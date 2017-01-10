@@ -175,7 +175,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-tiny{font-size:10px!important}.w3-small{font-size:12px!important}
 .w3-medium{font-size:15px!important}.w3-large{font-size:18px!important}
 .w3-xlarge{font-size:24px!important}.w3-xxlarge{font-size:36px!important}
-.w3-xxxlarge{font-size:48px!important}.w3-jumbo{font-size:10vmin!important}
+.w3-xxxlarge{font-size:48px!important}.w3-jumbo{font-size:64px!important}
 .w3-vertical{word-break:break-all;line-height:1;text-align:center;width:0.6em}
 .w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}
 .w3-justify{text-align:justify!important}.w3-center{text-align:center!important}
