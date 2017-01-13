@@ -64,6 +64,26 @@ body, html {
   border-bottom: 0vh solid transparent; 
   border-right:120vw solid #222; 
 }
+    .hp-enter-arrow {
+    -webkit-animation-name: hp-enter-arrow; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: hp-enter-arrow;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes hp-enter-arrow {
+    0%   {color: rgba(200,200,200,0.3);bottom:20px;}
+    100% {color: rgba(0,0,0,1); bottom:0px;}
+}
+
+/* Standard syntax */
+@keyframes hp-enter-arrow {
+    0%   {color: rgba(200,200,200,0.3);bottom:20px;}
+    100% {color: rgba(0,0,0,1); bottom:0px;}
+}
 </style>
     </head>
 <body>
