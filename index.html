@@ -203,7 +203,7 @@ body, html {
 <body>
 
 <!-- Navbar (sit on top) -->
-<nav class="w3-top sc-full-width headerouter-down" style='height: 60px; backgorund-color: #fff; box-shadow: 0px 1px 8px #222;'id='myNavbar'>
+<nav class="w3-top sc-full-width headerouter-down" style='height: 60px; backgorund-color: #fff;'id='myNavbar'>
   <a href='#home'>
     <img class='w3-display-topleft' id='navLogo' src='https://1.bp.blogspot.com/-R-JZXRwDKRs/WHpAoIIg6OI/AAAAAAAAKbY/Eq0E-zuD4NkRrsLHZH1URBaRmJIAK5omwCK4B/s320/unnamed.png' style='top: 15px; left: 15px; width: 30px;'>
   </a>
@@ -211,6 +211,9 @@ body, html {
     <div class="bars"><span></span><span></span><span></span>
       <div class="other-bar"></div>
     </div>
+  </div>
+  <div class="logo" style="white-space:nowrap;">
+    <img class='w3-animate-opacity' src='https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s320/unnamed-1.png'>
   </div>
   <!--<ul class="w3-navbar" id="myNavbar">
     <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
@@ -243,9 +246,6 @@ body, html {
 <div class="bgimg-1 w3-display-container w3-opacity-min w3-container-black" style='overflow: hidden; background-color: #171717 z-index:-4;' id="home">
 <!--<div class="sc-full-screen w3-display-container w3-opacity-min w3-container-black" style='overflow: hidden; background-color: #171717 z-index:-4;' id="home">-->
   <div class="w3-display-middle hp-slash" style=''></div>
-  <div class="logo" style="white-space:nowrap;">
-    <img class='w3-animate-opacity' src='https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s320/unnamed-1.png'>
-  </div>
   <div class='w3-display-bottommiddle w3-animate-opacity-long'>
     <div class='w3-large w3-center w3-text-black' style='position: absolute; width: 100%; bottom: 50px; bottom-border: 1px solid #000;'>
       <a href='#about' style='text-decoration:none;'>ENTER</a>
@@ -491,89 +491,75 @@ function toggleFunction() {
     
     <script>
     //<![CDATA[
-      // navbar actions on scroll
-      var didScroll;
-      var lastScrollTop = 0;
-      var delta = 5;
-      var homeHeight = $('#home').outerHeight() / 2;
+    // navbar actions on scroll
+      
+      // "move logo" variables
       var imageWidth = parseInt($('.logo img').css('width'));
       var stopWidth = imageWidth / 1.5;
-      //var marginHeight = parseInt($('nav').css('margin-top'));
-      //var stopMargin=marginHeight/2;
       var moveLeft = 0.5 * $(window).width();
-      var stopLeft = moveLeft / 100;
+      var stopLeft = moveLeft / 3.2;
       var moveTop = 0.5 * $(window).height();
-      var stopTop = moveTop / 3;
+      var stopTop = moveTop / 8.5;
       
+      // "change navbar background" variables
+      var navbar = document.getElementById("myNavbar");
     
       $(window).scroll(function(event){
         didScroll = true;
         
         var windowScroll = $(window).scrollTop();
-        var newWidth = imageWidth - windowScroll;
-        var newLeft = moveLeft - windowScroll;
-        var newTop = moveTop - windowScroll;
         
+        // as the scroll is happening, define "move logo" variables proportional to scroll distance
+        var newWidth = imageWidth - .23*windowScroll;
+        var newLeft = moveLeft - .45*windowScroll;
+        var newTop = moveTop - 0.463*windowScroll;
+        
+        // "move logo" functions
+        // change image width proportional to scroll distance
         if(newWidth >= stopWidth){
           $('.logo img').css("width", newWidth);
           }
           else{
             $('.logo img').css("width", stopWidth);
         }
+        
+        // move image left proportional to scroll distance
         if(newLeft >= stopLeft){
           $('.logo').css("left", newLeft);
           }
           else{
             $('.logo').css("left", stopLeft);
         }
+        
+        // move image up proportional to scroll distance
         if(newTop >= stopTop){
           $('.logo').css("top", newTop);
-          $('#navLogo').removeClass('w3-display-topleft').addClass('w3-hide');
           }
           else{
             $('.logo').css("top", stopTop);
+            $('#navLogo').removeClass('w3-display-topleft').addClass('w3-hide');
         }
-      });
-      
-//      setInterval(function() {
-//       if (didScroll) {
-//          hasScrolled();
-//          didScroll = false;
-//        }
-//      }, 250);
-//      function hasScrolled() {
-//        var st = $(this).scrollTop();
-        // Make sure they scroll more than delta
-//        if(Math.abs(lastScrollTop - st) <= delta)
-//          return;
-        // If they scrolled down and are past the bottom of the homepage, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
-//        if (st > lastScrollTop && st > homeHeight){
-          // Fix Logo
-          //$('#home').removeClass('headerouter-down').addClass('headerouter-up');
-//          $('#home').addClass('fix-logo');
-//          $('#navLogo').style('visibility:hidden');
-//        } else {
-          // Unfix Logo
-//          if(st < $(window).height() / 2) {
-//           $('#home').removeClass('fix-logo')
-//          }
-//        }
-//        lastScrollTop = st;
-//      }
-      //]]>
+        
+        // hide square navLogo on homepage when logo image takes it's place
+        if(newTop <= stopTop){
+          $('#navLogo').removeClass('w3-display-topleft').addClass('w3-hide');
+          }
+          // otherwise show square navLogo on homepage
+          else{
+            $('#navLogo').removeClass('w3-hide').addClass('w3-display-topleft');
+            
+        }
+        
+        // change navbar background depending on scroll distance
+        if (windowScroll >= $(window).height()) {
+        navbar.className = "w3-card-2" + " w3-top" + " w3-white";
+          } 
+          else {
+        navbar.className = "w3-top";
+        }
+     });
+    //]]>
       </script>
-    
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
-    </script>
-    <script>
-    var nav = $('nav')
-    var limit = 35;
-    var st2 = $(this).scrollTop();
-      if (st2 <= limit) {
-        nav.css({ 'opacity' : (1 - st2/limit)});
-        }
-    </script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script>
 function openNav() {
@@ -593,3 +579,5 @@ function openNav() {
 
 </body>
 </html>
+
+
