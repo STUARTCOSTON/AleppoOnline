@@ -240,7 +240,8 @@ body, html {
   <h1 id="TagLine" class="w3-text-black w3-center sc-small">You found me, now let me help them find you.</h1>
   <div class="sc-flex-spacearound">
     <button id="btn1" class="w3-btn sc-med" style="border: 1px solid #fff; color:white; background-color: transparent;">Learn More</button>
-  <button id="btn2" class="w3-btn sc-med" style="border: 1px solid #607d8b; color: white; background-color: #607d8b;">Get Started</button>
+    <button id="btn2" class="w3-btn sc-med" style="border: 1px solid #607d8b; color: white; background-color: #607d8b;">Get Started</button>
+  </div>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
@@ -554,12 +555,12 @@ function toggleFunction() {
             $('.logo').css("top", stopTop);
         }
         
-      //  if(newRight <= stopRight){
-      //    $('#btn2').css("right", newRight);
-      //    }
-       //   else{
-      //      $('#btn2').css("right", stopRight);
-      //  }
+        if(newRight <= stopRight){
+          $('#btn2').css("right", newRight);
+          }
+          else{
+            $('#btn2').css("right", stopRight);
+        }
         
         // hide square navLogo on homepage when logo image takes it's place
 //        if(newTop <= stopTop){
