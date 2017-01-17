@@ -54,11 +54,13 @@ body, html {
 }
 /* fade homepage words */
 #BuildIt {
-  margin-top: 35%;
+  position: fixed;
+  top: 35%;
   opacity: 1;
 }
 #TagLine {
-  margin-top: 10%;
+  position: fixed;
+  top: 60%;
 }
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -243,11 +245,11 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min w3-container-black" style='overflow: hidden; background-color: #171717;' id="home">
   <div class="w3-display-middle hp-slash"></div>
-  <div class="w3-center w3-text-black" id="BuildIt">
+  <div class="sc-full-width w3-center w3-text-black" id="BuildIt">
     <h1 class='sc-Jumbo'>If we build it, they will come!</h1>
   </div>
-  <div class="w3-center w3-text-black" id="TagLine">
-    <h1 class='sc-xlarge'>You found us, now let us help them find you.</h1>
+  <div class="sc-full-width w3-center w3-text-black" id="TagLine">
+    <h1 class='sc-large'>You found us, now let us help them find you.</h1>
   </div>
   <div class='w3-display-bottommiddle w3-animate-opacity-long'>
     <div class='w3-large w3-center w3-text-black' style='position: absolute; width: 100%; bottom: 50px; bottom-border: 1px solid #000;'>
