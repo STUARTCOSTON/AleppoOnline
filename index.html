@@ -48,9 +48,17 @@ body, html {
 .logo {
   position: fixed;
   left: 50%;
-  top: 65%;
+  top: 50%;
   transform:translate(-50%,-50%);
   -ms-transform:translate(-50%,-50%)
+}
+/* fade homepage words */
+#BuildIt {
+  margin-top: 35%;
+  opacity: 1;
+}
+#TagLine {
+  margin-top: 10%;
 }
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -61,7 +69,7 @@ body, html {
 }
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('https://4.bp.blogspot.com/-5Z8g68wkdz4/WH2yfEd0LOI/AAAAAAAAKkA/MnKADyzLKZIzQxm0BLZZCQP2t9xDrqpyQCK4B/s1600/FullSizeRender%2B4.jpg');
+  background-image: url('https://4.bp.blogspot.com/-4PNYULr8wq8/WH2ycy51LbI/AAAAAAAAKj4/pVHlkaGa6YwRmpc2WuHIflbx5py0tC0lgCK4B/s1600/IMG_5832.JPG');
   min-height: 100%;
 }
 /* Second image (Portfolio) */
@@ -194,11 +202,8 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <nav class="w3-top sc-full-width headerouter-down" style='height: 60px; backgorund-color: #fff;'id='myNavbar'>
-  <a href='#home'>
-    <img class='w3-display-topleft' id='navLogo' src='https://1.bp.blogspot.com/-R-JZXRwDKRs/WHpAoIIg6OI/AAAAAAAAKbY/Eq0E-zuD4NkRrsLHZH1URBaRmJIAK5omwCK4B/s320/unnamed.png' style='top: 15px; left: 15px; width: 30px;'>
-  </a>
   <a href='#contact'>
-    <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-hide' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
+    <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-display-topleft' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
   </a>
   <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
     <div class="bars"><span></span><span></span><span></span>
@@ -236,19 +241,24 @@ body, html {
 </nav>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min w3-container-black" style='overflow: hidden; background-color: #171717 z-index:-4;' id="home">
-<!--<div class="sc-full-screen w3-display-container w3-opacity-min w3-container-black" style='overflow: hidden; background-color: #171717 z-index:-4;' id="home">-->
-  <div class="w3-display-middle hp-slash" style=''></div>
+<div class="bgimg-1 w3-display-container w3-opacity-min w3-container-black" style='overflow: hidden; background-color: #171717;' id="home">
+  <div class="w3-display-middle hp-slash"></div>
+  <div class="w3-center w3-text-black" id="BuildIt">
+    <h1 class='sc-Jumbo'>If we build it, they will come!</h1>
+  </div>
+  <div class="w3-center w3-text-black" id="TagLine">
+    <h1 class='sc-xlarge'>You found us, now let us help them find you.</h1>
+  </div>
   <div class='w3-display-bottommiddle w3-animate-opacity-long'>
     <div class='w3-large w3-center w3-text-black' style='position: absolute; width: 100%; bottom: 50px; bottom-border: 1px solid #000;'>
-      <a href='#about' style='text-decoration:none;'>ENTER</a>
+      <a href='#about' style='text-decoration:none;' onclick='smoothScrollAbout()'>ENTER</a>
     </div>
-    <div class='hp-enter-arrow w3-display-bottommiddle w3-xlarge'>&#8595;</div> 
+    <div class='hp-enter-arrow w3-display-bottommiddle w3-jumbo'>&#8595;</div> 
   </div>
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
+<div class="about w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">ABOUT ME</h3>
   <p class="w3-center"><em>I love photography</em></p>
   <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -415,6 +425,10 @@ body, html {
 </footer>
  
 <script>
+// smooth scroll
+function smoothScrollAbout() {
+  document.querySelector('.about').scrollIntoView({ behavior: 'smooth' });
+  }
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -487,12 +501,14 @@ function toggleFunction() {
     // navbar actions on scroll
       
       // "move logo" variables
-      var imageWidth = parseInt($('.logo img').css('width'));
+      var imageWidth = parseInt($(".logo img").css("width"));
       var stopWidth = imageWidth / 1.5;
-      //var moveLeft = 0.5 * $(window).width();
-     // var stopLeft = 108.5;
-      var moveTop = 0.7 * $(window).height();
+      var moveTop = 0.5 * $(window).height();
       var stopTop = 30;
+      
+      // fade homepage words
+      var startOpacity = 1;
+      var stopOpacity = 0;
       
       // "change navbar background" variables
       var navbar = document.getElementById("myNavbar");
@@ -502,13 +518,13 @@ function toggleFunction() {
         
         var windowScroll = $(window).scrollTop();
         
-        // as the scroll is happening, define "move logo" variables proportional to scroll distance
+        // while scrolling, define variables proportional to scroll distance
         var newWidth = imageWidth - .23*windowScroll;
-        //var newLeft = moveLeft - .45*windowScroll;
-        var newTop = moveTop - 0.463*windowScroll;
+        var newTop = moveTop - 0.45*windowScroll;
+        var newOpacityA = startOpacity - .004*windowScroll;
+        var newOpacityB = startOpacity - .0027*windowScroll;
         
-        // "move logo" functions
-        // change image width proportional to scroll distance
+        // change image width
         if(newWidth >= stopWidth){
           $('.logo img').css("width", newWidth);
           }
@@ -516,13 +532,20 @@ function toggleFunction() {
             $('.logo img').css("width", stopWidth);
         }
         
-        // move image left proportional to scroll distance
-//        if(newLeft >= stopLeft){
-//          $('.logo').css("left", newLeft);
-//          }
-//          else{
-//            $('.logo').css("left", stopLeft);
-//        }
+        // change hompage word opacity
+        if(newOpacityA >= stopOpacity){
+          $("#BuildIt").css("opacity", newOpacityA);
+          }
+          else{
+            $("#BuildIt").css("opacity", stopOpacity);
+        }
+        
+        if(newOpacityB >= stopOpacity){
+          $("#TagLine").css("opacity", newOpacityB);
+          }
+          else{
+            $("#TagLine").css("opacity", stopOpacity);
+        }
         
         // move image up proportional to scroll distance
         if(newTop >= stopTop){
@@ -533,15 +556,15 @@ function toggleFunction() {
         }
         
         // hide square navLogo on homepage when logo image takes it's place
-        if(newTop <= stopTop){
-          $('#navLogo').removeClass('w3-display-topleft').addClass('w3-hide');
-          $('#contactIcon').removeClass('w3-hide').addClass('w3-display-topleft');
-          }
+//        if(newTop <= stopTop){
+//          $('#navLogo').removeClass('w3-display-topleft').addClass('w3-hide');
+//          $('#contactIcon').removeClass('w3-hide').addClass('w3-display-topleft');
+//          }
           // otherwise show square navLogo on homepage
-          else{
-            $('#navLogo').removeClass('w3-hide').addClass('w3-display-topleft');
-            $('#contactIcon').removeClass('w3-display-topleft').addClass('w3-hide');
-        }
+//          else{
+//            $('#navLogo').removeClass('w3-hide').addClass('w3-display-topleft');
+//            $('#contactIcon').removeClass('w3-display-topleft').addClass('w3-hide');
+//        }
         
         // change navbar background depending on scroll distance
         if (windowScroll >= $(window).height()) {
