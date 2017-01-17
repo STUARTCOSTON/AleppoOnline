@@ -541,10 +541,12 @@ function toggleFunction() {
         }
         
         if(newOpacityC >= stopOpacity){
-          $("#btn1").css("opacity", newOpacityC);
+    //      $("#btn1").css("opacity", newOpacityC);
+          $(".logo button").css("opacity", newOpacityC);
           }
           else{
-            $("#btn1").css("opacity", stopOpacity);
+      //      $("#btn1").css("opacity", stopOpacity);
+            $(".logo button").css("opacity", stopOpacity);
         }
                
         // move items proportional to scroll distance
@@ -555,12 +557,12 @@ function toggleFunction() {
             $('.logo').css("top", stopTop);
         }
         
-        if(newRight >= stopRight){
-          $('#btn2').css("right", newRight);
-          }
-          else{
-            $('#btn2').css("right", stopRight);
-        }
+//        if(newRight >= stopRight){
+//          $('#btn2').css("right", newRight);
+//          }
+//          else{
+//            $('#btn2').css("right", stopRight);
+//        }
         
         // hide square navLogo on homepage when logo image takes it's place
 //        if(newTop <= stopTop){
