@@ -21,7 +21,6 @@ body, html {
   color: #777;
   line-height: 1.8;
 }
-
 /* Theme Colors - Arylide */
 /* rgb(233, 214, 107) */
 .theme-textcolor, .theme-textcolor-hover:hover {
@@ -30,7 +29,6 @@ body, html {
 .theme-backgroundcolor, .theme-backgroundcolor-hover:hover {
   background-color: #e9d66b;!important
 }
-
 /* move header up and down with scroll */
 .headerouter-up {
   top:-105px;
@@ -39,7 +37,6 @@ body, html {
 .headerouter-down {
   transition: 0.5s;
 }
-
 /* fix logo to header on scroll past */
 .fix-logo .logo {
     position: fixed;
@@ -48,7 +45,6 @@ body, html {
     width: 200px;
     z-index: 5;
 }  
-
 .logo {
   position: fixed;
   left: 50%;
@@ -56,7 +52,6 @@ body, html {
   transform:translate(-50%,-50%);
   -ms-transform:translate(-50%,-50%)
 }
-
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
@@ -64,13 +59,11 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('/w3images/parallax1.jpg');
+  background-image: url('https://4.bp.blogspot.com/-5Z8g68wkdz4/WH2yfEd0LOI/AAAAAAAAKkA/MnKADyzLKZIzQxm0BLZZCQP2t9xDrqpyQCK4B/s1600/FullSizeRender%2B4.jpg');
   min-height: 100%;
 }
-
 /* Second image (Portfolio) */
 .bgimg-2 {
   background-image: url("/w3images/parallax2.jpg");
@@ -83,14 +76,12 @@ body, html {
 }
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
     .bgimg-1, .bgimg-2, .bgimg-3 {
         background-attachment: scroll;
     }
 }
-
 /* homepage css */
 .hp-slash {
   width: 0; 
@@ -118,7 +109,6 @@ body, html {
     100% {color: rgba(0,0,0,1); bottom:0px;}
 }
 /* end homepage css */
-
 /* Open and Close menu animation */
 .menu-container {
   right: 15px;
@@ -206,6 +196,9 @@ body, html {
 <nav class="w3-top sc-full-width headerouter-down" style='height: 60px; backgorund-color: #fff;'id='myNavbar'>
   <a href='#home'>
     <img class='w3-display-topleft' id='navLogo' src='https://1.bp.blogspot.com/-R-JZXRwDKRs/WHpAoIIg6OI/AAAAAAAAKbY/Eq0E-zuD4NkRrsLHZH1URBaRmJIAK5omwCK4B/s320/unnamed.png' style='top: 15px; left: 15px; width: 30px;'>
+  </a>
+  <a href='#contact'>
+    <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-hide' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
   </a>
   <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
     <div class="bars"><span></span><span></span><span></span>
@@ -496,8 +489,8 @@ function toggleFunction() {
       // "move logo" variables
       var imageWidth = parseInt($('.logo img').css('width'));
       var stopWidth = imageWidth / 1.5;
-      var moveLeft = 0.5 * $(window).width();
-      var stopLeft = 108.5;
+      //var moveLeft = 0.5 * $(window).width();
+     // var stopLeft = 108.5;
       var moveTop = 0.5 * $(window).height();
       var stopTop = 30;
       
@@ -511,7 +504,7 @@ function toggleFunction() {
         
         // as the scroll is happening, define "move logo" variables proportional to scroll distance
         var newWidth = imageWidth - .23*windowScroll;
-        var newLeft = moveLeft - .45*windowScroll;
+        //var newLeft = moveLeft - .45*windowScroll;
         var newTop = moveTop - 0.463*windowScroll;
         
         // "move logo" functions
@@ -524,12 +517,12 @@ function toggleFunction() {
         }
         
         // move image left proportional to scroll distance
-        if(newLeft >= stopLeft){
-          $('.logo').css("left", newLeft);
-          }
-          else{
-            $('.logo').css("left", stopLeft);
-        }
+//        if(newLeft >= stopLeft){
+//          $('.logo').css("left", newLeft);
+//          }
+//          else{
+//            $('.logo').css("left", stopLeft);
+//        }
         
         // move image up proportional to scroll distance
         if(newTop >= stopTop){
@@ -537,17 +530,17 @@ function toggleFunction() {
           }
           else{
             $('.logo').css("top", stopTop);
-            $('#navLogo').removeClass('w3-display-topleft').addClass('w3-hide');
         }
         
         // hide square navLogo on homepage when logo image takes it's place
         if(newTop <= stopTop){
           $('#navLogo').removeClass('w3-display-topleft').addClass('w3-hide');
+          $('#contactIcon').removeClass('w3-hide').addClass('w3-display-topleft');
           }
           // otherwise show square navLogo on homepage
           else{
             $('#navLogo').removeClass('w3-hide').addClass('w3-display-topleft');
-            
+            $('#contactIcon').removeClass('w3-display-topleft').addClass('w3-hide');
         }
         
         // change navbar background depending on scroll distance
