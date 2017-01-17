@@ -28,6 +28,7 @@ body, html {
 }
 .theme-backgroundcolor, .theme-backgroundcolor-hover:hover {
   background-color: #e9d66b;!important
+  color: #fff;
 }
 /* move header up and down with scroll */
 .headerouter-up {
@@ -237,12 +238,9 @@ body, html {
     <img style="height: auto; width: auto;" src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s320/unnamed-1.png">
   </div>
   <h1 id="TagLine" class="w3-text-black w3-center sc-small">You found me, now let me help them find you.</h1>
-  <button class="w3-btn" style="border: 1px solid #fff; color:white; background-color: transparent;">
-    Learn More
-  </button>
-  <button class="w3-btn" style="border: 1px solid #3f51b5; color: white; background-color: #3f51b5;">
-    Let's Build It
-  </button>
+  <div class="sc-flex-spacearound">
+    <button id="btn1" class="w3-btn sc-med" style="border: 1px solid #fff; color:white; background-color: transparent;">Learn More</button>
+  <button id="btn2" class="w3-btn sc-med" style="border: 1px solid #607d8b; color: white; background-color: #607d8b;">Get Started</button>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
@@ -496,6 +494,7 @@ function toggleFunction() {
       var stopWidth = imageWidth / 1.5;
       var moveTop = 0.5 * $(window).height();
       var stopTop = 30;
+      var moveRight = parseInt($("#btn2").css("right"));
       
       // fade homepage words
       var startOpacity = 1;
@@ -512,8 +511,10 @@ function toggleFunction() {
         // while scrolling, define variables proportional to scroll distance
         var newWidth = imageWidth - .23*windowScroll;
         var newTop = moveTop - 0.45*windowScroll;
+        var newRight = moveRight - .5*windowScroll;
         var newOpacityA = startOpacity - .004*windowScroll;
         var newOpacityB = startOpacity - .0027*windowScroll;
+        var newOpacityC = startOpacity - .002*windowScroll;
         
         // change image width
         if(newWidth >= stopWidth){
@@ -538,12 +539,26 @@ function toggleFunction() {
             $("#TagLine").css("opacity", stopOpacity);
         }
         
-        // move image up proportional to scroll distance
+        if(newOpacityC >= stopOpacity){
+          $("#btn1").css("opacity", newOpacityC);
+          }
+          else{
+            $("#btn1").css("opacity", stopOpacity);
+        }
+               
+        // move items proportional to scroll distance
         if(newTop >= stopTop){
           $('.logo').css("top", newTop);
           }
           else{
             $('.logo').css("top", stopTop);
+        }
+        
+        if(newRight >= stopRight){
+          $('#btn2').css("right", newRight);
+          }
+          else{
+            $('#btn2').css("right", stopRight);
         }
         
         // hide square navLogo on homepage when logo image takes it's place
