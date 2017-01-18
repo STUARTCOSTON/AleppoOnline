@@ -506,6 +506,12 @@ body, html {
       z.className = z.className.replace(' w3-hide', ' w3-show');
     }
   }
+        
+  function closeNav() {
+    document.getElementById('menu-container').className.replace(' is-menu-open', '');
+    document.getElementById('menu').className.replace(' nav-open', ' nav-closed');
+    document.getElementById('logo').className.replace(' w3-hide', ' w3-show');
+  }
   </script>
   
 
