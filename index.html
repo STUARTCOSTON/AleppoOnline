@@ -482,10 +482,10 @@ body, html {
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
-      y.className = y.className.replace(' nav-closed', ' nav-open');
+      y.className = y.className.replace(' nav-closed', ' nav-open w3-animate-top');
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
-      y.className = y.className.replace(' nav-open', ' nav-closed');
+      y.className = y.className.replace(' nav-open w3-animate-top', ' nav-closed w3-animate-bottom');
     }
   }
   </script>
