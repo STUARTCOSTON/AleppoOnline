@@ -277,7 +277,7 @@ body, html {
   
   <!-- Homepage -->
   <div id="home" class="sc-full-screen w3-text-black" style="position: absolute; top:0;">
-    <div id="logo" class="logo w3-animate-opacity-long" style="z-index: 12;">
+    <div id="logo" class="logo w3-animate-opacity-long w3-show" style="z-index: 12;">
       <div class="sc-flex-center w3-padding-bottom">
         <a href="#"><img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png"></a>
       </div>
@@ -499,7 +499,7 @@ body, html {
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
       y.className = y.className.replace(' nav-closed', ' nav-open');
-      z.className += ' w3-hide';
+      z.className = z.className.replace(' w3-show', ' w3-hide');
 
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
