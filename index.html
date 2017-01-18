@@ -303,7 +303,7 @@ body, html {
       <p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>
     </div>
     
-    <div id="page2-develop" class="w3-text-black" style="position:absolute; top: 10vh; right: 10vw; width: 300px;">
+    <div id="page2-develop" class="w3-text-black" style="position:absolute; bottom: 55vh; right: 10vw; width: 300px;">
       <h3 class="w3-center w3-xxxlarge" style="font-family: 'Droid Serif', serif;">&lt;/developer&gt;</h3>
       <p class="w3-center">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
     </div>
@@ -415,7 +415,7 @@ body, html {
   var imageWidth = parseInt($(".logo img").css("width"));
   var stopWidth = imageWidth / 1.5;
   var moveTop = 0.5 * $(window).height();
-  var stopTop = 140;
+  var stopTop = 130;
   var moveRight = parseInt($("#btn2").css("right"));
     
   // fade homepage words
@@ -491,14 +491,17 @@ body, html {
   function openNav() {
     var x = document.getElementById('menu-container');
     var y = document.getElementById('menu');
+    var z = document.getElementByID('#home);
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
       y.className = y.className.replace(' nav-closed', ' nav-open');
+      z.className += ' w3-hide-;
 
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
       y.className = y.className.replace(' nav-open', ' nav-closed');
+      z.className = z.className.replace(' w3-hide', ' w3-show');
     }
   }
   </script>
