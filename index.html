@@ -251,7 +251,7 @@ body, html {
   </div>
 
   <!-- Navbar (sit on top) -->
-  <nav class="w3-top sc-full-width headerouter-down" style='height: 60px; backgorund-color: #fff;z-index:10;'id='myNavbar'>
+  <nav class="w3-top sc-full-width" style='height: 60px; backgorund-color: #fff;z-index:10;background-color:#fff;'id='myNavbar'>
     <a href="#page6">
       <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-display-topleft' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
     </a>
@@ -274,10 +274,9 @@ body, html {
   
   <!-- Homepage -->
   <div id="home" class="sc-fullscreen">
-    <div class="logo w3-animate-opacity-long">
-      <h1 id="Welcome" class="w3-jumbo w3-left w3-text-black"></h1>
+    <div class="logo w3-animate-opacity-long" style="z-index: 12;">
       <div class="sc-flex-center w3-padding-bottom">
-        <img style="height: auto; width: auto;" src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png">
+        <img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png">
       </div>
       <h1 id="TagLine" class="w3-text-black w3-center w3-large">You found me, now let me help them find you.</h1>
       <button id="cta" class="w3-btn w3-xlarge sc-full-width" style="margin: 16px; border: 2px solid #e9d66b; color: #6bbde9; background-color: #fff;">You Won't</button>
@@ -358,8 +357,8 @@ body, html {
   <!-- Watch Me Do It Page -->
   <div id="page6" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">
     <ul class="sc-ul" style="position: absolute; top:30vh; left:33vw;">
-      <li><i class="material-icons">phone_iphone</i><p>  931.588.0398</p></li>
-      <li><i class="material-icons">mail_outline</i><p>  family@costonmission.com</p></li>
+      <li><i class="material-icons">phone_iphone</i>&nbsp;&nbsp;  931.588.0398</li>
+      <li><i class="material-icons">mail_outline</i>&nbsp;&nbsp;  family@costonmission.com</li>
     </ul>
   </div>
  
@@ -410,7 +409,7 @@ body, html {
   var imageWidth = parseInt($(".logo img").css("width"));
   var stopWidth = imageWidth / 1.5;
   var moveTop = 0.5 * $(window).height();
-  var stopTop = 300;
+  var stopTop = 100;
   var moveRight = parseInt($("#btn2").css("right"));
     
   // fade homepage words
