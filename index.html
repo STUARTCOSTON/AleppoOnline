@@ -222,7 +222,7 @@ body, html {
   .nav-open {
     display: block;
     position:fixed;
-    top:-100vh;
+    bottom:100vh;
     width: 100vw;
     height: 100vh;
     background-color: #fff;
@@ -262,7 +262,7 @@ body, html {
         <div class="other-bar"></div>
       </div>
     </div>
-    <div id="menu" class="sc-full-screen nav-open sc-animate-top sc-text-center" onclick="openNav()">
+    <div id="menu" class="sc-full-screen nav-open sc-text-center" onclick="openNav()">
       <ul class="sc-ul" style="padding-top: 30%;">
         <li><a href="#home">Home</a></li>
         <li><a href="#page2">Design &amp; Develop</a></li>
@@ -494,12 +494,12 @@ body, html {
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
    //   y.className = y.className.replace(' nav-closed sc-animate-bottom', ' nav-open sc-animate-top');
-      y.css.top = &quot;0px&quot;
+      y.style.bottom = $(window).height());
 
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
  //     y.className = y.className.replace(' nav-open sc-animate-top', ' nav-closed sc-animate-bottom');
-      y.css.top = &quot;-100vh&quot;
+      y.style.bottom = 0
     }
   }
   </script>
