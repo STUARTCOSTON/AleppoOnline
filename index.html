@@ -252,7 +252,7 @@ body, html {
 
   <!-- Navbar (sit on top) -->
   <nav class="w3-top sc-full-width headerouter-down" style='height: 60px; backgorund-color: #fff;z-index:10;'id='myNavbar'>
-    <a href='#contact'>
+    <a href='#page6' style="z-index:11;">
       <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-display-topleft' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
     </a>
     <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
@@ -357,8 +357,10 @@ body, html {
   
   <!-- Watch Me Do It Page -->
   <div id="page6" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">
-  <i class="material-icons">phone_iphone</i>931.588.0398
-  <i class="material-icons">mail_outline</i>family@costonmission.com
+    <ul class="sc-ul" style="position: absolute; top:50vh; left:35vw;">
+      <li><i class="material-icons">phone_iphone</i><p>  931.588.0398</p></li>
+      <li><i class="material-icons">mail_outline</i><p>  family@costonmission.com</p></li>
+    </ul>
   </div>
  
   <script>
@@ -408,7 +410,7 @@ body, html {
   var imageWidth = parseInt($(".logo img").css("width"));
   var stopWidth = imageWidth / 1.5;
   var moveTop = 0.5 * $(window).height();
-  var stopTop = 30;
+  var stopTop = 50;
   var moveRight = parseInt($("#btn2").css("right"));
     
   // fade homepage words
@@ -428,7 +430,7 @@ body, html {
     var newRight = moveRight - .5*windowScroll;
     var newOpacityA = startOpacity - .004*windowScroll;
     var newOpacityB = startOpacity - .0027*windowScroll;
-    var newOpacityC = startOpacity - .002*windowScroll;
+    var newOpacityC = startOpacity - .0025*windowScroll;
        
     // change image width
     if(newWidth >= stopWidth){
