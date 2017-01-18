@@ -265,7 +265,7 @@ body, html {
     </div>
     <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="closeNav()">
       <ul class="sc-ul" style="padding-top: 30%;">
-        <li><a href="#home">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#page2">Design &amp; Develop</a></li>
         <li><a href="#page3">What's Mine Could Be Yours</a></li>
         <li><a href="#page4">See Updates Live</a></li>
@@ -277,9 +277,9 @@ body, html {
   
   <!-- Homepage -->
   <div id="home" class="sc-full-screen w3-text-black" style="position: absolute; top:0;">
-    <div class="logo w3-animate-opacity-long" style="z-index: 12;">
+    <div id="logo" class="logo w3-animate-opacity-long" style="z-index: 12;">
       <div class="sc-flex-center w3-padding-bottom">
-        <a href="#home"><img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png"></a>
+        <a href="#"><img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png"></a>
       </div>
       <div id="TagLine" class="w3-text-black w3-center">
         <h1 class="w3-xxlarge">You found me!</h1>
@@ -494,7 +494,7 @@ body, html {
   function openNav() {
     var x = document.getElementById('menu-container');
     var y = document.getElementById('menu');
-    var z = document.getElementById('home');
+    var z = document.getElementById('logo');
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
