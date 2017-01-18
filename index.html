@@ -61,7 +61,7 @@ body, html {
 .swiper-container {
     width: 100%;
     max-width: 800px;
-    height: 85vh;
+    height: 100%;
   }  
   
 /* Create a Parallax Effect */
@@ -244,7 +244,7 @@ body, html {
         <div class="other-bar"></div>
       </div>
     </div>
-    <div class="w3-middle">
+    <div id="menu" class="sc-full-screen nav-closed">
       <ul>
         <li><a href="#home">page 1</a></li>
         <li><a href="#page2">page 2</a></li>
@@ -253,7 +253,7 @@ body, html {
         <li><a href="#page5">page 5</a></li>
         <li><a href="#page6">page 6</a></li>
       </ul>
-    </div> 
+    </div>
   </nav>
   
   <!-- Homepage -->
@@ -296,9 +296,9 @@ body, html {
     <div id="page3title" style="position: absolute; top: 10vh; left:10vw;">
       <h1>What's Mine Is Yours</h1>
     </div>
-    <div id="page3content" class="w3-display-middle" style="border: 1px solid black;height: 55vh; width: 80vw; overflow: hidden;">
+    <div id="page3content" class="w3-display-middle" style="border: 1px solid green; height: 55vh; width: 80vw; max-width: 800px; overflow: hidden;">
       <!-- Slider main container -->
-      <div class="swiper-container">
+      <div class="swiper-container" style="border: 1px solid black">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
