@@ -494,11 +494,12 @@ body, html {
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
    //   y.className = y.className.replace(' nav-closed sc-animate-bottom', ' nav-open sc-animate-top');
-      y.style.top = &quot;0px&quot;;
+      y.css.top = &quot;0px&quot;
+
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
  //     y.className = y.className.replace(' nav-open sc-animate-top', ' nav-closed sc-animate-bottom');
-      y.style.top = &quot;-100vh&quot;;
+      y.css.top = &quot;-100vh&quot;
     }
   }
   </script>
