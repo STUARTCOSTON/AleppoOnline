@@ -260,7 +260,7 @@ body, html {
         <div class="other-bar"></div>
       </div>
     </div>
-    <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="openNav()">
+    <div id="menu" class="sc-full-screen nav-closed sc-animate-top sc-text-center" onclick="openNav()">
       <ul class="sc-ul" style="padding-top: 30%;">
         <li><a href="#home">home</a></li>
         <li><a href="#page2">page 2</a></li>
@@ -487,10 +487,10 @@ body, html {
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
-      y.className = y.className.replace(' nav-closed', ' nav-open sc-animate-bottom');
+      y.className = y.className.replace(' nav-closed sc-animate-bottom', ' nav-open sc-animate-top');
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
-      y.className = y.className.replace(' nav-open sc-animate-bottom', ' nav-closed sc-animate-top');
+      y.className = y.className.replace(' nav-open sc-animate-top', ' nav-closed sc-animate-bottom');
     }
   }
   </script>
