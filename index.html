@@ -221,8 +221,6 @@ body, html {
   }
   .nav-open {
     display: block;
-    position:fixed;
-    bottom:100vh;
     width: 100vw;
     height: 100vh;
     background-color: #fff;
@@ -262,7 +260,7 @@ body, html {
         <div class="other-bar"></div>
       </div>
     </div>
-    <div id="menu" class="sc-full-screen nav-open sc-text-center" onclick="openNav()">
+    <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="openNav()">
       <ul class="sc-ul" style="padding-top: 30%;">
         <li><a href="#home">Home</a></li>
         <li><a href="#page2">Design &amp; Develop</a></li>
@@ -417,7 +415,7 @@ body, html {
   var imageWidth = parseInt($(".logo img").css("width"));
   var stopWidth = imageWidth / 1.5;
   var moveTop = 0.5 * $(window).height();
-  var stopTop = 120;
+  var stopTop = 140;
   var moveRight = parseInt($("#btn2").css("right"));
     
   // fade homepage words
@@ -496,13 +494,11 @@ body, html {
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
-   //   y.className = y.className.replace(' nav-closed sc-animate-bottom', ' nav-open sc-animate-top');
-      y.style.bottom = $(window).height());
+      y.className = y.className.replace(' nav-closed', ' nav-open');
 
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
- //     y.className = y.className.replace(' nav-open sc-animate-top', ' nav-closed sc-animate-bottom');
-      y.style.bottom = 0
+      y.className = y.className.replace(' nav-open', ' nav-closed');
     }
   }
   </script>
