@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/arylide.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif|Libre+Franklin">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 <style>
 img {
@@ -42,7 +45,7 @@ body, html {
 .logo {
   position: fixed;
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
   left: 50%;
   top: 50%;
   -ms-transform: translate(-50%,-50%); /* IE 9 */
@@ -51,9 +54,15 @@ body, html {
   z-index: 5;
 }
 #TagLine {
-  font-family: 'Droid Serif', serif;
-  font-style: italic;
+  font-family: 'Libre Franklin', sans-serif;
 }
+
+/* Swiper */
+.swiper-container {
+    width: 100%;
+    max-width: 800px;
+    height: 85vh;
+  }  
   
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -208,30 +217,21 @@ body, html {
 <body>
   
   <div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
-    <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 20vh solid transparent; border-left:20vw solid #6bbde9; "></div>
-    <div class="rt-triangle" style="top: 10vh; border-top: 90vh solid transparent; border-bottom: 70vh solid transparent; border-right:80vw solid #e9d66b; "></div>
-    <div class="lt-triangle" style="top: 160vh; border-top: 70vh solid transparent; border-bottom: 115vh solid transparent; border-left:70vw solid #6bbde9; "></div>
-    <div class="rt-triangle" style="top: 335vh; border-top: 20vh solid transparent; border-bottom: 10vh solid transparent; border-right:10vw solid #6bbde9; "></div>
-    <div class="lt-triangle" style="top: 365vh; border-top: 135vh solid transparent; border-bottom: 100vh solid transparent; border-left:70vw solid #e9d66b; "></div>
-    <div class="rt-triangle" style="top: 590vh; border-top: 10vh solid transparent; border-bottom: 0vh solid transparent; border-right:7vw solid #6bbde9; "></div>
-   <!-- <div style="position: absolute; width: 100vw; height: 100vh; background-color: #111; top: 100vh; z-index:-1;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #222; top: 200vh; z-index:-1;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #333; top: 300vh; z-index:-1;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #444; top: 400vh; z-index:-1;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #555; top: 500vh; z-index:-1;"></div>-->
-    <!--<div style="position: absolute; width: 300vh; height: 300vw; border-radius: 50%; background-color: #fff; top: -50vh; left: -50px;"></div>
-    <div style="position: absolute; width: 300vw; height: 300vh; border-radius: 50%; background-color: #e9d66b; top: -50vh; left: 30vw; z-index: 1;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #fff; top: 220vh;"></div>
-    <div style="position: absolute; width: 20vw; height: 40vh; border-radius: 0%; background-color: #e9d66b; top: 213vh; right: 0vw; z-index:2;"></div>
-    <div style="position: absolute; width: 85vw; height: 90vh; border-radius: 50%; background-color: #fff; top: 204.5vh; right: -1vw; z-index:2;"></div>
-    <div style="position: absolute; width: 130vw; height: 300vh; border-radius: 50%; background-color: #6bbde9; top: 211.1vh; right: 29.2vw;z-index: 3;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #fff; top: 300vh;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #fff; top: 400vh;z-index:2"></div>
-    <div style="position: absolute; width: 20vw; height: 40vh; border-radius: 0%; background-color: #e9d66b; top: 450vh; right: 0vw; z-index:2;"></div>
-    <div style="position: absolute; width: 85vw; height: 90vh; border-radius: 50%; background-color: #fff; top: 416.5vh; right: -1.5vw; z-index:2;"></div>
-    <div style="position: absolute; width: 100vw; height: 100vh; background-color: #111; top: 500vh;z-index:2"></div>
-    <div style="position: absolute; width: 40vw; height: 20vh; background-color: #6bbde9; top: 500vh;z-index:2"></div>
-    <div style="position: absolute; width: 80vw; height: 190vh; border-radius: 50%; background-color: #fff; top: 497vh; left: -5vw; z-index:3;"></div>-->
+    <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 25.71vh solid transparent; border-left:20vw solid #6bbde9; "></div>
+    
+    <div class="rt-triangle" style="top: 10vh; border-top: 90vh solid transparent; border-bottom: 180vh solid transparent; border-right:70vw solid #e9d66b; "></div>
+    
+    <div class="lt-triangle" style="top: 240vh; border-top: 90vh solid transparent; border-bottom: 115vh solid transparent; border-left:30vw solid #6bbde9; "></div>
+    <div class="lt-triangle" style="top: 321vh; height: 20vh; width:60vw; background-color: #fff; "></div>
+    <div class="lt-triangle" style="top: 321vh; height: 20vh; width:27vw; background-color: #6bbde9; "></div>
+    
+    <div class="rt-triangle" style="top: 360vh; border-top: 60vh solid transparent; border-bottom: 20vh solid transparent; border-right:10vw solid #6bbde9; "></div>
+    
+    <div class="lt-triangle" style="top: 440vh; border-top: 60vh solid transparent; border-bottom: 100vh solid transparent; border-left:30vw solid #e9d66b; "></div>
+    <div class="lt-triangle" style="top: 500vh; height: 50vh; width:30vw; background-color: #e9d66b; "></div>
+    <div class="lt-triangle" style="top: 550vh; border-top: 0vh solid transparent; border-bottom: 50vh solid transparent; border-left:30vw solid #e9d66b; "></div>
+    
+    <div class="rt-triangle" style="top: 590vh; border-top: 10vh solid transparent; border-bottom: 0vh solid transparent; border-right:5vw solid #6bbde9; "></div>
   </div>
 
   <!-- Navbar (sit on top) -->
@@ -244,40 +244,105 @@ body, html {
         <div class="other-bar"></div>
       </div>
     </div>
+    <div class="w3-middle">
+      <ul>
+        <li><a href="#home">page 1</a></li>
+        <li><a href="#page2">page 2</a></li>
+        <li><a href="#page3">page 3</a></li>
+        <li><a href="#page4">page 4</a></li>
+        <li><a href="#page5">page 5</a></li>
+        <li><a href="#page6">page 6</a></li>
+      </ul>
+    </div> 
   </nav>
   
   <!-- Homepage -->
-  <div class="sc-fullscreen">
+  <div id="home" class="sc-fullscreen">
     <div class="logo w3-animate-opacity-long">
-      <h1 id="Welcome" class="sc-jumbo w3-center w3-text-black">Welcome to</h1>
+      <h1 id="Welcome" class="w3-jumbo w3-left w3-text-black"></h1>
       <div class="sc-flex-center w3-padding-bottom">
         <img style="height: auto; width: auto;" src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png">
       </div>
-      <h1 id="TagLine" class="w3-text-black w3-center sc-small">You found me, now let me help them find you.</h1>
-      <div class="sc-flex-center">
-        <button id="btn1" class="w3-btn sc-small" style="margin: 16px; border: 1px solid #fff; color:white; background-color: transparent;">Learn More</button>
-        <button id="btn2" class="w3-btn sc-small" style="margin: 16px; border: 1px solid #607d8b; color: white; background-color: #607d8b;">Get Started</button>
-      </div>
+      <h1 id="TagLine" class="w3-text-black w3-center w3-large">You found me, now let me help them find you.</h1>
+      <button id="cta" class="w3-btn w3-xlarge sc-full-width" style="margin: 16px; border: 2px solid #e9d66b; color: #6bbde9; background-color: #fff;">You Won't</button>
     </div>
-    <div class="w3-large w3-center w3-text-black" style="position: absolute; width: 100%; bottom: 50px; bottom-border: 1px solid #000;">
-      <a href="#about" style="text-decoration:none;" onclick="smoothScrollAbout()">SCROLL FOR MORE</a>
-    </div>
-    <div class="hp-enter-arrow w3-display-bottommiddle w3-xlarge">&#8595;</div>
+    <a href="#page2" style="position: absolute; height:80px; left: 0; bottom: 0;margin: 0;text-decoration:none;" onclick="smoothScrollAbout()">
+      <div class="w3-btn w3-left; w3-text-black w3-padding" style="border: 1px solid #111; background-color: #fff;margin-left: 16px;"><strong>What's Down There?</strong></div>
+    </a>
+    <div id="arrow" class="hp-enter-arrow w3-xlarge" style="position: fixed; left: 35px; bottom: 10px;">&#8595;</div>
   </div>
 
-  <!-- Designer and Developer Page -->
-  <div class="sc-fullscreen">
-    <div class="sc-flex-item-small">
-      <h3 class="w3-center sc-xxxlarge" style="font-family: 'Droid Serif', serif;">designer</h3>
+  <!-- Page 2 -->
+  <div id="page2" class="sc-full-screen w3-text-black" style="position: absolute; top:100vh;">
+    <div id="page2-design" style="position:absolute; top: 60vh; left: 10vw; width: 300px;">
+      <h3 class="w3-center w3-xxxlarge" style="font-family: 'Droid Serif', serif;">designer</h3>
       <p class="w3-center">Web designer with a passion for designing clean and functional websites and user interfaces.</p>
     </div>
-    <div class="sc-flex-item-small">
-      <p class="w3-center w3-jumbo"><em>&amp;</em></p>
+    
+    <div id="page2-amp" style="position:absolute; top: 50vh; left: 48vw; width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);">
+      <p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>
     </div>
-    <div class="sc-flex-item-small">
-      <h3 class="w3-center sc-xxxlarge" style="font-family: 'Droid Serif', serif;">&lt;/developer&gt;</h3>
+    
+    <div id="page2-develop" class="w3-text-black" style="position:absolute; top: 10vh; right: 10vw; width: 300px;">
+      <h3 class="w3-center w3-xxxlarge" style="font-family: 'Droid Serif', serif;">&lt;/developer&gt;</h3>
       <p class="w3-center">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
     </div>
+  </div>
+  
+  <!-- What I Can Do Page -->
+  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:200vh; ">
+    <div id="page3title" style="position: absolute; top: 10vh; left:10vw;">
+      <h1>What's Mine Is Yours</h1>
+    </div>
+    <div id="page3content" class="w3-display-middle" style="border: 1px solid black;height: 55vh; width: 80vw; overflow: hidden;">
+      <!-- Slider main container -->
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">Swiper</div>
+          <div class="swiper-slide">Animations</div>
+          <div class="swiper-slide">Single or Multipage design</div>
+          <div class="swiper-slide">Responsive</div>
+          <div class="swiper-slide">SEO</div>
+          <div class="swiper-slide">HTML CSS JavaScript</div>
+        </div>
+        
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+      </div>
+    </div>
+  </div>
+  
+  <!-- Watch Me Do It Page -->
+  <div id="page4" class="sc-full-screen w3-text-black" style="position: absolute; top:300vh;">
+    <div style="position: absolute; top: 12vh; right:12vw;">
+      <h1>See the Changes</h1>
+      <h3 style="font-style: italic">as I make them</h3>
+    </div>
+    <p style="position:absolute; width: 300px; bottom: 200px;right: 15vw;">I will give you a url that you can visit at any</p>
+    <p style="position:absolute; width: 300px; bottom: 180px;right: 15.9vw;">time during the development and see what</p><p style="position:absolute; width: 300px; bottom: 160px;right: 16.8vw;">it looks like right then</p>
+  </div>
+  
+  <!-- Watch Me Do It Page -->
+  <div id="page5" class="sc-full-screen w3-text-black" style="position: absolute; top:400vh;">
+    <div class="w3-display-middle" style="height:55vh; width: 80vw; border:1px solid black;">
+      Check out my latest projects
+      <a href="https://github.com/stucoston">Link to GitHub</a>
+    </div>
+  </div>
+  
+  <!-- Watch Me Do It Page -->
+  <div id="page6" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">
+  <i class="material-icons">phone_iphone</i>931.588.0398
+  <i class="material-icons">mail_outline</i>family@costonmission.com
   </div>
  
   <script>
@@ -295,17 +360,17 @@ body, html {
   }
     
   // Change style of navbar on scroll
-  window.onscroll = function() {myFunction()};
-  function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    var scrollHomepage = $(window).scrollTop(); 
+//  window.onscroll = function() {myFunction()};
+//  function myFunction() {
+ //   var navbar = document.getElementById("myNavbar");
+ //   var scrollHomepage = $(window).scrollTop(); 
     
-    if (scrollHomepage >= $(window).height()) {
-      navbar.className = "w3-card-2" + " w3-top" + " w3-white";
-    } else {
-      navbar.className = navbar.className.replace(" w3-card-2 w3-top w3-white", "w3-top");
-    } 
-  }
+ //   if (scrollHomepage >= $(window).height()) {
+ //     navbar.className = "w3-card-2" + " w3-top" + " w3-white";
+ //   } else {
+ //     navbar.className = navbar.className.replace(" w3-card-2 w3-top w3-white", "w3-top");
+ //   } 
+ // }
 
   // Used to toggle the menu on small screens when clicking on the menu button
   function toggleFunction() {
@@ -388,12 +453,12 @@ body, html {
     }
             
     // change navbar background depending on scroll distance
-    if (windowScroll >= $(window).height()) {
-      navbar.className = "w3-card-2" + " w3-top" + " w3-white";
-      } 
-      else {
-        navbar.className = "w3-top";
-    }
+ //   if (windowScroll >= $(window).height()) {
+ //     navbar.className = "w3-card-2" + " w3-top" + " w3-white";
+ //     } 
+ //     else {
+ //       navbar.className = "w3-top";
+ //   }
   });
   //]]>
   </script>
@@ -415,6 +480,26 @@ body, html {
       z.className = z.className.replace(' w3-bottom', ' w3-top');
     }
   }
+  </script>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+  <script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    
+    // If we need pagination
+    pagination: '.swiper-pagination',
+    
+    // Navigation arrows
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    
+    // And if we need scrollbar
+    //scrollbar: '.swiper-scrollbar',
+  })        
   </script>
 
 </body>
