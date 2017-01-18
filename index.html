@@ -260,7 +260,7 @@ body, html {
         <div class="other-bar"></div>
       </div>
     </div>
-    <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="openNav()">
+    <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="closeNav()">
       <ul class="sc-ul" style="padding-top: 30%;">
         <li><a href="#home">Home</a></li>
         <li><a href="#page2">Design &amp; Develop</a></li>
@@ -439,10 +439,10 @@ body, html {
        
     // change image width
     if(newWidth >= stopWidth){
-      $('.logo').css("width", newWidth);
+      $('.logo img').css("width", newWidth);
       }
       else{
-        $('.logo').css("width", stopWidth);
+        $('.logo img').css("width", stopWidth);
     }
         
     // change hompage word opacity
