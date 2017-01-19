@@ -487,6 +487,36 @@ body, html {
   });
   //]]>
   </script>
+  
+  <script>
+  var moveArrow = 35;
+  
+  
+   $(window).scroll(function(event){ 
+    var windowScroll = $(window).scrollTop();  
+    var newArrow1 = moveArrow + .35*windowScroll;
+    var stopArrow1 = .61*$(window).width();
+    var newArrow3 = stopArrow1 - 35*windowScroll;
+    var newArrow4 = moveArrow + .5*windowScroll;
+    var newArrow5 = moveArrow + .5*windowScroll;
+    
+     // move arrow proportional to windowScroll
+    if(windowScroll <= 2*$(window).height()){
+      $("#arrow").css("left", newArrow1);
+    }  else if(windowScroll <= 4*$(window).height()){
+      $("#arrow").css("left", stopArrow1);
+    }  else if(windowScroll <= 8*$(window).height()){
+      $("#arrow").css("left", newArrow3);
+    }  else if(windowScroll <= 8*$(window).height()){
+      $("#arrow").css("left", newArrow4);
+    }  else if(windowScroll <= 4.5*$(window).height()){
+      $("#arrow").css("left", newArrow5);
+    }  else {
+      $("#arrow").css("left", 5+$(window).width());
+    }
+    
+  });
+  </script>
 
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script>
