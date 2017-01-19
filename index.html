@@ -408,7 +408,7 @@ body, html {
   }
   </script>
   
-  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
   <script>
   //<![CDATA[
   // navbar actions on scroll
@@ -417,13 +417,18 @@ body, html {
   var imageWidth = parseInt($(".logo img").css("width"));
   var stopWidth = imageWidth / 1.5;
   var moveTop = 0.5 * $(window).height();
-  var stopTop = 130;
+  var stopTop = 135;
   var moveRight = parseInt($("#btn2").css("right"));
+  var moveArrow = parseInt($"#arrow").css("left"));
+  var stopArrow1 = 0.5 * $(window).width();
+  var stopArrow2 = 0.85 * $(window).width();
+  var stopArrow3 = 0.75 * $(window).width();
+  var stopArrow4 = 0.4 * $(window).width();
+  var stopArrow5 = 0.85 * $(window).width();
     
   // fade homepage words
   var startOpacity = 1;
   var stopOpacity = 0;
-
   // "change navbar background" variables
   var navbar = document.getElementById("myNavbar");
    
@@ -432,12 +437,28 @@ body, html {
     var windowScroll = $(window).scrollTop();
         
     // while scrolling, define variables proportional to scroll distance
-    var newWidth = imageWidth - .23*windowScroll;
+    var newWidth = imageWidth - .28*windowScroll;
     var newTop = moveTop - 0.45*windowScroll;
     var newRight = moveRight - .5*windowScroll;
     var newOpacityA = startOpacity - .004*windowScroll;
     var newOpacityB = startOpacity - .0027*windowScroll;
     var newOpacityC = startOpacity - .0025*windowScroll;
+    var newArrow1 = moveArrow + windowScroll;
+    
+    // move arrow proportional to windowScroll
+    if(windowScroll <= $(window).height()){
+      $("#arrow").css("left", newArrow1);
+    }  else if(windowScroll <= 2*$(window).height()){
+      $("#arrow").css("left", newArrow1);
+    }  else if(windowScroll <= 3*$(window).height()){
+      $("#arrow").css("left", newArrow1);
+    }  else if(windowScroll <= 4*$(window).height()){
+      $("#arrow").css("left", newArrow1);
+    }  else if(windowScroll <= 4.5*$(window).height()){
+      $("#arrow").css("left", newArrow1);
+    }  else {
+      $("#arrow").css("left", 5+$(window).width());
+    }
        
     // change image width
     if(newWidth >= stopWidth){
@@ -499,7 +520,6 @@ body, html {
       x.className += ' is-menu-open';
       y.className = y.className.replace(' nav-closed', ' nav-open');
       z.className = z.className.replace(' w3-show', ' w3-hide');
-
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
       y.className = y.className.replace(' nav-open', ' nav-closed');
