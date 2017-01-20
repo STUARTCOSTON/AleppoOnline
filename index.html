@@ -285,7 +285,10 @@ body, html {
       <button id="cta" class="w3-btn w3-xlarge sc-full-width" style="max-width: 100%; margin: 0px; border: 2px solid #e9d66b; border-radius: 100px; color: #6bbde9; background-color: #fff;">Stand Out!</button>
     </div>
     <a href="#page2" style="position: absolute; height:80px; left: 0; bottom: 0;margin: 0;text-decoration:none;" onclick="smoothScrollAbout()">
-      <div class="w3-btn w3-left; w3-text-black w3-padding" style="border: 1px solid #111; border-radius: 100px; background-color: #fff;margin-left: 16px;"><strong>What's Down There?</strong></div>
+    
+      <div class="lt-triangle" style="bottom: 20px; border-top: 0 solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #111; left: 16px;"></div>
+       
+      <div class="w3-btn w3-left; w3-text-white w3-padding" style="border: 1px solid #111; border-radius: 30px 30px 30px 0px; background-color: #111; margin-left: 16px;"><strong>Follow Me</strong></div>
     </a>
     <div id="arrow" class="hp-enter-arrow w3-xlarge" style="position: fixed; left: 35px; bottom: 10px;">&#8595;</div>
   </div>
@@ -440,6 +443,8 @@ body, html {
   var stopTop = 130;
   var moveRight = parseInt($("#btn2").css("right"));
   var moveArrow = 35;
+  var stopArrow1 = .61*$(window).width();
+  var stopArrow2 = .64*$(window).width();
     
   // fade homepage words
   var startOpacity = 1;
@@ -457,34 +462,32 @@ body, html {
     var newTop = moveTop - 0.45*windowScroll;
     
     var newRight = moveRight - .5*windowScroll;
-    var newOpacityA = startOpacity - .004*windowScroll;
     var newOpacityB = startOpacity - .0027*windowScroll;
     var newOpacityC = startOpacity - .0025*windowScroll;
     
-    var newArrow1 = moveArrow + (.001*windowWidth * .35*windowScroll);
-    var stopArrow1 = .61*$(window).width();
-    var newArrow3 = stopArrow1 - 35*windowScroll;
-    var newArrow4 = moveArrow + .5*windowScroll;
-    var newArrow5 = moveArrow + .5*windowScroll;
+    var newArrow1 = moveArrow + (.001 * windowWidth * .35 * windowScroll);
+    var newArrow2 = (stopArrow1 + .61 * windowWidth) - (.001 * windowWidth * .35 * windowScroll);
+    var newArrow3 = (-.65 * windowWidth) + (.001 * windowWidth * .45 * windowScroll);
+    var newArrow4 = (5.3 * windowWidth) - .88 * windowScroll;
     
     // move arrow proportional to windowScroll and windowWidth
-    if(windowScroll <= 2*$(window).height()){
+    if(windowScroll <= 2.3*$(window).height()){
       $("#arrow").css("left", newArrow1);
       
-    }  else if(windowScroll <= 4*$(window).height()){
+    }  else if(windowScroll <= 2.45*$(window).height()){
       $("#arrow").css("left", stopArrow1);
       
-    }  else if(windowScroll <= 8*$(window).height()){
+    }  else if(windowScroll <= 3.25*$(window).height()){
+      $("#arrow").css("left", newArrow2);
+      
+    }  else if(windowScroll <= 4*$(window).height()){
       $("#arrow").css("left", newArrow3);
       
-    }  else if(windowScroll <= 8*$(window).height()){
-      $("#arrow").css("left", newArrow4);
-      
-    }  else if(windowScroll <= 4.5*$(window).height()){
-      $("#arrow").css("left", newArrow5);
+    }  else if(windowScroll <= 4.6*$(window).height()){
+      $("#arrow").css("left", stopArrow2);
       
     }  else {
-      $("#arrow").css("left", 5+$(window).width());
+      $("#arrow").css("left", newArrow4);
     }
        
     // change image width
@@ -495,14 +498,7 @@ body, html {
         $('.logo img').css("width", stopWidth);
     }
         
-    // change hompage word opacity
-    if(newOpacityA >= stopOpacity){
-      $("#Welcome").css("opacity", newOpacityA);
-      }
-      else{
-        $("#Welcome").css("opacity", stopOpacity);
-    }
-        
+    // change hompage word opacity        
     if(newOpacityB >= stopOpacity){
       $("#TagLine").css("opacity", newOpacityB);
       }
@@ -583,4 +579,6 @@ body, html {
 
 </body>
 </html>
+
+
 
