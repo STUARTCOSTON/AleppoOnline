@@ -228,10 +228,15 @@ body, html {
   }
             
 /* end Open and close menu animation */
+
+/* follow dot css */
+#followDot {
+  position:fixed;
+}
 </style>
 <body>
   
-  <div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
+  <!--<div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
     <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 25.71vh solid transparent; border-left:20vw solid #6bbde9; "></div>
     
     <div class="rt-triangle" style="top: 10vh; border-top: 90vh solid transparent; border-bottom: 180vh solid transparent; border-right:70vw solid #e9d66b; "></div>
@@ -247,7 +252,7 @@ body, html {
     <div class="lt-triangle" style="top: 550vh; border-top: 0vh solid transparent; border-bottom: 50vh solid transparent; border-left:30vw solid #e9d66b; "></div>
     
     <div class="rt-triangle" style="top: 590vh; border-top: 10vh solid transparent; border-bottom: 0vh solid transparent; border-right:5vw solid #6bbde9; "></div>
-  </div>
+  </div>-->
 
   <!-- Navbar (sit on top) -->
   <nav class="w3-top sc-full-width" style='height: 60px; z-index:10;'id='myNavbar'>
@@ -274,6 +279,25 @@ body, html {
     </div>
   </nav>
   
+  <!-- followDot -->
+  <div id="followDot" class="hp-enter-arrow w3-xxlarge w3-display-bottommiddle" style="z-index:6;">
+    <svg height="100px" width="100px">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
+          <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="80%">
+          <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <circle cx="50%" cy="50%" r="35" fill="transparent" stroke-width="4" stroke="url(#grad1)" />
+      <text class="w3-xxxlarge w3-display-middle" fill="url(#grad2)" font-family="Verdana" x="34" y="65">&#8595;</text>
+      &#8595;
+    </svg>
+  </div>
+  
   <!-- Homepage -->
   <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
     <div id="logo" class="logo w3-animate-opacity w3-show">
@@ -283,30 +307,11 @@ body, html {
       </div>
       <!--<button id="cta" class="w3-btn w3-xlarge sc-full-width" style="max-width: 100%; margin: 0px; border: 2px solid #e9d66b; border-radius: 100px; color: #171717; background-color: #e9d66b;">Stand Out!</button>-->
     
-      <a href="#page2" style="text-decoration:none;" onclick="smoothScrollAbout()">
+      <a href="#page2" onclick="smoothScrollAbout()" class="w3-display-middle" style="top:110%; height: 200px; width: 200px;text-decoration:none;"></a>
     
       <!--<div class="lt-triangle" style="bottom: 20px; border-top: 0 solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #111; left: 16px;"></div>
        
       <div class="w3-btn w3-left; w3-text-white w3-padding" style="border: 1px solid #111; border-radius: 30px 30px 30px 0px; background-color: #111; margin-left: 16px;"><strong>Follow Me</strong></div>-->
-    
-        <div id="arrow" class="hp-enter-arrow w3-xxlarge w3-display-bottommiddle" style="bottom: -60%;">
-          <svg height="100px" width="100px">
-            <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
-                <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
-              </linearGradient>
-              <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="80%">
-                <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
-              </linearGradient>
-            </defs>
-            <circle cx="50%" cy="50%" r="35" fill="transparent" stroke-width="4" stroke="url(#grad1)" />
-            <text class="w3-xxxlarge w3-display-middle" fill="url(#grad2)" font-family="Verdana" x="34" y="65">&#8595;</text>
-          &#8595;
-          </svg>
-        </div>
-      </a>
     </div>
   </div>
 
@@ -553,3 +558,5 @@ body, html {
 
 </body>
 </html>
+
+
