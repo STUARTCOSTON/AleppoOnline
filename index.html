@@ -102,7 +102,7 @@ body, html {
   width: 90%;
   max-width: 400px;
   left: 50%;
-  top: 35%;
+  top: 40%;
   -ms-transform: translate(-50%,-50%); /* IE 9 */
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
@@ -276,31 +276,37 @@ body, html {
   
   <!-- Homepage -->
   <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
-    <div id="logo" class="logo w3-animate-opacity-long w3-show" style="z-index: 12;">
+    <div id="logo" class="logo w3-animate-opacity w3-show">
       <div id="TagLine" class="w3-text-black w3-center">
         <h1 class="w3-xxxlarge">YOU FOUND ME!</h1>
         <p class="w3-xlarge">Now let me help them find you.</p>
-          </div>
+      </div>
       <!--<button id="cta" class="w3-btn w3-xlarge sc-full-width" style="max-width: 100%; margin: 0px; border: 2px solid #e9d66b; border-radius: 100px; color: #171717; background-color: #e9d66b;">Stand Out!</button>-->
-    </div>
-    <!--<a href="#page2" style="position: absolute; height:80px; left: 0; bottom: 0;margin: 0;text-decoration:none;" onclick="smoothScrollAbout()">
     
-      <div class="lt-triangle" style="bottom: 20px; border-top: 0 solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #111; left: 16px;"></div>
+      <a href="#page2" style="text-decoration:none;" onclick="smoothScrollAbout()">
+    
+      <!--<div class="lt-triangle" style="bottom: 20px; border-top: 0 solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #111; left: 16px;"></div>
        
-      <div class="w3-btn w3-left; w3-text-white w3-padding" style="border: 1px solid #111; border-radius: 30px 30px 30px 0px; background-color: #111; margin-left: 16px;"><strong>Follow Me</strong></div>
-    </a>-->
-    <div id="arrow" class="hp-enter-arrow w3-xxlarge w3-display-bottommiddle" style="bottom: 35%; border: 1px solid black;">
-      <svg height="100px" style="border: 1px solid black;">
-        <defs>
-          <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
-            <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
-          </linearGradient>
-        </defs>
-        <circle cx="50%" cy="50%" r="35" fill="transparent" stroke-width="4" stroke="url(#grad1)" />
-        <text class="w3-xxlarge w3-display-middle" fill="url(#grad1)" font-family="Verdana" x="50%" y="86">&#8595;</text>
-      &#8595;
-      </svg>
+      <div class="w3-btn w3-left; w3-text-white w3-padding" style="border: 1px solid #111; border-radius: 30px 30px 30px 0px; background-color: #111; margin-left: 16px;"><strong>Follow Me</strong></div>-->
+    
+        <div id="arrow" class="hp-enter-arrow w3-xxlarge w3-display-bottommiddle" style="bottom: -60%;">
+          <svg height="100px" width="100px">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
+                <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="80%">
+                <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <circle cx="50%" cy="50%" r="35" fill="transparent" stroke-width="4" stroke="url(#grad1)" />
+            <text class="w3-xxxlarge w3-display-middle" fill="url(#grad2)" font-family="Verdana" x="34" y="65">&#8595;</text>
+          &#8595;
+          </svg>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -323,7 +329,7 @@ body, html {
     </div>
   </div>
   
-  <!-- What I Can Do Page -->
+  <!-- Page 3 -->
   <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:200vh; ">
     <div id="page3title" style="position: absolute; top: 10vh; left:10vw;">
       <h1>Get Online</h1>
@@ -453,13 +459,11 @@ body, html {
   var moveTop = 0.35 * $(window).height();
 //  var stopTop = 130;
   var moveRight = parseInt($("#btn2").css("right"));
-//  var moveArrow = 35;
-//  var stopArrow1 = .61*$(window).width();
-//  var stopArrow2 = .64*$(window).width();
     
   // fade homepage words
   var startOpacity = 1;
   var stopOpacity = 0;
+  
   // "change navbar background" variables
   var navbar = document.getElementById("myNavbar");
    
@@ -473,55 +477,14 @@ body, html {
     var newTop = moveTop - 0.45*windowScroll;
     
     var newRight = moveRight - .5*windowScroll;
-    var newOpacityB = startOpacity - .003*windowScroll;
-    var newOpacityC = startOpacity - .0025*windowScroll;
+    var newOpacity = startOpacity - .005*windowScroll;
     
-//    var newArrow1 = moveArrow + (.001 * windowWidth * .35 * windowScroll);
-//    var newArrow2 = (stopArrow1 + .61 * windowWidth) - (.001 * windowWidth * .35 * windowScroll);
-//    var newArrow3 = (-.65 * windowWidth) + (.001 * windowWidth * .45 * windowScroll);
-//    var newArrow4 = (5.3 * windowWidth) - .88 * windowScroll;
-    
-    // move arrow proportional to windowScroll and windowWidth
-//    if(windowScroll <= 2.3*$(window).height()){
-//      $("#arrow").css("left", newArrow1);
-      
-//    }  else if(windowScroll <= 2.45*$(window).height()){
-//      $("#arrow").css("left", stopArrow1);
-      
-//    }  else if(windowScroll <= 3.25*$(window).height()){
-//      $("#arrow").css("left", newArrow2);
-      
-//    }  else if(windowScroll <= 4*$(window).height()){
-//      $("#arrow").css("left", newArrow3);
-      
-//    }  else if(windowScroll <= 4.6*$(window).height()){
-//      $("#arrow").css("left", stopArrow2);
-      
-//    }  else {
-//      $("#arrow").css("left", newArrow4);
-//    }
-       
-    // change image width
-    if(newWidth >= stopWidth){
-      $('.logo img').css("width", newWidth);
+    // change hompage word opacity     
+    if(newOpacity >= stopOpacity){
+      $(".logo").css("opacity", newOpacity);
       }
       else{
-        $('.logo img').css("width", stopWidth);
-    }
-        
-    // change hompage word opacity        
-    if(newOpacityB >= stopOpacity){
-      $("#TagLine").css("opacity", newOpacityB);
-      }
-      else{
-        $("#TagLine").css("opacity", stopOpacity);
-    }
-        
-    if(newOpacityC >= stopOpacity){
-      $(".logo button").css("opacity", newOpacityC);
-      }
-      else{
-        $(".logo button").css("opacity", stopOpacity);
+        $(".logo").css("opacity", stopOpacity);
     }
                
     // move items proportional to scroll distance
