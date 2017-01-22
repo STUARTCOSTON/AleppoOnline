@@ -268,7 +268,7 @@ body, html {
       </div>
     </div>
     <div id="menu" class="sc-full-screen w3-hide w3-animate-top sc-text-center" onclick="openNav()">
-      <ul class="sc-ul" style="padding-top: 30%;">
+      <ul class="sc-ul w3-display-middle">
         <li><a href="#">Home</a></li>
         <li><a href="#page2">Design &amp; Develop</a></li>
         <li><a href="#page3">Get Online</a></li>
@@ -300,6 +300,7 @@ body, html {
   
   <!-- Homepage -->
   <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
+    <div class="sc-full-size" style="background-color: #e9d66b; opacity: 0.55;z-index: 0;"></div>
     <div id="logo" class="logo w3-animate-opacity w3-show">
       <div id="TagLine" class="w3-text-black w3-center">
         <h1 class="w3-xxxlarge">YOU FOUND ME!</h1>
@@ -307,37 +308,53 @@ body, html {
       </div>
       <!--<button id="cta" class="w3-btn w3-xlarge sc-full-width" style="max-width: 100%; margin: 0px; border: 2px solid #e9d66b; border-radius: 100px; color: #171717; background-color: #e9d66b;">Stand Out!</button>-->
     
-      <a href="#page2" onclick="smoothScrollAbout()" class="w3-display-middle" style="top:110%; height: 200px; width: 200px;text-decoration:none;"></a>
-    
       <!--<div class="lt-triangle" style="bottom: 20px; border-top: 0 solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #111; left: 16px;"></div>
        
       <div class="w3-btn w3-left; w3-text-white w3-padding" style="border: 1px solid #111; border-radius: 30px 30px 30px 0px; background-color: #111; margin-left: 16px;"><strong>Follow Me</strong></div>-->
     </div>
+    <a href="#page2" class="w3-display-middle" style="height: 200px; width: 200px;text-decoration:none; border: 1px solid black;z-index: 1;"></a>
   </div>
 
   <!-- Page 2 -->
-  <div id="page2" class="sc-full-screen w3-text-black" style="position: absolute; top:100vh;">
-    <div id="page2design" style="position:absolute; top: 55vh; left: 10vw; width: 300px;">
+  <div id="page2" class="sc-full-screen w3-text-black" style="position: fixed; top:135vh;">
+    <div id="page2design" class="" style="position:fixed; bottom: 8%; left: -300px; width: 300px;">
       <h3 class="w3-center w3-xxxlarge" >Designer</h3>
       <p class="w3-center">Web designer with a passion for designing clean and functional websites and user interfaces.</p>
     </div>
     
-    <div id="page2amp" style="position:absolute; top: 50vh; left: 48vw; width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */
+    <div id="page2amp" class=""style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);">
-      <p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>
+      <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
+      <div class="w3-display-middle" style="left: 100%; height:3px; width:100px; background-color: #e9d66b;"></div> 
+      <div class="w3-display-middle" style="left: 0%; height:3px; width:100px; background-color: #e9d66b;"></div>
+      <svg height="100px" width="100%">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
+            <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="80%">
+            <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="50%" cy="50%" r="35" fill="transparent" stroke-width="4" stroke="url(#grad1)" />
+        <text class="w3-xxxlarge w3-display-middle" fill="url(#grad2)" font-family="Verdana" x="65" y="65">&amp;</text>
+          &#8595;
+      </svg>
     </div>
     
-    <div id="page2develop" class="w3-text-black" style="position:absolute; bottom: 55vh; right: 10vw; width: 300px;">
+    <div id="page2develop" class="" style="position:fixed; top: 8%; width: 300px; right: -300px;">
       <h3 class="w3-center w3-xxxlarge">&lt;/Developer&gt;</h3>
       <p class="w3-center">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
     </div>
   </div>
   
   <!-- Page 3 -->
-  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:200vh; ">
+  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:250vh; ">
     <div id="page3title" style="position: absolute; top: 10vh; left:10vw;">
-      <h1>Get Online</h1>
+      <h1>Features</h1>
       <p><em>make your online presence look exactly the way you want it to</em></p>
     </div>
     <div id="page3content" class="w3-display-middle" style="top: 60%; height: 55vh; width: 80vw; max-width: 800px; overflow: hidden; border: 1px solid black; background-color: white;">
@@ -366,18 +383,18 @@ body, html {
     </div>
   </div>
   
-  <!-- Watch Me Do It Page -->
-  <div id="page4" class="sc-full-screen w3-text-black" style="position: absolute; top:300vh;">
+  <!-- Page 4 -->
+  <!--<div id="page4" class="sc-full-screen w3-text-black" style="position: absolute; top:300vh;">
     <div id="page4title" style="position: absolute; top: 12vh; right:10vw;">
       <h1>Watch the Changes</h1>
       <h3><em>as I make them</em></h3>
     </div>
     <p style="position:absolute; width: 300px; bottom: 280px;left: 26vw;">I will give you a url that you can visit at any</p>
     <p style="position:absolute; width: 300px; bottom: 260px;left: 25.1vw;">time during the development and see what</p><p style="position:absolute; width: 300px; bottom: 240px; left: 24.2vw;">it looks like right then</p>
-  </div>
+  </div>-->
   
-  <!-- Watch Me Do It Page -->
-  <div id="page5" class="sc-full-screen w3-text-black" style="position: absolute; top:400vh;">
+  <!-- Page 5 -->
+  <!--<div id="page5" class="sc-full-screen w3-text-black" style="position: absolute; top:400vh;">
     <div id="page5title" style="position: absolute; top: 10vh; left:10vw;">
       <h1>Recent Projects</h1>
       <h3><em>Link to GitHub</em></h3>
@@ -403,10 +420,10 @@ body, html {
         <a href="https://github.com/stucoston" class="w3-center">project 6</a>
       </div>
     </div>
-  </div>
+  </div> -->
   
-  <!-- Watch Me Do It Page -->
-  <div id="page6" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">
+  <!-- Page 6 -->
+  <!--<div id="page6" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">
     <div id="page6title" style="position: absolute; top: 10vh; left:31vw;">
       <h1>Be Online Next Week</h1>
     </div>
@@ -414,14 +431,9 @@ body, html {
       <li><i id="phone" class="material-icons">phone_iphone</i>&nbsp;&nbsp;  931.588.0398</li>
       <li><i id="email" class="material-icons">mail_outline</i>&nbsp;&nbsp;  family@costonmission.com</li>
     </ul>
-  </div>
+  </div>-->
  
-  <script>
-  // smooth scroll
-  function smoothScrollAbout() {
-    document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
-    }
-    
+  <script>       
   // Modal Image Gallery
   function onClick(element) {
     document.getElementById("img01").src = element.src;
@@ -443,31 +455,50 @@ body, html {
  //   } 
  // }
   // Used to toggle the menu on small screens when clicking on the menu button
-  function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
+ // function toggleFunction() {
+ //   var x = document.getElementById("navDemo");
+ //   if (x.className.indexOf("w3-show") == -1) {
+ //     x.className += " w3-show";
+ //   } else {
+ //     x.className = x.className.replace(" w3-show", "");
+ //   }
+ // }
   </script>
   
   <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
   <script>
   //<![CDATA[
+  $('a[href*="#"]:not([href="#"])').click(function() {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
+  }
+});
   // navbar actions on scroll
       
   // "move logo" variables
-  var imageWidth = parseInt($(".logo img").css("width"));
-  var stopWidth = imageWidth / 1.5;
-  var moveTop = 0.35 * $(window).height();
+//  var imageWidth = parseInt($(".logo img").css("width"));
+//  var stopWidth = imageWidth / 1.5;
+//  var moveTop = 0.35 * $(window).height();
 //  var stopTop = 130;
-  var moveRight = parseInt($("#btn2").css("right"));
+//  var moveRight = parseInt($("#btn2").css("right"));
     
   // fade homepage words
   var startOpacity = 1;
   var stopOpacity = 0;
+  
+  // Animate Page 2
+  var design = document.getElementById("page2design");
+  var amp = document.getElementById("page2amp");
+  var develop = document.getElementById("page2develop");
+  var page2ItemStart = -1500;
+  var lastScrollTop = 0;
   
   // "change navbar background" variables
   var navbar = document.getElementById("myNavbar");
@@ -478,11 +509,14 @@ body, html {
 //    var windowWidth = $(window).width();
         
     // while scrolling, define variables proportional to scroll distance
-    var newWidth = imageWidth - .23*windowScroll;
-    var newTop = moveTop - 0.45*windowScroll;
+//    var newWidth = imageWidth - .23*windowScroll;
+//    var newTop = moveTop - 0.45*windowScroll;
     
-    var newRight = moveRight - .5*windowScroll;
+//    var newRight = moveRight - .5*windowScroll;
     var newOpacity = startOpacity - .005*windowScroll;
+    var newOpacity2 = stopOpacity + 0.00125*windowScroll;
+    var newOpacity3 = startOpacity - (0.00025*windowScroll);
+    var newPage2ItemPos = page2ItemStart + 2*windowScroll;
     
     // change hompage word opacity     
     if(newOpacity >= stopOpacity){
@@ -491,21 +525,35 @@ body, html {
       else{
         $(".logo").css("opacity", stopOpacity);
     }
-               
-    // move items proportional to scroll distance
-    if(newTop >= stopTop){
-      $('.logo').css("top", newTop);
-      }
-      else{
-        $('.logo').css("top", stopTop);
+      
+    // move page 2 elements on scroll
+    if(windowScroll >= lastScrollTop){
+      $("#page2design").css("left",newPage2ItemPos);
+      $("#page2develop").css("right",newPage2ItemPos);
+    }  
+    
+    if(newOpacity2 <= startOpacity){
+      $("#page2amp").css("opacity",newOpacity2);
+    }  else {
+         $("#page2amp").css("opacity",newOpacity3);
     }
+    
+    // move items proportional to scroll distance
+//    if(newTop >= stopTop){
+//      $('.logo').css("top", newTop);
+//      }
+//      else{
+//        $('.logo').css("top", stopTop);
+//    }
             
     // change navbar background depending on scroll distance
     if (windowScroll >= $(window).height()) {
-      navbar.className = " w3-card-2" + " w3-top" + " w3-white";
+      navbar.className = "w3-card-2" + " w3-top" + " w3-white";
+      // move page 2 elements on scroll
+      
       } 
       else {
-        navbar.className = " w3-top";
+        navbar.className = "w3-top";
     }
   });
   //]]>
@@ -516,23 +564,17 @@ body, html {
   function openNav() {
     var x = document.getElementById('menu-container');
     var y = document.getElementById('menu');
-    var z = document.getElementById('logo');
+//    var z = document.getElementById('logo');
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
       y.className = y.className.replace(' w3-hide', ' nav-open');
-      z.className = z.className.replace(' w3-show', ' w3-hide');
+//      z.className = z.className.replace(' w3-show', ' w3-hide');
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
       y.className = y.className.replace(' nav-open', ' w3-hide');
-      z.className = z.className.replace(' w3-hide', ' w3-show');
+//      z.className = z.className.replace(' w3-hide', ' w3-show');
     }
-  }
-        
-  function closeNav() {
-    document.getElementById('menu-container').className.replace(' is-menu-open', '');
-    document.getElementById('menu').className.replace(' nav-open', ' nav-closed');
-    document.getElementById('logo').className.replace(' w3-hide', ' w3-show');
   }
   </script>
   
