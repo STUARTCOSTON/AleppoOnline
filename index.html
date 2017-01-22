@@ -47,8 +47,9 @@ body, html {
 
 /* Swiper */
 .swiper-container {
+    position: absolute;
+    top: 0;
     width: 100%;
-    max-width: 800px;
     height: 100%;
   }  
   
@@ -77,20 +78,20 @@ body, html {
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
+/*@media only screen and (max-device-width: 1024px) {
     .bgimg-1, .bgimg-2, .bgimg-3 {
         background-attachment: scroll;
     }
-}
+}*/
 /* roadmap background css */
 .rt-triangle {
-  position: absolute;
+  position: fixed;
   width: 0; 
   height: 0;
   right: 0;
 }
 .lt-triangle {
-  position: absolute;
+  position: fixed;
   width: 0; 
   height: 0;
   left: 0;
@@ -232,6 +233,17 @@ body, html {
 /* follow dot css */
 #followDot {
   position:fixed;
+  height: 60px;
+  width: 60px;
+  z-index: 1; 
+  color: #171717; 
+  border: 2px solid #171717; 
+  border-radius: 50%; 
+  top: 90%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);
 }
 </style>
 <body>
@@ -280,69 +292,37 @@ body, html {
   </nav>
   
   <!-- followDot -->
-  <div id="followDot" class="hp-enter-arrow w3-xxlarge w3-display-bottommiddle" style="z-index:6;">
-    <svg height="100px" width="100px">
-      <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
-          <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
-        </linearGradient>
-        <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="80%">
-          <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
-        </linearGradient>
-      </defs>
-      <circle cx="50%" cy="50%" r="35" fill="transparent" stroke-width="4" stroke="url(#grad1)" />
-      <text class="w3-xxxlarge w3-display-middle" fill="url(#grad2)" font-family="Verdana" x="34" y="65">&#8595;</text>
-      &#8595;
-    </svg>
+  <div id="followDot" class="w3-xxlarge">
+    <div class="w3-display-middle">&#8595;</div>
   </div>
   
   <!-- Homepage -->
   <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
     <div class="sc-full-size" style="background-color: #e9d66b; opacity: 0.55;z-index: 0;"></div>
+    
     <div id="logo" class="logo w3-animate-opacity w3-show">
       <div id="TagLine" class="w3-text-black w3-center">
         <h1 class="w3-xxxlarge">YOU FOUND ME!</h1>
         <p class="w3-xlarge">Now let me help them find you.</p>
       </div>
-      <!--<button id="cta" class="w3-btn w3-xlarge sc-full-width" style="max-width: 100%; margin: 0px; border: 2px solid #e9d66b; border-radius: 100px; color: #171717; background-color: #e9d66b;">Stand Out!</button>-->
-    
-      <!--<div class="lt-triangle" style="bottom: 20px; border-top: 0 solid transparent; border-bottom: 15px solid transparent; border-left: 15px solid #111; left: 16px;"></div>
-       
-      <div class="w3-btn w3-left; w3-text-white w3-padding" style="border: 1px solid #111; border-radius: 30px 30px 30px 0px; background-color: #111; margin-left: 16px;"><strong>Follow Me</strong></div>-->
     </div>
-    <a href="#page2" class="w3-display-middle" style="height: 200px; width: 200px;text-decoration:none; border: 1px solid black;z-index: 1;"></a>
+    
+    <a href="#page2" class="w3-display-bottommiddle" style="height: 140px; width: 100%;text-decoration:none; z-index: 1;"></a>
   </div>
 
   <!-- Page 2 -->
-  <div id="page2" class="sc-full-screen w3-text-black" style="position: fixed; top:135vh;">
+  <div id="page2" class="sc-full-screen w3-text-black" style="position: fixed; top:100vh;">
     <div id="page2design" class="" style="position:fixed; bottom: 8%; left: -300px; width: 300px;">
       <h3 class="w3-center w3-xxxlarge" >Designer</h3>
       <p class="w3-center">Web designer with a passion for designing clean and functional websites and user interfaces.</p>
     </div>
     
-    <div id="page2amp" class=""style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */
-  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
-  transform: translate(-50%,-50%);">
+    <div id="page2amp" class="" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */ -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */ transform: translate(-50%,-50%);">
       <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
-      <div class="w3-display-middle" style="left: 100%; height:3px; width:100px; background-color: #e9d66b;"></div> 
-      <div class="w3-display-middle" style="left: 0%; height:3px; width:100px; background-color: #e9d66b;"></div>
-      <svg height="100px" width="100%">
-        <defs>
-          <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
-            <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
-          </linearGradient>
-          <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="80%">
-            <stop offset="0%" style="stop-color:#6bbde9;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#e9d66b;stop-opacity:1" />
-          </linearGradient>
-        </defs>
-        <circle cx="50%" cy="50%" r="35" fill="transparent" stroke-width="4" stroke="url(#grad1)" />
-        <text class="w3-xxxlarge w3-display-middle" fill="url(#grad2)" font-family="Verdana" x="65" y="65">&amp;</text>
-          &#8595;
-      </svg>
+      
+      <div class="w3-display-middle" style="left: 100%; height:2px; background-color: #e9d66b;"></div> 
+      
+      <div class="w3-display-middle" style="left: 0%; height:2px; background-color: #e9d66b;"></div>
     </div>
     
     <div id="page2develop" class="" style="position:fixed; top: 8%; width: 300px; right: -300px;">
@@ -352,10 +332,15 @@ body, html {
   </div>
   
   <!-- Page 3 -->
-  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:250vh; ">
-    <div id="page3title" style="position: absolute; top: 10vh; left:10vw;">
-      <h1>Features</h1>
-      <p><em>make your online presence look exactly the way you want it to</em></p>
+  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:270vh;">
+    <div id="slash" class="rt-triangle" style="top: 0vh; border-top: 100vh solid transparent; border-bottom: 110vh solid transparent; border-right:100vw solid #e9d66b;right: 100vw;"></div>
+    
+    <div id="process" style="position: absolute; top: 20vh; left:10vw;">
+      <h1>The Process</h1>
+    </div>
+    
+    <div id="offer" style="position: absolute; top: 80vh; right:10vw;">
+      <h1>What We Offer</h1>
     </div>
     <div id="page3content" class="w3-display-middle" style="top: 60%; height: 55vh; width: 80vw; max-width: 800px; overflow: hidden; border: 1px solid black; background-color: white;">
       <!-- Slider main container -->
@@ -421,17 +406,6 @@ body, html {
       </div>
     </div>
   </div> -->
-  
-  <!-- Page 6 -->
-  <!--<div id="page6" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">
-    <div id="page6title" style="position: absolute; top: 10vh; left:31vw;">
-      <h1>Be Online Next Week</h1>
-    </div>
-    <ul class="sc-ul" style="position: absolute; top:30vh; left:29vw;">
-      <li><i id="phone" class="material-icons">phone_iphone</i>&nbsp;&nbsp;  931.588.0398</li>
-      <li><i id="email" class="material-icons">mail_outline</i>&nbsp;&nbsp;  family@costonmission.com</li>
-    </ul>
-  </div>-->
  
   <script>       
   // Modal Image Gallery
@@ -493,12 +467,9 @@ body, html {
   var startOpacity = 1;
   var stopOpacity = 0;
   
-  // Animate Page 2
-  var design = document.getElementById("page2design");
-  var amp = document.getElementById("page2amp");
-  var develop = document.getElementById("page2develop");
-  var page2ItemStart = -1500;
-  var lastScrollTop = 0;
+  // Animate Pages
+  var page2ItemStart = -$(window).width();
+  var ampLineWidth = 0;
   
   // "change navbar background" variables
   var navbar = document.getElementById("myNavbar");
@@ -506,19 +477,17 @@ body, html {
   $(window).scroll(function(event){
     didScroll = true;      
     var windowScroll = $(window).scrollTop();
-//    var windowWidth = $(window).width();
+    var windowWidth = $(window).width();
+    var lastScrollTop = 0;
         
     // while scrolling, define variables proportional to scroll distance
-//    var newWidth = imageWidth - .23*windowScroll;
-//    var newTop = moveTop - 0.45*windowScroll;
-    
-//    var newRight = moveRight - .5*windowScroll;
     var newOpacity = startOpacity - .005*windowScroll;
     var newOpacity2 = stopOpacity + 0.00125*windowScroll;
     var newOpacity3 = startOpacity - (0.00025*windowScroll);
-    var newPage2ItemPos = page2ItemStart + 2*windowScroll;
+    var newPage2ItemPos = page2ItemStart + windowScroll;
+    var 
     
-    // change hompage word opacity     
+    // change hompage opacity     
     if(newOpacity >= stopOpacity){
       $(".logo").css("opacity", newOpacity);
       }
