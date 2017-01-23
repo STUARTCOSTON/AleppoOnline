@@ -291,8 +291,9 @@ h1 {
 </style>
 <body onload="myFunction()" style="margin:0;">
 
-<div id="loader"></div>
-  
+<div class="sc-full-screen" id="pulseloader" style="background-color: #e9d66b;!important">
+<img src="https://rawgit.com/stucoston/arylide/master/features/loaders/pulse.svg" width="50" class="w3-display-middle" alt="">
+</div>
   <!--<div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
     <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 25.71vh solid transparent; border-left:20vw solid #6bbde9; "></div>
     
@@ -456,7 +457,7 @@ function myFunction() {
     myVar = setTimeout(showPage, 3000);
 }
 function showPage() {
-  document.getElementById("loader").style.display = "none";
+  document.getElementById("pulseloader").style.display = "none";
   document.getElementById("site").style.display = "block";
 }
 </script>
@@ -554,9 +555,9 @@ function showPage() {
     // move page 2 elements on scroll
     if(windowScroll >= scrollHomePage){
       $("#page2designPar").css("left",newPage2ParPos);
-      $("#page2designTitle").css("left",-300+newPage2TitlePos);
+      $("#page2designTitle").css("left",-500+newPage2TitlePos);
       $("#page2developPar").css("right",newPage2ParPos);
-      $("#page2developTitle").css("right",-300+newPage2TitlePos);
+      $("#page2developTitle").css("right",100+newPage2TitlePos);
     }  
     
     if(newOpacity2 <= startOpacity){
