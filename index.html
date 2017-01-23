@@ -35,6 +35,34 @@ h1 {
   font-weight: 900;
   text-transform: capitalize;
 }
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #e9d66b;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: loader 2s linear infinite;
+  animation: loader 2s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes loader {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Theme Colors - Arylide */
 /* rgb(233, 214, 107) */
 .theme-textcolor, .theme-textcolor-hover:hover {
@@ -111,7 +139,7 @@ h1 {
   width: 90%;
   max-width: 400px;
   left: 50%;
-  top: 40%;
+  top: 50%;
   -ms-transform: translate(-50%,-50%); /* IE 9 */
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
@@ -274,7 +302,9 @@ h1 {
   transform: translate(-50%,-50%);
 }
 </style>
-<body>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
   
   <!--<div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
     <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 25.71vh solid transparent; border-left:20vw solid #6bbde9; "></div>
@@ -295,7 +325,7 @@ h1 {
   </div>-->
 
   <!-- Navbar (sit on top) -->
-  <nav class="w3-top sc-full-width" style='height: 60px; z-index:10;'id='myNavbar'>
+  <nav class="w3-top sc-full-width w3-animate-bottom" style="display:none; height: 60px; z-index:10;"id="myNavbar">
     <!--<a href="#page6">
       <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-display-topleft' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
     </a>-->
@@ -319,16 +349,16 @@ h1 {
   </nav>
   
   <!-- followDot -->
-  <div id="followDot" class="w3-xxlarge">
+  <div  style="display:none;" id="followDot" class="w3-xxlarge w3-animate-bottom">
     <div class="w3-display-middle">&#8595;</div>
   </div>
   
   <!-- Homepage -->
-  <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
+  <div id="home" class="w3-animate-bottom sc-full-screen w3-text-black bgimg-1" style="display: none; position: absolute; top:0;">
     <div class="sc-full-size" style="background-color: #e9d66b; opacity: 0;z-index: 0;"></div>
     
     <div id="logo" class="logo w3-animate-opacity w3-show">
-      <div id="TagLine" class="w3-text-black w3-display-middle;" style="width: 100%; max-width: 800px;">
+      <div id="TagLine" class="w3-text-black w3-display-middle;">
         <h1>YOU FOUND ME!</h1>
         <p class="w3-large">Now let me help them find you.</p>
       </div>
@@ -434,6 +464,21 @@ h1 {
     </div>
   </div> -->
  
+  <script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myNavbar").style.display = "block";
+  document.getElementById("followDot").style.display = "block";
+  document.getElementById("home").style.display = "block";
+}
+</script>
+  
   <script>       
   // Modal Image Gallery
   function onClick(element) {
