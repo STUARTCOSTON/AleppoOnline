@@ -27,17 +27,15 @@ body, html {
   color: #777;
   line-height: 1.8;
 }
-
 h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif;}
-
 h1 {
   font-size: 62px;
   font-weight: 900;
   text-transform: capitalize;
+  color: #171717;
 }
-
 #loader {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   z-index: 1;
@@ -52,17 +50,14 @@ h1 {
   -webkit-animation: loader 2s linear infinite;
   animation: loader 2s linear infinite;
 }
-
 @-webkit-keyframes loader {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
-
 @keyframes loader {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
 /* Theme Colors - Arylide */
 /* rgb(233, 214, 107) */
 .theme-textcolor, .theme-textcolor-hover:hover {
@@ -80,7 +75,6 @@ h1 {
 .headerouter-down {
   transition: 0.5s;
 }
-
 /* Swiper */
 .swiper-container {
     position: absolute;
@@ -92,7 +86,7 @@ h1 {
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -132,7 +126,6 @@ h1 {
   height: 0;
   left: 0;
 }
-
 /* Homepage CSS */
 .logo {
   position: fixed;
@@ -148,7 +141,6 @@ h1 {
 #TagLine {
   font-family: 'Libre Franklin', sans-serif;
 }
-
 /** Arrow **/
 .hp-enter-arrow {
     -webkit-animation-name: hp-enter-arrow; /* Safari 4.0 - 8.0 */
@@ -158,7 +150,6 @@ h1 {
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-
 /*** Safari 4.0 - 8.0 ***/
 @-webkit-keyframes hp-enter-arrow {
     0%   {color: rgba(200,200,200,0);}/*bottom:20px;}*/
@@ -170,9 +161,7 @@ h1 {
     100% {color: rgba(0,0,0,1);}/* bottom:0px;}*/
 }
 /** End Arrow **/
-
 /* end homepage css */
-
 /* Open and Close menu animation */
 .menu-container {
   right: 15px;
@@ -252,7 +241,6 @@ h1 {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
-
   .nav-closed {
     display: block;
     top: 0;
@@ -285,7 +273,6 @@ h1 {
    }
             
 /* end Open and close menu animation */
-
 /* follow dot css */
 #followDot {
   position:fixed;
@@ -324,8 +311,9 @@ h1 {
     <div class="rt-triangle" style="top: 590vh; border-top: 10vh solid transparent; border-bottom: 0vh solid transparent; border-right:5vw solid #6bbde9; "></div>
   </div>-->
 
+<div id="site" class="w3-animate-opacity" style="display:none;">
   <!-- Navbar (sit on top) -->
-  <nav class="w3-top sc-full-width w3-animate-bottom" style="display:none; height: 60px; z-index:10;"id="myNavbar">
+  <nav class="w3-top sc-full-width" style="height: 60px; z-index:10;"id="myNavbar">
     <!--<a href="#page6">
       <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-display-topleft' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
     </a>-->
@@ -339,7 +327,7 @@ h1 {
     </div>
     <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="openNav()">
       <div class="w3-display-middle" style="width: 400px; height: 400px;">
-        <ul class="sc-ul" style="transform: rotate(-90deg);">
+        <ul class="sc-ul sc-rotate90counterclock">
           <li><a href="#" onclick="openNav()"><h1>HOME</h1></a></li>
           <li><a href="#page2" onclick="openNav()"><h1>PAGE 2</h1></a></li>
           <li><a href="#page3" onclick="openNav()"><h1>PAGE 3</h1></a></li>
@@ -349,15 +337,15 @@ h1 {
   </nav>
   
   <!-- followDot -->
-  <div  style="display:none;" id="followDot" class="w3-xxlarge w3-animate-bottom">
+  <div id="followDot" class="w3-xxlarge">
     <div class="w3-display-middle">&#8595;</div>
   </div>
   
   <!-- Homepage -->
-  <div id="home" class="w3-animate-bottom sc-full-screen w3-text-black bgimg-1" style="display: none; position: absolute; top:0;">
+  <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
     <div class="sc-full-size" style="background-color: #e9d66b; opacity: 0;z-index: 0;"></div>
     
-    <div id="logo" class="logo w3-animate-opacity w3-show">
+    <div id="logo" class="logo w3-show">
       <div id="TagLine" class="w3-text-black w3-display-middle;">
         <h1>YOU FOUND ME!</h1>
         <p class="w3-large">Now let me help them find you.</p>
@@ -369,12 +357,10 @@ h1 {
 
   <!-- Page 2 -->
   <div id="page2" class="sc-full-screen w3-text-black" style="position: fixed; top:100vh;">
-    <div id="page2design" class="" style="position:fixed; bottom: 8%; left: -300px; width: 300px;">
-      <h3 class="w3-center w3-xxxlarge" >Designer</h3>
-      <p class="w3-center">Web designer with a passion for designing clean and functional websites and user interfaces.</p>
-    </div>
+    <h1 id="page2developTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 3%; width: 400px; right: -400px; opacity: 0.4;">&lt;/DEVELOPER&gt;</h3>
+    <p id="page2developPar" class="w3-xlarge w3-center" style="position:fixed; top: 8%; width: 400px; right: -400px;">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
     
-    <div id="page2amp" class="" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */ -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */ transform: translate(-50%,-50%);">
+    <div id="page2amp" class="w3-center" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */ -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */ transform: translate(-50%,-50%);">
       <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
       
       <div class="w3-display-middle" style="left: 100%; height:2px; background-color: #e9d66b;"></div> 
@@ -382,10 +368,9 @@ h1 {
       <div class="w3-display-middle" style="left: 0%; height:2px; background-color: #e9d66b;"></div>
     </div>
     
-    <div id="page2develop" class="" style="position:fixed; top: 8%; width: 300px; right: -300px;">
-      <h3 class="w3-center w3-xxxlarge">&lt;/Developer&gt;</h3>
-      <p class="w3-center">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
-    </div>
+    <h1 id="page2designTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 60%; left: -1000px; opacity: 0.4;">DESIGNER</h1>
+    <p id="page2designPar" class="w3-xlarge w3-center" style="position:fixed; top: 70%; width: 400px; left: -400px;">Web designer with a passion for designing clean and functional websites and user interfaces.</p>  
+   
   </div>
   
   <!-- Page 3 -->
@@ -463,19 +448,16 @@ h1 {
       </div>
     </div>
   </div> -->
+</div>
  
   <script>
 var myVar;
-
 function myFunction() {
     myVar = setTimeout(showPage, 3000);
 }
-
 function showPage() {
   document.getElementById("loader").style.display = "none";
-  document.getElementById("myNavbar").style.display = "block";
-  document.getElementById("followDot").style.display = "block";
-  document.getElementById("home").style.display = "block";
+  document.getElementById("site").style.display = "block";
 }
 </script>
   
@@ -540,7 +522,7 @@ function showPage() {
   var stopOpacity = 0;
   
   // Animate Pages
-  var page2ItemStart = -$(window).width();
+  var page2ItemStart = -400;
   var ampLineWidth = 0;
   
   // "change navbar background" variables
@@ -550,13 +532,16 @@ function showPage() {
     didScroll = true;      
     var windowScroll = $(window).scrollTop();
     var windowWidth = $(window).width();
-    var lastScrollTop = 0;
+    var scrollHomePage = 0;
+    var scrollPage2 = windowScroll - (1 * $(window).height());
+    var scrollPage3 = windowScroll - (2 * $(window).height());
         
     // while scrolling, define variables proportional to scroll distance
-    var newOpacity = startOpacity - .005*windowScroll;
-    var newOpacity2 = stopOpacity + 0.00125*windowScroll;
+    var newOpacity = startOpacity - (0.005*windowScroll);
+    var newOpacity2 = stopOpacity + (0.00125*windowScroll);
     var newOpacity3 = startOpacity - (0.00025*windowScroll);
-    var newPage2ItemPos = page2ItemStart + 1.3*windowScroll;
+    var newPage2ParPos = page2ItemStart + (2*scrollPage2);
+    var newPage2TitlePos = page2ItemStart + (3*scrollPage2);
     
     // change hompage opacity     
     if(newOpacity >= stopOpacity){
@@ -567,9 +552,11 @@ function showPage() {
     }
       
     // move page 2 elements on scroll
-    if(windowScroll >= lastScrollTop){
-      $("#page2design").css("left",newPage2ItemPos);
-      $("#page2develop").css("right",newPage2ItemPos);
+    if(windowScroll >= scrollHomePage){
+      $("#page2designPar").css("left",newPage2ParPos);
+      $("#page2designTitle").css("left",-300+newPage2TitlePos);
+      $("#page2developPar").css("right",newPage2ParPos);
+      $("#page2developTitle").css("right",-300+newPage2TitlePos);
     }  
     
     if(newOpacity2 <= startOpacity){
