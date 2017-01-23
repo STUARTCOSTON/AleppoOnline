@@ -21,11 +21,19 @@ img {
   a {
     text-decoration: none;
   }
-body,h1,h2,h3,h4,h5,h6 {font-family: "Libre Franklin", sans-serif;}
+body {font-family: "Libre Franklin", sans-serif;}
 body, html {
   height: 100%;
   color: #777;
   line-height: 1.8;
+}
+
+h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif;}
+
+h1 {
+  font-size: 62px;
+  font-weight: 900;
+  text-transform: capitalize;
 }
 /* Theme Colors - Arylide */
 /* rgb(233, 214, 107) */
@@ -217,16 +225,36 @@ body, html {
           transition-delay: 0.3s;
 }
 
-  .nav-open {
+  .nav-closed {
     display: block;
     top: 0;
+    left: 100%;
     position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: #fff;
     color: black;
-    transition: 0.5s;
+    opacity: 0.8;
+    transition: 1.5s;
   }
+  
+  .nav-open {
+    display: block;
+    top: 0;
+    left: 0%;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    color: black;
+    opacity: 1;
+    transition: 1.5s;
+  }
+  
+  #menu a:hover {
+    color: #555;
+    transition: 0.5s;
+   }
             
 /* end Open and close menu animation */
 
@@ -279,15 +307,14 @@ body, html {
         <div class="other-bar"></div>
       </div>
     </div>
-    <div id="menu" class="sc-full-screen w3-hide w3-animate-top sc-text-center" onclick="openNav()">
-      <ul class="sc-ul w3-display-middle">
-        <li><a href="#">Home</a></li>
-        <li><a href="#page2">Design &amp; Develop</a></li>
-        <li><a href="#page3">Get Online</a></li>
-        <li><a href="#page4">Watch the Changes</a></li>
-        <li><a href="#page5">Projects</a></li>
-        <li><a href="#page6">Contact</a></li>
-      </ul>
+    <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="openNav()">
+      <div class="w3-display-middle" style="width: 400px; height: 400px;">
+        <ul class="sc-ul" style="transform: rotate(-90deg);">
+          <li><a href="#" onclick="openNav()"><h1>HOME</h1></a></li>
+          <li><a href="#page2" onclick="openNav()"><h1>PAGE 2</h1></a></li>
+          <li><a href="#page3" onclick="openNav()"><h1>PAGE 3</h1></a></li>
+        </ul>
+      </div>
     </div>
   </nav>
   
@@ -298,12 +325,12 @@ body, html {
   
   <!-- Homepage -->
   <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
-    <div class="sc-full-size" style="background-color: #e9d66b; opacity: 0.55;z-index: 0;"></div>
+    <div class="sc-full-size" style="background-color: #e9d66b; opacity: 0;z-index: 0;"></div>
     
     <div id="logo" class="logo w3-animate-opacity w3-show">
-      <div id="TagLine" class="w3-text-black w3-center">
-        <h1 class="w3-xxxlarge">YOU FOUND ME!</h1>
-        <p class="w3-xlarge">Now let me help them find you.</p>
+      <div id="TagLine" class="w3-text-black w3-display-middle;" style="width: 100%; max-width: 800px;">
+        <h1>YOU FOUND ME!</h1>
+        <p class="w3-large">Now let me help them find you.</p>
       </div>
     </div>
     
@@ -484,7 +511,7 @@ body, html {
     var newOpacity = startOpacity - .005*windowScroll;
     var newOpacity2 = stopOpacity + 0.00125*windowScroll;
     var newOpacity3 = startOpacity - (0.00025*windowScroll);
-    var newPage2ItemPos = page2ItemStart + 1.5*windowScroll;
+    var newPage2ItemPos = page2ItemStart + 1.3*windowScroll;
     
     // change hompage opacity     
     if(newOpacity >= stopOpacity){
@@ -536,11 +563,11 @@ body, html {
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
-      y.className = y.className.replace(' w3-hide', ' nav-open');
+      y.className = y.className.replace(' nav-closed', ' nav-open');
 //      z.className = z.className.replace(' w3-show', ' w3-hide');
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
-      y.className = y.className.replace(' nav-open', ' w3-hide');
+      y.className = y.className.replace(' nav-open', ' nav-closed');
 //      z.className = z.className.replace(' w3-hide', ' w3-show');
     }
   }
