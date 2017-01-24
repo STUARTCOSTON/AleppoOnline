@@ -110,7 +110,11 @@ h1 {
 /* Maintain parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
     .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: fixed;
+        -moz-background-size: auto;
+        -webkit-background-size: auto;
+	    background-attachment: scroll;
+	    background-position: center bottom;
+        background-size: auto;
     }
 }
 /* roadmap background css */
@@ -291,7 +295,7 @@ h1 {
 </style>
 <body onload="myFunction()" style="margin:0;">
 
-<div class="sc-full-screen" id="pulseloader" style="background-color: #e9d66b;!important">
+<div class="sc-full-screen" id="pulseloader" style="background-color: #171717;!important">
 <img src="https://rawgit.com/stucoston/arylide/master/features/loaders/pulse.svg" width="50" class="w3-display-middle" alt="">
 </div>
   <!--<div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
