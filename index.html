@@ -134,13 +134,14 @@ h1 {
 .logo {
   position: fixed;
   width: 90%;
-  max-width: 400px;
+  max-width: 550px;
   left: 50%;
   top: 50%;
   -ms-transform: translate(-50%,-50%); /* IE 9 */
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
   z-index: 5;
+  line-height:1;
 }
 #TagLine {
   font-family: 'Libre Franklin', sans-serif;
@@ -253,9 +254,10 @@ h1 {
     width: 100vw;
     height: 100vh;
     background-color: #fff;
-    color: black;
-    opacity: 0.8;
-    transition: 1.5s;
+    color: #171717;
+    opacity: 1;
+    transition: 1s;
+    line-height: 1;
   }
   
   .nav-open {
@@ -266,9 +268,10 @@ h1 {
     width: 100vw;
     height: 100vh;
     background-color: #fff;
-    color: black;
+    color: #171717;
     opacity: 1;
-    transition: 1.5s;
+    transition: 1s;
+    line-height: 1;
   }
   
   #menu a:hover {
@@ -333,9 +336,9 @@ h1 {
     <div id="menu" class="sc-full-screen nav-closed sc-text-center" onclick="openNav()">
       <div class="w3-display-middle" style="width: 400px; height: 400px;">
         <ul class="sc-ul sc-rotate90counterclock">
-          <li><a href="#" onclick="openNav()"><h1>HOME</h1></a></li>
-          <li><a href="#page2" onclick="openNav()"><h1>PAGE 2</h1></a></li>
-          <li><a href="#page3" onclick="openNav()"><h1>PAGE 3</h1></a></li>
+          <li><h1><a href="#home" onclick="openNav()">HOME</a></h1></li>
+          <li><h1><a href="#page2" onclick="openNav()">PAGE 2</a></h1></li>
+          <li><h1><a href="#page3" onclick="openNav()">PAGE 3</a></h1></li>
         </ul>
       </div>
     </div>
@@ -363,7 +366,7 @@ h1 {
   <!-- Page 2 -->
   <div id="page2" class="sc-full-screen w3-text-black" style="position: fixed; top:100vh;">
     <h1 id="page2developTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 3%; width: 400px; right: -400px; opacity: 0.4;">&lt;/DEVELOPER&gt;</h3>
-    <p id="page2developPar" class="w3-xlarge w3-center" style="position:fixed; top: 8%; width: 400px; right: -400px;">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
+    <p id="page2developPar" class="w3-xlarge w3-center" style="position:fixed; top: 8%; width: 350px; right: -400px;">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
     
     <div id="page2amp" class="w3-center" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */ -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */ transform: translate(-50%,-50%);">
       <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
@@ -373,8 +376,9 @@ h1 {
       <div class="w3-display-middle" style="left: 0%; height:2px; background-color: #e9d66b;"></div>
     </div>
     
-    <h1 id="page2designTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 60%; left: -1000px; opacity: 0.4;">DESIGNER</h1>
-    <p id="page2designPar" class="w3-xlarge w3-center" style="position:fixed; top: 70%; width: 400px; left: -400px;">Web designer with a passion for designing clean and functional websites and user interfaces.</p>  
+    <div id="page2half" style="position:fixed; top:50%; height: 50%; width: 100%; left: -100%; background-color: #171717;"></div>
+    <h1 id="page2designTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 59%; left: -1000px; opacity: 0.4;">DESIGNER</h1>
+    <p id="page2designPar" class="w3-xlarge w3-center" style="position:fixed; top: 66%; width: 350px; left: -400px;">Web designer with a passion for designing clean and functional websites and user interfaces.</p>  
    
   </div>
   
@@ -562,6 +566,7 @@ function showPage() {
       $("#page2designTitle").css("left",-500+newPage2TitlePos);
       $("#page2developPar").css("right",newPage2ParPos);
       $("#page2developTitle").css("right",100+newPage2TitlePos);
+      $("#page2half").css('left', 0);
     }  
     
     if(newOpacity2 <= startOpacity){
@@ -632,5 +637,3 @@ function showPage() {
 
 </body>
 </html>
-
-
