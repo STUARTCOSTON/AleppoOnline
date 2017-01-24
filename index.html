@@ -134,7 +134,7 @@ h1 {
 .logo {
   position: fixed;
   width: 90%;
-  max-width: 550px;
+  max-width: 700px;
   left: 50%;
   top: 50%;
   -ms-transform: translate(-50%,-50%); /* IE 9 */
@@ -364,9 +364,9 @@ h1 {
   </div>
 
   <!-- Page 2 -->
-  <div id="page2" class="sc-full-screen w3-text-black" style="position: fixed; top:100vh;">
-    <h1 id="page2developTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 3%; width: 400px; right: -400px; opacity: 0.4;">&lt;/DEVELOPER&gt;</h3>
-    <p id="page2developPar" class="w3-xlarge w3-center" style="position:fixed; top: 8%; width: 350px; right: -400px;">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
+  <div id="page2" class="sc-full-screen" style="position: fixed; top:100vh;">
+    <h1 id="page2designTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 8%; left: -1000px; opacity: 0.4;">DESIGNER</h1>
+    <p id="page2designPar" class="w3-xlarge w3-center w3-text-black" style="position:fixed; top: 13%; width: 350px; left: -400px;">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
     
     <div id="page2amp" class="w3-center" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */ -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */ transform: translate(-50%,-50%);">
       <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
@@ -376,10 +376,11 @@ h1 {
       <div class="w3-display-middle" style="left: 0%; height:2px; background-color: #e9d66b;"></div>
     </div>
     
-    <div id="page2half" style="position:fixed; top:50%; height: 50%; width: 100%; left: -100%; background-color: #171717;"></div>
-    <h1 id="page2designTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 59%; left: -1000px; opacity: 0.4;">DESIGNER</h1>
-    <p id="page2designPar" class="w3-xlarge w3-center" style="position:fixed; top: 66%; width: 350px; left: -400px;">Web designer with a passion for designing clean and functional websites and user interfaces.</p>  
+    <div id="page2half" style="position:fixed; top:100%; height: 50%; width: 100%; left: 0; background-color: #171717; z-index: -1;"></div>
+     
    
+    <h1 id="page2developTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 54%; width: 400px; right: -400px; opacity: 0.4;">&lt;/DEVELOPER&gt;</h3>
+    <p id="page2developPar" class="w3-xlarge w3-center w3-text-white" style="position:fixed; top: 60%; width: 350px; right: -400px;">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
   </div>
   
   <!-- Page 3 -->
@@ -526,11 +527,10 @@ function showPage() {
 //  var stopTop = 130;
 //  var moveRight = parseInt($("#btn2").css("right"));
     
-  // fade homepage words
+  var h = $(window).height();
+  var w = $(window).width();
   var startOpacity = 1;
   var stopOpacity = 0;
-  
-  // Animate Pages
   var page2ItemStart = -400;
   var ampLineWidth = 0;
   
@@ -539,18 +539,18 @@ function showPage() {
    
   $(window).scroll(function(event){
     didScroll = true;      
-    var windowScroll = $(window).scrollTop();
-    var windowWidth = $(window).width();
-    var scrollHomePage = 0;
-    var scrollPage2 = windowScroll - (1 * $(window).height());
-    var scrollPage3 = windowScroll - (2 * $(window).height());
+    var st = $(window).scrollTop();
+    var stHomePage = 0;
+    var stPage2 = st-(1*h);
+    var stPage3 = st-(2*h);
         
-    // while scrolling, define variables proportional to scroll distance
-    var newOpacity = startOpacity - (0.005*windowScroll);
-    var newOpacity2 = stopOpacity + (0.00125*windowScroll);
-    var newOpacity3 = startOpacity - (0.00025*windowScroll);
-    var newPage2ParPos = page2ItemStart + (2*scrollPage2);
-    var newPage2TitlePos = page2ItemStart + (3*scrollPage2);
+    // while scrolling, define variables proportional to scroll distance and viewport dimensions
+    var newOpacity = startOpacity - (0.005*st);
+    var newOpacity2 = stopOpacity + (0.00125*st);
+    var newOpacity3 = startOpacity - (0.00025*st);
+    var newPage2ParPos = page2ItemStart + (2*stPage2);
+    var newPage2TitlePos = page2ItemStart + (3*stPage2);
+    var newPage2Half = h - (0.5*st);
     
     // change hompage opacity     
     if(newOpacity >= stopOpacity){
@@ -561,13 +561,18 @@ function showPage() {
     }
       
     // move page 2 elements on scroll
-    if(windowScroll >= scrollHomePage){
+    if(st >= stHomePage){
       $("#page2designPar").css("left",newPage2ParPos);
-      $("#page2designTitle").css("left",-500+newPage2TitlePos);
+      $("#page2designTitle").css("left",-600+newPage2TitlePos);
       $("#page2developPar").css("right",newPage2ParPos);
       $("#page2developTitle").css("right",100+newPage2TitlePos);
-      $("#page2half").css('left', 0);
     }  
+    
+    if(newPage2Half >= (0.5*h)) {
+      $("#page2half").css('top', newPage2Half);    
+      } else {
+          $("#page2half").css('top', (0.5*h));
+    }
     
     if(newOpacity2 <= startOpacity){
       $("#page2amp").css("opacity",newOpacity2);
@@ -584,7 +589,7 @@ function showPage() {
 //    }
             
     // change navbar background depending on scroll distance
-    if (windowScroll >= $(window).height()) {
+    if (st >= h) {
       navbar.className = "w3-card-2" + " w3-top" + " w3-white";
       // move page 2 elements on scroll
       
