@@ -32,8 +32,8 @@
             margin-top: 60px;
             list-style: none;
             padding: 0;
-            -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
-            box-shadow:      0px 0px 4px 0px rgba(0,0,0,0.37);
+           /* -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
+            box-shadow:      0px 0px 4px 0px rgba(0,0,0,0.37);*/
         }
         ul li {
             width: 160px;
@@ -44,9 +44,15 @@
             background-repeat: no-repeat;
             background-position: center;
             margin: 15px;
+            -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
+            box-shadow:      0px 0px 4px 0px rgba(0,0,0,0.37);
         }
         ul li img {
-            vertical-align: middle;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            -ms-transform:translate(-50%,-50%)
         }
         li:nth-child(1) {
             background-color: #6b7ee9;
