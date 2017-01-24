@@ -295,6 +295,15 @@ h1 {
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
 }
+.ball {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  z-index: 1; 
+  background-color: #171717;
+  opacity: 0;
+  border-radius: 50%; 
+}
 </style>
 <body onload="myFunction()" style="margin:0;">
 
@@ -348,13 +357,15 @@ h1 {
   <!-- followDot -->
   <div id="followDot1" class="followDot w3-xxlarge">
     <div class="w3-display-middle">
-      <div id="downArrow">&#8595;</div>
-      <div id="amp" class="w3-hide">&amp;</div>
-      <div id="leftArrow" class="w3-hide">&#8592;</div>
+      <div id="ball1" class="ball w3-display-middle"></div>
+      <div id="downArrow" class="w3-display-middle">&#8595;</div>
+      <div id="amp" class="w3-display-middle" style="opacity: 0; color: #fff;">&amp;</div>
+      <div id="leftArrow" class="w3-display-middle" style="opacity: 0;">&#8592;</div>
     </div>
   </div>
   <div id="followDot2" class="followDot w3-xxlarge w3-hide">
     <div class="w3-display-middle">
+      <div id="ball2" class="ball"></div>
       <div id="rightArrow">&#8594;</div>
     </div>
   </div>
@@ -529,26 +540,14 @@ function showPage() {
   }
 });
   // navbar actions on scroll
-      
-  // "move logo" variables
-//  var imageWidth = parseInt($(".logo img").css("width"));
-//  var stopWidth = imageWidth / 1.5;
-//  var moveTop = 0.35 * $(window).height();
-//  var stopTop = 130;
-//  var moveRight = parseInt($("#btn2").css("right"));
-
-  var page2ItemStart = -400;
-  
-  // "change navbar background" variables
-  var navbar = document.getElementById("myNavbar");
-   
+        var h = $(window).height();
+  var w = $(window).width();
+  var halfh = h/2;
+  var fdStart = 0.9*h;
+  var navbar = document.getElementById("myNavbar");   
   $(window).scroll(function(event){
-    didScroll = true; 
-    var h = $(window).height();
-    var w = $(window).width();
-    var halfh = h/2;
-    var fdStart = 0.9*h;
     var st = $(window).scrollTop();
+
     var stHomePage = 0;
     var stPage2 = st-(1*h);
     var stPage3 = st-(2*h);
@@ -557,31 +556,30 @@ function showPage() {
     var newOpacity = 1 - (0.005*st);
     var newOpacity2 = 0 + (0.00125*st);
     var newOpacity3 = 1 - (0.00025*st);
-    var newPage2ParPos = page2ItemStart + (2*stPage2);
-    var newPage2TitlePos = page2ItemStart + (3*stPage2);
-    var newPage2Half = h - (0.5*st);
+    var newPage2ParPos = 0.05*w+(2*stPage2);
+    var newPage2TitlePos = 0.05*w+(3*stPage2);
+    var movePage2Divider = h - (0.5*st);
     var newfd = fdStart - (0.4*st);
-    var newDownArrowOpac = 1 - (0.4*st);
-    var newfdOpac = 0 + (0.4*st);
+    var newDownArrowOpac = 1 - (0.004*st);
+    var newfdOpac = 0 + (0.004*st);
     
     // change hompage opacity     
-    if(newOpacity >= stopOpacity){
+    if(newOpacity >= 0){
       $(".logo").css("opacity", newOpacity);
-      }
-      else{
-        $(".logo").css("opacity", 0);
+      } else {
+          $(".logo").css("opacity", 0);
     }
       
     // move page 2 elements on scroll
     if(st >= stHomePage){
       $("#page2designPar").css("left",newPage2ParPos);
-      $("#page2designTitle").css("left",-600+newPage2TitlePos);
+      $("#page2designTitle").css("left",-375+newPage2TitlePos);
       $("#page2developPar").css("right",newPage2ParPos);
-      $("#page2developTitle").css("right",100+newPage2TitlePos);
+      $("#page2developTitle").css("right",275+newPage2TitlePos);
     }  
     
-    if(newPage2Half >= halfh) {
-      $("#page2half").css("top", newPage2Half);
+    if(movePage2Divider >= halfh) {
+      $("#page2half").css("top", movePage2Divider);
       } else {
           $("#page2half").css("top", halfh);
     }
@@ -589,33 +587,18 @@ function showPage() {
     if(newfd >= halfh) {
       $("#followDot1").css("top",newfd);
       $("#downArrow").css("opacity",newDownArrowOpac);
+      $("#ball1").css("opacity",-newDownArrowOpac);
+      $("#amp").css("opacity",-newDownArrowOpac);
+      $("#amp").css("z-index",1);
       } else {
           $("#followDot1").css("top", halfh);
     }
-    
-    
-    if(newOpacity2 <= startOpacity){
-      $("#page2amp").css("opacity",newOpacity2);
-    }  else {
-         $("#page2amp").css("opacity",newOpacity3);
-    }
-    
-    // move items proportional to scroll distance
-//    if(newTop >= stopTop){
-//      $('.logo').css("top", newTop);
-//      }
-//      else{
-//        $('.logo').css("top", stopTop);
-//    }
             
-    // change navbar background depending on scroll distance
+    // change navbar background if scroll past homepage
     if (st >= h) {
-      navbar.className = "w3-card-2" + " w3-top" + " w3-white";
-      // move page 2 elements on scroll
-      
-      } 
-      else {
-        navbar.className = "w3-top";
+      navbar.className = "w3-card-2" + " w3-top" + " w3-white";     
+      } else {
+          navbar.className = "w3-top";
     }
   });
   //]]>
