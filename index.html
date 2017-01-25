@@ -341,6 +341,64 @@ h1 {
   opacity: 0;
   border-radius: 50%; 
 }
+
+.featurestitle {
+  position: absolute;
+  transform: rotate(90deg);
+  transform-origin:0% 50%; /* set to the upper-left corner */
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -ms-transform-origin:0% 50%; /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -webkit-transform-origin:35% 230%; /* Safari and Chrome */
+}
+.featuresthe {
+  position: absolute;
+  top: 90px;
+  right: 55px;
+}
+#features {
+  background: #e96b7e;
+  background: -moz-linear-gradient(-45deg,  #e96b7e 0%, #e9976b 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e96b7e), color-stop(100%,#e9976b));
+  background: -webkit-linear-gradient(-45deg,  #e96b7e 0%,#e9976b 100%);
+  background: -o-linear-gradient(-45deg,  #e96b7e 0%,#e9976b 100%);
+  background: -ms-linear-gradient(-45deg,  #e96b7e 0%,#e9976b 100%);
+  background: linear-gradient(135deg,  #e96b7e 0%,#e9976b 100%);
+  background-attachment: fixed;
+}
+
+.processtitle {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  transform: rotate(-90deg);
+  transform-origin:10% 40%; /* set to the upper-left corner */
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -ms-transform-origin:10% 40%; /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+  -webkit-transform-origin:10% 40%; /* Safari and Chrome */
+}
+.processthe {
+  position: absolute;
+  bottom: 20px;
+  left: 38px;
+}
+#process {
+  background: #976be9;
+  background: -moz-linear-gradient(-45deg,  #976be9 0%, #6b7ee9 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#976be9), color-stop(100%,#6b7ee9));
+  background: -webkit-linear-gradient(-45deg,  #976be9 0%,#6b7ee9 100%);
+  background: -o-linear-gradient(-45deg,  #976be9 0%,#6b7ee9 100%);
+  background: -ms-linear-gradient(-45deg,  #976be9 0%,#6b7ee9 100%);
+  background: linear-gradient(135deg,  #976be9 0%,#6b7ee9 100%);
+  background-attachment: fixed;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 </style>
 <body onload="myFunction()" style="margin:0;">
 
@@ -375,6 +433,7 @@ h1 {
     <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">
       <a href="#home"><img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png"></a>
     </div>
+    <!--<div class="w3-text-black w3-display-middle" style="">Made by Stu. Just for you</div>-->
     <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
       <div class="bars"><span></span><span></span><span></span>
         <div class="other-bar"></div>
@@ -390,7 +449,7 @@ h1 {
       </div>
     </div>
   </nav>
-  
+ 
   <!-- followDot -->
   <div id="followDot1" class="followDot w3-xxlarge center-offset">
     <div class="w3-display-middle">
@@ -426,13 +485,7 @@ h1 {
     <h1 id="page2designTitle" class="theme-textcolor w3-center designTitle center-offset ginormous">DESIGNER</h1>
     <p id="page2designPar" class="w3-large w3-left-align center-offset w3-text-black designPar">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
     
-    <div id="page2amp" class="w3-center center-offset" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px;">
-      <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
-      
-      <div class="w3-display-middle" style="left: 100%; height:2px; background-color: #e9d66b;"></div> 
-      
-      <div class="w3-display-middle" style="left: 0%; height:2px; background-color: #e9d66b;"></div>
-    </div>
+
     
     <div id="page2half" style="position:fixed; top:100%; height: 50%; width: 100%; left: 0; background-color: #171717; z-index: -1; border-top: 3px solid #fff;"></div>
      
@@ -442,17 +495,25 @@ h1 {
   </div>
   
   <!-- Page 3 -->
-  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:400vh;">
-    <div id="slash" class="rt-triangle" style="top: 0vh; border-top: 100vh solid transparent; border-bottom: 110vh solid transparent; border-right:100vw solid #e9d66b;right: 100vw;"></div>
-    
-    <div id="process" style="position: absolute; top: 20vh; left:10vw;">
-      <h1>The Process</h1>
+  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">   
+    <div id="process" class="w3-display-bottomleft" style="width:50%; height: 100%;">
+      <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
+      <h1 class="w3-text-white w3-xlarge processthe">THE</h1>
     </div>
     
-    <div id="offer" style="position: absolute; top: 80vh; right:10vw;">
-      <h1>What We Offer</h1>
+    <div id="features" class="w3-display-bottomright" style="width:50%; height: 100%;">
+      <h1 class="sc-rotate90counterclock w3-text-white featurestitle">FEATURES</h1>
+      <h1 class="w3-text-white w3-xlarge featuresthe">THE</h1>
     </div>
-    <div id="page3content" class="w3-display-middle" style="top: 60%; height: 55vh; width: 80vw; max-width: 800px; overflow: hidden; border: 1px solid black; background-color: white;">
+  </div>
+  
+  <!-- Page 4 (fixed and off to the left) -->
+  <div id="page4" class="sc-full-screen w3-text-black" style="position: fixed; top:0; right: 100%;">
+  </div>
+  
+  <!-- Page 5 (fixed and off to the right) -->
+  <div id="page5" class="sc-full-screen w3-text-black" style="position: fixed; top:0; left: 100%;">
+    <div id="page4content" class="w3-display-middle" style="top: 60%; height: 55vh; width: 80vw; max-width: 800px; overflow: hidden; border: 1px solid black; background-color: white;">
       <!-- Slider main container -->
       <div class="swiper-container">
         <!-- Additional required wrapper -->
@@ -477,6 +538,13 @@ h1 {
       </div>
     </div>
   </div>
+  
+  <!-- Footer (stay at bottom) -->
+  <footer id="footer" class="w3-text-white">
+    <div class="w3-left-align w3-padding">
+      Made by Stu. Just for you
+    </div>
+  </footer>
   
   <!-- Page 4 -->
   <!--<div id="page4" class="sc-full-screen w3-text-black" style="position: absolute; top:300vh;">
