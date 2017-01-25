@@ -34,7 +34,6 @@ h1 {
   text-transform: capitalize;
   color: #171717;
 }
-
 .ginormous {
   font-size: 150px;
 }
@@ -43,7 +42,6 @@ h1 {
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
 }
-
 #loader {
   position: fixed;
   left: 50%;
@@ -293,42 +291,35 @@ h1 {
 .designPar {
   position:fixed; 
   top: 25%; 
-  width: 350px; 
+  width: 300px; 
   left: -1000px;
+}
+.developPar {
+  position:fixed; 
+  top: 75%; 
+  width: 300px; 
+  right: -1000px;
   -ms-transform: translate(50%,-50%); /* IE 9 */
   -webkit-transform: translate(50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(50%,-50%);
 }
-
-.developPar {
-  position:fixed; 
-  top: 75%; 
-  width: 350px; 
-  right: -1000px;
-}
-
 .designTitle {
   z-index: -1; 
   position:fixed; 
   top: 25%; 
   left: -2000px; 
   opacity: 0.4;
-  -ms-transform: translate(-5%,-50%); /* IE 9 */
-  -webkit-transform: translate(-5%,-50%); /* Chrome, Safari, Opera */
-  transform: translate(-5%,-50%);
 }
-
 .developTitle {
   z-index: -1;  
   position:fixed; 
   top: 75%;  
   right: -2000px; 
   opacity: 0.4;
-  -ms-transform: translate(15%,-50%); /* IE 9 */
-  -webkit-transform: translate(15%,-50%); /* Chrome, Safari, Opera */
-  transform: translate(15%,-50%);
+  -ms-transform: translate(50%,-50%); /* IE 9 */
+  -webkit-transform: translate(50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(50%,-50%);
 }
-
 /* follow dot css */
 .followDot {
   position:fixed;
@@ -340,16 +331,13 @@ h1 {
   border-radius: 50%; 
   top: 90%;
   left: 50%;
-  -ms-transform: translate(-50%,-50%); /* IE 9 */
-  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
-  transform: translate(-50%,-50%);
 }
 .ball {
   position: absolute;
   height: 60px;
   width: 60px;
   z-index: 1; 
-  background-color: #171717;
+  background-color: #fff;
   opacity: 0;
   border-radius: 50%; 
 }
@@ -378,14 +366,14 @@ h1 {
     <div class="rt-triangle" style="top: 590vh; border-top: 10vh solid transparent; border-bottom: 0vh solid transparent; border-right:5vw solid #6bbde9; "></div>
   </div>-->
 
-<div id="site" class="w3-animate-opacity" style="display:none;">
+<div id="site" class="w3-animate-opacity" style="display:none; background-color:#6be9d6;">
   <!-- Navbar (sit on top) -->
   <nav class="w3-top sc-full-width" style="height: 60px; z-index:10;"id="myNavbar">
     <!--<a href="#page6">
       <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-display-topleft' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
     </a>-->
     <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">
-      <a href="#"><img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png"></a>
+      <a href="#home"><img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png"></a>
     </div>
     <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
       <div class="bars"><span></span><span></span><span></span>
@@ -404,11 +392,11 @@ h1 {
   </nav>
   
   <!-- followDot -->
-  <div id="followDot1" class="followDot w3-xxlarge">
+  <div id="followDot1" class="followDot w3-xxlarge center-offset">
     <div class="w3-display-middle">
       <div id="ball1" class="ball w3-display-middle"></div>
       <div id="downArrow" class="w3-display-middle">&#8595;</div>
-      <div id="amp" class="w3-display-middle" style="opacity: 0; color: #fff;">&amp;</div>
+      <div id="amp" class="w3-display-middle w3-text-black" style="opacity: 0;">&amp;</div>
       <div id="leftArrow" class="w3-display-middle" style="opacity: 0;">&#8592;</div>
     </div>
   </div>
@@ -434,11 +422,11 @@ h1 {
   </div>
 
   <!-- Page 2 -->
-  <div id="page2" class="sc-full-screen" style="position: fixed; top:150vh;">
-    <h1 id="page2designTitle" class="theme-textcolor designTitle center-offset ginormous">DESIGNER</h1>
-    <p id="page2designPar" class="w3-xlarge w3-center w3-text-black designPar">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
+  <div id="page2" class="sc-full-screen" style="position: fixed; top:280vh;">
+    <h1 id="page2designTitle" class="theme-textcolor w3-center designTitle center-offset ginormous">DESIGNER</h1>
+    <p id="page2designPar" class="w3-large w3-left-align center-offset w3-text-black designPar">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
     
-    <div id="page2amp" class="w3-center" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */ -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */ transform: translate(-50%,-50%);">
+    <div id="page2amp" class="w3-center center-offset" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px;">
       <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
       
       <div class="w3-display-middle" style="left: 100%; height:2px; background-color: #e9d66b;"></div> 
@@ -446,11 +434,11 @@ h1 {
       <div class="w3-display-middle" style="left: 0%; height:2px; background-color: #e9d66b;"></div>
     </div>
     
-    <div id="page2half" style="position:fixed; top:100%; height: 50%; width: 100%; left: 0; background-color: #171717; z-index: -1;"></div>
+    <div id="page2half" style="position:fixed; top:100%; height: 50%; width: 100%; left: 0; background-color: #171717; z-index: -1; border-top: 3px solid #fff;"></div>
      
    
-    <h1 id="page2developTitle" class="theme-textcolor center-offset developTitle ginormous">&lt;/DEVELOPER&gt;</h3>
-    <p id="page2developPar" class="w3-xlarge w3-center w3-text-white center-offset developPar">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
+    <h1 id="page2developTitle" class="theme-textcolor w3-center center-offset developTitle ginormous">&lt;/DEVELOPER&gt;</h3>
+    <p id="page2developPar" class="w3-large w3-right-align w3-text-white center-offset developPar">Front-end developer with experience in HTML, CSS, JS, jQuery, WordPress, and Blogger.</p>
   </div>
   
   <!-- Page 3 -->
@@ -589,12 +577,14 @@ function showPage() {
   }
 });
   // navbar actions on scroll
-        var h = $(window).height();
-  var w = $(window).width();
-  var halfh = h/2;
-  var fdStart = 0.9*h;
+  
   var navbar = document.getElementById("myNavbar");   
   $(window).scroll(function(event){
+    var h = $(window).height();
+  var w = $(window).width();
+  var halfh = h/2;
+  var halfw = w/2
+  var fdStart = 0.9*h;
     var st = $(window).scrollTop();
     var stHomePage = 0;
     var stPage2 = st-(1*h);
@@ -604,9 +594,9 @@ function showPage() {
     var newOpacity = 1 - (0.005*st);
     var newOpacity2 = 0 + (0.00125*st);
     var newOpacity3 = 1 - (0.00025*st);
-    var newPage2ParPos = stPage2;
+    var newPage2ParPos = (halfw*(stPage2/h))-halfw;
     var newPage2ParPos2 = 0.1*stPage2;
-    var newPage2TitlePos = 2*stPage2;
+    var newPage2TitlePos = 2*(halfw*(stPage2/h))-1.5*w;
     var newPage2TitlePos2 = 0.5*stPage2;
     var movePage2Divider = h - (0.5*st);
     var newfd = fdStart - (0.4*st);
@@ -622,30 +612,30 @@ function showPage() {
           $(".logo").css("opacity", 0);
     }
     
-//    if(st >= stHomePage){
-//      $("#page2designPar").css("left",newPage2ParPos);
-//      $("#page2designTitle").css("left",-375+newPage2TitlePos);
-//      $("#page2developPar").css("right",newPage2ParPos);
-//      $("#page2developTitle").css("right",275+newPage2TitlePos);
-//    }  
+    if(st >= 0){
+      $("#page2designPar").css("left",newPage2ParPos);
+      $("#page2designTitle").css("left",newPage2TitlePos);
+      $("#page2developPar").css("right",newPage2ParPos);
+      $("#page2developTitle").css("right",newPage2TitlePos);
+    }  
       
     // move page 2 elements on scroll     
-    if(newPage2ParPos <= (0.47*w)){
-      $("#page2designPar").css("left", newPage2ParPos);
-      $("#page2developPar").css("right", newPage2ParPos);
-      $("#page2designTitle").css("left", newPage2TitlePos);
-      $("#page2developTitle").css("right", newPage2TitlePos);
-      } else if(newPage2ParPos >= (0.53*w)){
-         $("#page2designPar").css("left", newPage2ParPos-(0.5*w));
-         $("#page2developPar").css("right", newPage2ParPos-(0.5*w));
-         $("#page2designTitle").css("left", newPage2TitlePos-(0.8*w));
-         $("#page2developTitle").css("right", newPage2TitlePos-(0.8*w)); 
-         } else {
-            $("#page2designPar").css("left", newPage2ParPos2);
-            $("#page2developPar").css("right", newPage2ParPos2);
-            $("#page2designTitle").css("left", newPage2TitlePos2);
-            $("#page2developTitle").css("right", newPage2TitlePos2);
-    }
+//    if(newPage2ParPos <= (0.47*w)){
+//      $("#page2designPar").css("left", newPage2ParPos);
+//      $("#page2developPar").css("right", newPage2ParPos);
+//      $("#page2designTitle").css("left", newPage2TitlePos);
+//      $("#page2developTitle").css("right", newPage2TitlePos);
+//      } else if(newPage2ParPos >= (0.53*w)){
+//         $("#page2designPar").css("left", newPage2ParPos-(0.5*w));
+//         $("#page2developPar").css("right", newPage2ParPos-(0.5*w));
+//         $("#page2designTitle").css("left", newPage2TitlePos-(0.8*w));
+//         $("#page2developTitle").css("right", newPage2TitlePos-(0.8*w)); 
+//         } else {
+//            $("#page2designPar").css("left", newPage2ParPos2);
+//            $("#page2developPar").css("right", newPage2ParPos2);
+//            $("#page2designTitle").css("left", newPage2TitlePos2);
+//            $("#page2developTitle").css("right", newPage2TitlePos2);
+//    }
     
     if(movePage2Divider >= halfh) {
       $("#page2half").css("top", movePage2Divider);
@@ -706,17 +696,14 @@ function showPage() {
     });
   }
 }
-
 var moveItItem = function(el){
   this.el = $(el);
   this.speed = parseInt(this.el.attr('data-scroll-speed'));
 };
-
 moveItItem.prototype.update = function(scrollTop){
   var pos = scrollTop / this.speed;
   this.el.css('transform', 'translateY(' + -pos + 'px)');
 };
-
 // Initialization
 $(function(){
   $('[data-scroll-speed]').moveIt();
