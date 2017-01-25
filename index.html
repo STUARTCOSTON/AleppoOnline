@@ -34,6 +34,16 @@ h1 {
   text-transform: capitalize;
   color: #171717;
 }
+
+.ginormous {
+  font-size: 150px;
+}
+.center-offset {
+  -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);
+}
+
 #loader {
   position: fixed;
   left: 50%;
@@ -280,6 +290,45 @@ h1 {
    }
             
 /* end Open and close menu animation */
+.designPar {
+  position:fixed; 
+  top: 25%; 
+  width: 350px; 
+  left: -1000px;
+  -ms-transform: translate(50%,-50%); /* IE 9 */
+  -webkit-transform: translate(50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(50%,-50%);
+}
+
+.developPar {
+  position:fixed; 
+  top: 75%; 
+  width: 350px; 
+  right: -1000px;
+}
+
+.designTitle {
+  z-index: -1; 
+  position:fixed; 
+  top: 25%; 
+  left: -2000px; 
+  opacity: 0.4;
+  -ms-transform: translate(-5%,-50%); /* IE 9 */
+  -webkit-transform: translate(-5%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-5%,-50%);
+}
+
+.developTitle {
+  z-index: -1;  
+  position:fixed; 
+  top: 75%;  
+  right: -2000px; 
+  opacity: 0.4;
+  -ms-transform: translate(15%,-50%); /* IE 9 */
+  -webkit-transform: translate(15%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(15%,-50%);
+}
+
 /* follow dot css */
 .followDot {
   position:fixed;
@@ -385,9 +434,9 @@ h1 {
   </div>
 
   <!-- Page 2 -->
-  <div id="page2" class="sc-full-screen" style="position: fixed; top:100vh;">
-    <h1 id="page2designTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 8%; left: -1000px; opacity: 0.4;">DESIGNER</h1>
-    <p id="page2designPar" class="w3-xlarge w3-center w3-text-black" style="position:fixed; top: 13%; width: 350px; left: -400px;">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
+  <div id="page2" class="sc-full-screen" style="position: fixed; top:150vh;">
+    <h1 id="page2designTitle" class="theme-textcolor designTitle center-offset ginormous">DESIGNER</h1>
+    <p id="page2designPar" class="w3-xlarge w3-center w3-text-black designPar">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
     
     <div id="page2amp" class="w3-center" style="position:fixed; top: 50vh; left: 50%; opacity: 0;width: 200px; -ms-transform: translate(-50%,-50%); /* IE 9 */ -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */ transform: translate(-50%,-50%);">
       <!--<p class="w3-center w3-jumbo" style="color: #6bbde9;"><em>&amp;</em></p>-->
@@ -400,12 +449,12 @@ h1 {
     <div id="page2half" style="position:fixed; top:100%; height: 50%; width: 100%; left: 0; background-color: #171717; z-index: -1;"></div>
      
    
-    <h1 id="page2developTitle" class="theme-textcolor" style="z-index: -1; font-size: 150px; position:fixed; top: 54%; width: 400px; right: -400px; opacity: 0.4;">&lt;/DEVELOPER&gt;</h3>
-    <p id="page2developPar" class="w3-xlarge w3-center w3-text-white" style="position:fixed; top: 60%; width: 350px; right: -400px;">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
+    <h1 id="page2developTitle" class="theme-textcolor center-offset developTitle ginormous">&lt;/DEVELOPER&gt;</h3>
+    <p id="page2developPar" class="w3-xlarge w3-center w3-text-white center-offset developPar">Front-end developer with experience coding HTML, CSS, JavaScript, jQuery, WordPress, and Blogger.</p>
   </div>
   
   <!-- Page 3 -->
-  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:270vh;">
+  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:400vh;">
     <div id="slash" class="rt-triangle" style="top: 0vh; border-top: 100vh solid transparent; border-bottom: 110vh solid transparent; border-right:100vw solid #e9d66b;right: 100vw;"></div>
     
     <div id="process" style="position: absolute; top: 20vh; left:10vw;">
@@ -547,7 +596,6 @@ function showPage() {
   var navbar = document.getElementById("myNavbar");   
   $(window).scroll(function(event){
     var st = $(window).scrollTop();
-
     var stHomePage = 0;
     var stPage2 = st-(1*h);
     var stPage3 = st-(2*h);
@@ -556,12 +604,16 @@ function showPage() {
     var newOpacity = 1 - (0.005*st);
     var newOpacity2 = 0 + (0.00125*st);
     var newOpacity3 = 1 - (0.00025*st);
-    var newPage2ParPos = w - (0.5*stPage2);
-    var newPage2TitlePos = w + (3*stPage2);
+    var newPage2ParPos = stPage2;
+    var newPage2ParPos2 = 0.1*stPage2;
+    var newPage2TitlePos = 2*stPage2;
+    var newPage2TitlePos2 = 0.5*stPage2;
     var movePage2Divider = h - (0.5*st);
     var newfd = fdStart - (0.4*st);
     var newDownArrowOpac = 1 - (0.004*st);
     var newfdOpac = 0 + (0.004*st);
+//    var newPage2ParPos = w - (0.5*stPage2);
+//    var newPage2TitlePos = w + (3*stPage2);
     
     // change hompage opacity     
     if(newOpacity >= 0){
@@ -569,14 +621,31 @@ function showPage() {
       } else {
           $(".logo").css("opacity", 0);
     }
+    
+//    if(st >= stHomePage){
+//      $("#page2designPar").css("left",newPage2ParPos);
+//      $("#page2designTitle").css("left",-375+newPage2TitlePos);
+//      $("#page2developPar").css("right",newPage2ParPos);
+//      $("#page2developTitle").css("right",275+newPage2TitlePos);
+//    }  
       
-    // move page 2 elements on scroll
-    if(st >= stHomePage){
-      $("#page2designPar").css("left",newPage2ParPos);
-      $("#page2designTitle").css("left",-375+newPage2TitlePos);
-      $("#page2developPar").css("right",newPage2ParPos);
-      $("#page2developTitle").css("right",275+newPage2TitlePos);
-    }  
+    // move page 2 elements on scroll     
+    if(newPage2ParPos <= (0.47*w)){
+      $("#page2designPar").css("left", newPage2ParPos);
+      $("#page2developPar").css("right", newPage2ParPos);
+      $("#page2designTitle").css("left", newPage2TitlePos);
+      $("#page2developTitle").css("right", newPage2TitlePos);
+      } else if(newPage2ParPos >= (0.53*w)){
+         $("#page2designPar").css("left", newPage2ParPos-(0.5*w));
+         $("#page2developPar").css("right", newPage2ParPos-(0.5*w));
+         $("#page2designTitle").css("left", newPage2TitlePos-(0.8*w));
+         $("#page2developTitle").css("right", newPage2TitlePos-(0.8*w)); 
+         } else {
+            $("#page2designPar").css("left", newPage2ParPos2);
+            $("#page2developPar").css("right", newPage2ParPos2);
+            $("#page2designTitle").css("left", newPage2TitlePos2);
+            $("#page2developTitle").css("right", newPage2TitlePos2);
+    }
     
     if(movePage2Divider >= halfh) {
       $("#page2half").css("top", movePage2Divider);
@@ -621,6 +690,37 @@ function showPage() {
 //      z.className = z.className.replace(' w3-hide', ' w3-show');
     }
   }
+  
+  $.fn.moveIt = function(){
+  var $window = $(window);
+  var instances = [];
+  
+  $(this).each(function(){
+    instances.push(new moveItItem($(this)));
+  });
+  
+  window.onscroll = function(){
+    var scrollTop = $window.scrollTop();
+    instances.forEach(function(inst){
+      inst.update(scrollTop);
+    });
+  }
+}
+
+var moveItItem = function(el){
+  this.el = $(el);
+  this.speed = parseInt(this.el.attr('data-scroll-speed'));
+};
+
+moveItItem.prototype.update = function(scrollTop){
+  var pos = scrollTop / this.speed;
+  this.el.css('transform', 'translateY(' + -pos + 'px)');
+};
+
+// Initialization
+$(function(){
+  $('[data-scroll-speed]').moveIt();
+});
   </script>
   
 
