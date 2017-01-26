@@ -18,7 +18,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 body {font-family: "Libre Franklin", sans-serif;}
 body, html {
   height: 100%;
@@ -342,7 +341,6 @@ li a {
   opacity: 0;
   border-radius: 50%; 
 }
-
 .featurestitle {
   position: absolute;
   transform: rotate(90deg);
@@ -367,7 +365,6 @@ li a {
   background: linear-gradient(135deg,  #e96b7e 0%,#e9976b 100%);
   background-attachment: fixed;
 }
-
 .processtitle {
   position: absolute;
   bottom: 20px;
@@ -384,7 +381,7 @@ li a {
   bottom: 20px;
   left: 38px;
 }
-#process {
+.bg-purplerain {
   background: #976be9;
   background: -moz-linear-gradient(45deg,  #976be9 0%, #6b7ee9 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#976be9), color-stop(100%,#6b7ee9));
@@ -394,17 +391,17 @@ li a {
   background: linear-gradient(45deg,  #976be9 0%,#6b7ee9 100%);
   background-attachment: fixed;
 }
-
 #footer {
   position: fixed;
   bottom: 0;
   width: 100%;
 }
-
 .half-height {
   height: 50%;
 }
-
+.half-width {
+  width: 50%
+}
 #page2half {
   position:fixed;
   top:100%;
@@ -426,6 +423,11 @@ li a {
   left: 0;
   z-index: -2;
   border-bottom: 10px solid #fff;"
+}
+#pulseloader {
+  background: #e9976b;
+}
+.bg-sunset {
   background: #e9976b;
   background: -moz-linear-gradient(45deg,  #e9976b 0%, #e9d66b 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e9976b), color-stop(100%,#e9d66b));
@@ -435,20 +437,10 @@ li a {
   background: linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
   background-attachment: fixed;
 }
-#pulseloader {
-  background: #e9976b;
-  background: -moz-linear-gradient(-45deg,  #e9976b 0%, #e9d66b 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e9976b), color-stop(100%,#e9d66b));
-  background: -webkit-linear-gradient(-45deg,  #e9976b 0%,#e9d66b 100%);
-  background: -o-linear-gradient(-45deg,  #e9976b 0%,#e9d66b 100%);
-  background: -ms-linear-gradient(-45deg,  #e9976b 0%,#e9d66b 100%);
-  background: linear-gradient(135deg,  #e9976b 0%,#e9d66b 100%);
-  background-attachment: fixed;
-}
 </style>
 <body onload="myFunction()" style="margin:0;">
 
-<div class="sc-full-screen" id="pulseloader">
+<div class="sc-full-screen bg-sunset" id="pulseloader">
   <img src="https://rawgit.com/stucoston/arylide/master/features/loaders/pulse.svg" width="50" class="w3-display-middle" alt="">
   <p class="w3-display-middle w3-text-white w3-center" style="top: 55%; opacity:0.6;">loading...<br/><span>Made by Stu. I'll make yours too.</span></p>
 </div>
@@ -531,7 +523,7 @@ li a {
     <h1 id="page2designTitle" class="w3-center w3-text-white designTitle center-offset ginormous">DESIGNER</h1>
     <p id="page2designPar" class="w3-large w3-left-align center-offset w3-text-black designPar">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
     
-    <div id="page2halflight" class="half-height sc-full-width"></div>
+    <div id="page2halflight" class="half-height sc-full-width bg-sunset"></div>
     <div id="page2half" class="half-height sc-full-width"></div>
 
     <h1 id="page2developTitle" class="w3-text-white w3-center center-offset developTitle ginormous">&lt;/DEVELOPER&gt;</h3>
@@ -539,10 +531,12 @@ li a {
   </div>
   
   <!-- Page 3 -->
-  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;">   
-    <div id="process" class="w3-display-bottomleft" style="width:50%; height: 100%;">
-      <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
-      <h1 class="w3-text-white w3-xlarge processthe">THE</h1>
+  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;"> 
+    <div class="half-width sc-full-height bg-purplerain w3-display-bottomleft">
+      <div id="process" class="center-offset sc-fullwidth" style="border: 2px solid green;">
+        <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
+        <h1 class="w3-text-white w3-xlarge processthe">THE</h1>
+      </div>
     </div>
     
     <div id="features" class="w3-display-bottomright" style="width:50%; height: 100%;">
