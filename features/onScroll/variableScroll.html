@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href='//fonts.googleapis.com/css?family=Libre+Franklin:300' rel='stylesheet' type='text/css'>
+
+<style>
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+}
+
+a {
+  color: #fff;
+}
+
+.content {
+  height: 3000px;
+  background: #e9976b;
+  background: -moz-linear-gradient(45deg,  #e9976b 0%, #e9d66b 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e9976b), color-stop(100%,#e9d66b));
+  background: -webkit-linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background: -o-linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background: -ms-linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background: linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background-attachment: fixed;
+}
+
+.center-offset {
+  -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+}
+
+.box {
+  width: 50px;
+  position: absolute;
+  line-height: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  background: #e96b7e;
+}
+
+  .box1 {
+    left: 50px;
+    background: #6b7ee9;
+  }
+
+  .box2 {
+    left: 100px;
+    background: #e9976b;
+  }
+
+  .box3 {
+    left: 150px;
+    background: #6bbde9;
+  }
+
+  .box4 {
+    left: 200px;
+    background: #bde96b;
+  }
+
+  .box5 {
+    left: 250px;
+    background: #976be9;
+  }
+  
+.actions {
+  margin: auto;
+  margin-top: 45px;
+  width: 325px;
+}
+
+.actions a {
+  width: 150px;
+  height: 46px;
+  background-repeat: no-repeat;
+  background-size: 150px 46px;
+  display: block;
+  text-indent: -9999px;
+  float: left;
+}
+
+a.download {
+  background-image: url(site-assets/images/download-btn.png);
+}
+
+a.tweet {
+  background-image: url(site-assets/images/tweet-btn.png);
+  margin-left: 25px;
+}
+
+.attr {
+  color: #fff;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+}
+</style>
+</head>
+    
+<body>
+
+<div class="content">
+  <div class="wrapper center-offset">
+    <div class="box" data-scroll-speed="2">S</div>
+    <div class="box box1" data-scroll-speed="3">C</div>
+    <div class="box box2" data-scroll-speed="6">R</div>
+    <div class="box box3" data-scroll-speed="5">O</div>
+    <div class="box box4" data-scroll-speed="9">L</div>
+    <div class="box box5" data-scroll-speed="4">L</div>
+  </div>
+</div>
+
+<footer>
+  <div class="actions">
+    <a href="https://github.com/stucoston/arylide/new/master/features/loaders" target="_blank" class="download">Download</a>
+    <a href="https://twitter.com/intent/tweet?text=Pure%20loaders/spinners&url=http://rawgit.com/stucoston/arylide/master/features/loaders/index.html" target="_blank" class="tweet">Tweet</a>
+  </div>
+  <div style="clear: both"></div>
+  <div class="attr">
+  Made by <a href="http://twitter.com/stucoston">Stu</a>. I'll make yours too.
+  </div>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+<script>
+$.fn.moveIt = function(){
+  var $window = $(window);
+  var instances = [];
+  
+  $(this).each(function(){
+    instances.push(new moveItItem($(this)));
+  });
+  
+  window.onscroll = function(){
+    var scrollTop = $window.scrollTop();
+    instances.forEach(function(inst){
+      inst.update(scrollTop);
+    });
+  }
+}
+
+var moveItItem = function(el){
+  this.el = $(el);
+  this.speed = parseInt(this.el.attr('data-scroll-speed'));
+};
+
+moveItItem.prototype.update = function(scrollTop){
+  var pos = scrollTop / this.speed;
+  this.el.css('transform', 'translateY(' + -pos + 'px)');
+};
+
+// Initialization
+$(function(){
+  $('[data-scroll-speed]').moveIt();
+});
+</script>
+</body>
+
+</html>
