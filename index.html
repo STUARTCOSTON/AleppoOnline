@@ -18,9 +18,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-  a {
-    text-decoration: none;
-  }
+
 body {font-family: "Libre Franklin", sans-serif;}
 body, html {
   height: 100%;
@@ -33,6 +31,9 @@ h1 {
   font-weight: 900;
   text-transform: capitalize;
   color: #171717;
+}
+li a {
+  text-decoration: none;
 }
 .ginormous {
   font-size: 150px;
@@ -334,8 +335,8 @@ h1 {
 }
 .ball {
   position: absolute;
-  height: 60px;
-  width: 60px;
+  height: 61px;
+  width: 61px;
   z-index: 1; 
   background-color: #fff;
   opacity: 0;
@@ -385,12 +386,12 @@ h1 {
 }
 #process {
   background: #976be9;
-  background: -moz-linear-gradient(-45deg,  #976be9 0%, #6b7ee9 100%);
+  background: -moz-linear-gradient(45deg,  #976be9 0%, #6b7ee9 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#976be9), color-stop(100%,#6b7ee9));
-  background: -webkit-linear-gradient(-45deg,  #976be9 0%,#6b7ee9 100%);
-  background: -o-linear-gradient(-45deg,  #976be9 0%,#6b7ee9 100%);
-  background: -ms-linear-gradient(-45deg,  #976be9 0%,#6b7ee9 100%);
-  background: linear-gradient(135deg,  #976be9 0%,#6b7ee9 100%);
+  background: -webkit-linear-gradient(45deg,  #976be9 0%,#6b7ee9 100%);
+  background: -o-linear-gradient(45deg,  #976be9 0%,#6b7ee9 100%);
+  background: -ms-linear-gradient(45deg,  #976be9 0%,#6b7ee9 100%);
+  background: linear-gradient(45deg,  #976be9 0%,#6b7ee9 100%);
   background-attachment: fixed;
 }
 
@@ -399,12 +400,57 @@ h1 {
   bottom: 0;
   width: 100%;
 }
+
+.half-height {
+  height: 50%;
+}
+
+#page2half {
+  position:fixed;
+  top:100%;
+  left: 0;
+  z-index: -1;
+  border-top: 10px solid #fff;"
+  background: #976be9;
+  background: -moz-linear-gradient(-45deg,  #976be9 0%, #6be9d6 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#976be9), color-stop(100%,#6be9d6));
+  background: -webkit-linear-gradient(-45deg,  #976be9 0%,#6be9d6 100%);
+  background: -o-linear-gradient(-45deg,  #976be9 0%,#6be9d6 100%);
+  background: -ms-linear-gradient(-45deg,  #976be9 0%,#6be9d6 100%);
+  background: linear-gradient(135deg,  #976be9 0%,#6be9d6 100%);
+  background-attachment: fixed;
+}
+#page2halflight {
+  position:fixed;
+  top:100%;
+  left: 0;
+  z-index: -2;
+  border-bottom: 10px solid #fff;"
+  background: #e9976b;
+  background: -moz-linear-gradient(45deg,  #e9976b 0%, #e9d66b 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e9976b), color-stop(100%,#e9d66b));
+  background: -webkit-linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background: -o-linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background: -ms-linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background: linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
+  background-attachment: fixed;
+}
+#pulseloader {
+  background: #e9976b;
+  background: -moz-linear-gradient(-45deg,  #e9976b 0%, #e9d66b 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e9976b), color-stop(100%,#e9d66b));
+  background: -webkit-linear-gradient(-45deg,  #e9976b 0%,#e9d66b 100%);
+  background: -o-linear-gradient(-45deg,  #e9976b 0%,#e9d66b 100%);
+  background: -ms-linear-gradient(-45deg,  #e9976b 0%,#e9d66b 100%);
+  background: linear-gradient(135deg,  #e9976b 0%,#e9d66b 100%);
+  background-attachment: fixed;
+}
 </style>
 <body onload="myFunction()" style="margin:0;">
 
-<div class="sc-full-screen" id="pulseloader" style="background-color: #171717;!important">
+<div class="sc-full-screen" id="pulseloader">
   <img src="https://rawgit.com/stucoston/arylide/master/features/loaders/pulse.svg" width="50" class="w3-display-middle" alt="">
-  <p class="w3-display-middle theme-textcolor" style="top: 55%; opacity:0.6;">loading...</p>
+  <p class="w3-display-middle w3-text-white w3-center" style="top: 55%; opacity:0.6;">loading...<br/><span>Made by Stu. I'll make yours too.</span></p>
 </div>
   <!--<div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
     <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 25.71vh solid transparent; border-left:20vw solid #6bbde9; "></div>
@@ -424,7 +470,7 @@ h1 {
     <div class="rt-triangle" style="top: 590vh; border-top: 10vh solid transparent; border-bottom: 0vh solid transparent; border-right:5vw solid #6bbde9; "></div>
   </div>-->
 
-<div id="site" class="w3-animate-opacity" style="display:none; background-color:#6be9d6;">
+<div id="site" class="w3-animate-opacity" style="display:none;">
   <!-- Navbar (sit on top) -->
   <nav class="w3-top sc-full-width" style="height: 60px; z-index:10;"id="myNavbar">
     <!--<a href="#page6">
@@ -482,16 +528,14 @@ h1 {
 
   <!-- Page 2 -->
   <div id="page2" class="sc-full-screen" style="position: fixed; top:280vh;">
-    <h1 id="page2designTitle" class="theme-textcolor w3-center designTitle center-offset ginormous">DESIGNER</h1>
+    <h1 id="page2designTitle" class="w3-center w3-text-white designTitle center-offset ginormous">DESIGNER</h1>
     <p id="page2designPar" class="w3-large w3-left-align center-offset w3-text-black designPar">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
     
+    <div id="page2halflight" class="half-height sc-full-width"></div>
+    <div id="page2half" class="half-height sc-full-width"></div>
 
-    
-    <div id="page2half" style="position:fixed; top:100%; height: 50%; width: 100%; left: 0; background-color: #171717; z-index: -1; border-top: 3px solid #fff;"></div>
-     
-   
-    <h1 id="page2developTitle" class="theme-textcolor w3-center center-offset developTitle ginormous">&lt;/DEVELOPER&gt;</h3>
-    <p id="page2developPar" class="w3-large w3-right-align w3-text-white center-offset developPar">Front-end developer with experience in HTML, CSS, JS, jQuery, WordPress, and Blogger.</p>
+    <h1 id="page2developTitle" class="w3-text-white w3-center center-offset developTitle ginormous">&lt;/DEVELOPER&gt;</h3>
+    <p id="page2developPar" class="w3-large w3-right-align w3-text-black center-offset developPar">Front-end developer with experience in HTML, CSS, JS, jQuery, WordPress, and Blogger.</p>
   </div>
   
   <!-- Page 3 -->
@@ -541,8 +585,8 @@ h1 {
   
   <!-- Footer (stay at bottom) -->
   <footer id="footer" class="w3-text-white">
-    <div class="w3-left-align w3-padding">
-      Made by Stu. Just for you
+    <div class="w3-center w3-padding w3-animate-top">
+      Made by <a href="http://twitter.com/stucoston">Stu</a>. I'll make yours too.
     </div>
   </footer>
   
@@ -707,8 +751,10 @@ function showPage() {
     
     if(movePage2Divider >= halfh) {
       $("#page2half").css("top", movePage2Divider);
+      $("#page2halflight").css("top", h-st);
       } else {
           $("#page2half").css("top", halfh);
+          $("#page2halflight").css("top", 0);
     }
     
     if(newfd >= halfh) {
