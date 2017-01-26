@@ -343,19 +343,16 @@ li a {
 }
 .featurestitle {
   position: absolute;
-  transform: rotate(90deg);
-  transform-origin:0% 50%; /* set to the upper-left corner */
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -ms-transform-origin:0% 50%; /* IE 9 */
-  -webkit-transform: rotate(90deg); /* Safari and Chrome */
-  -webkit-transform-origin:35% 230%; /* Safari and Chrome */
+  transform-origin:50% 50%; /* set to the upper-left corner */
+  -ms-transform-origin:50% 50%; /* IE 9 */
+  -webkit-transform-origin: 5% 100%; /* Safari and Chrome */
 }
 .featuresthe {
   position: absolute;
-  top: 90px;
-  right: 55px;
+  top: 55px;
+  left: 47px;
 }
-#features {
+.bg-redrum {
   background: #e96b7e;
   background: -moz-linear-gradient(-45deg,  #e96b7e 0%, #e9976b 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e96b7e), color-stop(100%,#e9976b));
@@ -369,17 +366,14 @@ li a {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  transform: rotate(-90deg);
   transform-origin:10% 40%; /* set to the upper-left corner */
-  -ms-transform: rotate(-90deg); /* IE 9 */
   -ms-transform-origin:10% 40%; /* IE 9 */
-  -webkit-transform: rotate(-90deg); /* Safari and Chrome */
-  -webkit-transform-origin:10% 40%; /* Safari and Chrome */
+  -webkit-transform-origin:5% 5%; /* Safari and Chrome */
 }
 .processthe {
   position: absolute;
-  bottom: 20px;
-  left: 38px;
+  top: 200px;
+  left: 57px;
 }
 .bg-purplerain {
   background: #976be9;
@@ -533,15 +527,17 @@ li a {
   <!-- Page 3 -->
   <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;"> 
     <div class="half-width sc-full-height bg-purplerain w3-display-bottomleft">
-      <div id="process" class="center-offset sc-fullwidth" style="border: 2px solid green;">
+      <div id="process" class="center-offset half-width half-height w3-display-middle" style="border: 2px solid green;">
         <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
         <h1 class="w3-text-white w3-xlarge processthe">THE</h1>
       </div>
     </div>
     
-    <div id="features" class="w3-display-bottomright" style="width:50%; height: 100%;">
-      <h1 class="sc-rotate90counterclock w3-text-white featurestitle">FEATURES</h1>
-      <h1 class="w3-text-white w3-xlarge featuresthe">THE</h1>
+    <div class="bg-redrum half-width sc-full-height w3-display-bottomright">
+      <div id="features" class="center-offset half-width half-height w3-display-middle" style="border: 2px solid green;">
+        <h1 class="sc-rotate90clock w3-text-white featurestitle">FEATURES</h1>
+        <h1 class="w3-text-white w3-xlarge featuresthe">THE</h1>
+      </div>
     </div>
   </div>
   
