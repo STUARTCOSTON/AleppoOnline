@@ -343,14 +343,14 @@ li a {
 }
 .featurestitle {
   position: absolute;
-  transform-origin:50% 50%; /* set to the upper-left corner */
-  -ms-transform-origin:50% 50%; /* IE 9 */
-  -webkit-transform-origin: 5% 100%; /* Safari and Chrome */
+  transform-origin:-25% 120%; /* set to the upper-left corner */
+  -ms-transform-origin:-25% 120%; /* IE 9 */
+  -webkit-transform-origin: -10% 80%; /* Safari and Chrome */
 }
 .featuresthe {
   position: absolute;
-  top: 55px;
-  left: 47px;
+  top: 110px;
+  left: 0px;
 }
 .bg-redrum {
   background: #e96b7e;
@@ -364,16 +364,14 @@ li a {
 }
 .processtitle {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  transform-origin:10% 40%; /* set to the upper-left corner */
-  -ms-transform-origin:10% 40%; /* IE 9 */
-  -webkit-transform-origin:5% 5%; /* Safari and Chrome */
+  transform-origin:25% 120%; /* set to the upper-left corner */
+  -ms-transform-origin:25% 120%; /* IE 9 */
+  -webkit-transform-origin:25% 120%; /* Safari and Chrome */
 }
 .processthe {
   position: absolute;
-  top: 200px;
-  left: 57px;
+  top: 222px;
+  left: -2px;
 }
 .bg-purplerain {
   background: #976be9;
@@ -436,7 +434,7 @@ li a {
 
 <div class="sc-full-screen bg-sunset" id="pulseloader">
   <img src="https://rawgit.com/stucoston/arylide/master/features/loaders/pulse.svg" width="50" class="w3-display-middle" alt="">
-  <p class="w3-display-middle w3-text-white w3-center" style="top: 55%; opacity:0.6;">loading...<br/><span>Made by Stu. I'll make yours too.</span></p>
+  <p class="w3-display-middle w3-text-white w3-center" style="top: 60%; opacity:0.6; width:100%;">loading...<br/><span>Made by Stu. I'll make yours too.</span></p>
 </div>
   <!--<div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
     <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 25.71vh solid transparent; border-left:20vw solid #6bbde9; "></div>
@@ -484,17 +482,16 @@ li a {
  
   <!-- followDot -->
   <div id="followDot1" class="followDot w3-xxlarge center-offset">
-    <div class="w3-display-middle">
+    <div class="">
       <div id="ball1" class="ball w3-display-middle"></div>
       <div id="downArrow" class="w3-display-middle">&#8595;</div>
       <div id="amp" class="w3-display-middle w3-text-black" style="opacity: 0;">&amp;</div>
-      <div id="leftArrow" class="w3-display-middle" style="opacity: 0;">&#8592;</div>
+      <div id="leftArrow" class="w3-display-middle w3-text-white" style="opacity: 0;">&#8592;</div>
     </div>
   </div>
-  <div id="followDot2" class="followDot w3-xxlarge w3-hide">
+  <div id="followDot2" class="followDot w3-xxlarge center-offset" style="opacity: 0;">
     <div class="w3-display-middle">
-      <div id="ball2" class="ball"></div>
-      <div id="rightArrow">&#8594;</div>
+      <div id="rightArrow" class="w3-text-white" style="opacity: 0;">&#8594;</div>
     </div>
   </div>
   
@@ -527,16 +524,16 @@ li a {
   <!-- Page 3 -->
   <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;"> 
     <div class="half-width sc-full-height bg-purplerain w3-display-bottomleft">
-      <div id="process" class="center-offset half-width half-height w3-display-middle" style="border: 2px solid green;">
+      <div id="process" class="half-width half-height w3-display-bottomright">
         <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
-        <h1 class="w3-text-white w3-xlarge processthe">THE</h1>
+        <h1 class="w3-text-white w3-xlarge processthe center-offset">THE</h1>
       </div>
     </div>
     
     <div class="bg-redrum half-width sc-full-height w3-display-bottomright">
-      <div id="features" class="center-offset half-width half-height w3-display-middle" style="border: 2px solid green;">
+      <div id="features" class="half-width half-height w3-display-topright">
         <h1 class="sc-rotate90clock w3-text-white featurestitle">FEATURES</h1>
-        <h1 class="w3-text-white w3-xlarge featuresthe">THE</h1>
+        <h1 class="center-offset w3-text-white w3-xlarge featuresthe">THE</h1>
       </div>
     </div>
   </div>
@@ -697,15 +694,13 @@ function showPage() {
     var newOpacity2 = 0 + (0.00125*st);
     var newOpacity3 = 1 - (0.00025*st);
     var newPage2ParPos = (halfw*(stPage2/h))-halfw;
-    var newPage2ParPos2 = 0.1*stPage2;
     var newPage2TitlePos = 2*(halfw*(stPage2/h))-1.5*w;
-    var newPage2TitlePos2 = 0.5*stPage2;
     var movePage2Divider = h - (0.5*st);
     var newfd = fdStart - (0.4*st);
     var newDownArrowOpac = 1 - (0.004*st);
+    var newBallOpac = 5 - (0.0045*stPage3);
+    var newfdMove = (.25*halfw*(stPage3/h))+0.5*halfw;
     var newfdOpac = 0 + (0.004*st);
-//    var newPage2ParPos = w - (0.5*stPage2);
-//    var newPage2TitlePos = w + (3*stPage2);
     
     // change hompage opacity     
     if(newOpacity >= 0){
@@ -720,24 +715,6 @@ function showPage() {
       $("#page2developPar").css("right",newPage2ParPos);
       $("#page2developTitle").css("right",newPage2TitlePos);
     }  
-      
-    // move page 2 elements on scroll     
-//    if(newPage2ParPos <= (0.47*w)){
-//      $("#page2designPar").css("left", newPage2ParPos);
-//      $("#page2developPar").css("right", newPage2ParPos);
-//      $("#page2designTitle").css("left", newPage2TitlePos);
-//      $("#page2developTitle").css("right", newPage2TitlePos);
-//      } else if(newPage2ParPos >= (0.53*w)){
-//         $("#page2designPar").css("left", newPage2ParPos-(0.5*w));
-//         $("#page2developPar").css("right", newPage2ParPos-(0.5*w));
-//         $("#page2designTitle").css("left", newPage2TitlePos-(0.8*w));
-//         $("#page2developTitle").css("right", newPage2TitlePos-(0.8*w)); 
-//         } else {
-//            $("#page2designPar").css("left", newPage2ParPos2);
-//            $("#page2developPar").css("right", newPage2ParPos2);
-//            $("#page2designTitle").css("left", newPage2TitlePos2);
-//            $("#page2developTitle").css("right", newPage2TitlePos2);
-//    }
     
     if(movePage2Divider >= halfh) {
       $("#page2half").css("top", movePage2Divider);
@@ -749,12 +726,34 @@ function showPage() {
     
     if(newfd >= halfh) {
       $("#followDot1").css("top",newfd);
+      $("#followDot1").css("left", halfw);
+      $("#followDot1").css("border-color", "#171717");
+      $("#leftArrow").css("opacity", 0);
+      $("#followDot2").css("top",newfd);
+      $("#followDot2").css("opacity", 0);
       $("#downArrow").css("opacity",newDownArrowOpac);
       $("#ball1").css("opacity",-newDownArrowOpac);
       $("#amp").css("opacity",-newDownArrowOpac);
       $("#amp").css("z-index",1);
-      } else {
+      } else if(st < 4.3*h){
           $("#followDot1").css("top", halfh);
+          $("#followDot1").css("left", halfw);
+          $("#followDot2").css("top", halfh);
+          $("#followDot2").css("opacity", 0);
+          $("#ball1").css("opacity", newBallOpac);
+          $("#amp").css("opacity",newBallOpac);
+          } else {
+              $("#followDot2").css("opacity", -newBallOpac);
+              $("#followDot2").css("top", halfh);
+              $("#followDot1").css("top", halfh);
+              $("#followDot1").css("left", -newfdMove+2*halfw);
+              $("#followDot2").css("left", newfdMove);
+              $("#followDot2").css("border-color", "#fff");
+              $("#followDot1").css("border-color", "#fff");
+              $("#ball1").css("opacity", newBallOpac);
+              $("#amp").css("opacity", newBallOpac);
+              $("#leftArrow").css("opacity", -newBallOpac);          
+              $("#rightArrow").css("opacity", -newBallOpac);
     }
             
     // change navbar background if scroll past homepage
