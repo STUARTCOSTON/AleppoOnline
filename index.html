@@ -127,13 +127,13 @@ li a {
 }
 /* roadmap background css */
 .rt-triangle {
-  position: fixed;
+  position: absolute;
   width: 0; 
   height: 0;
   right: 0;
 }
 .lt-triangle {
-  position: fixed;
+  position: absolute;
   width: 0; 
   height: 0;
   left: 0;
@@ -141,9 +141,8 @@ li a {
 /* Homepage CSS */
 .logo {
   position: fixed;
-  width: 90%;
-  max-width: 700px;
-  left: 50%;
+  width: 300px;
+  left: 60%;
   top: 50%;
   -ms-transform: translate(-50%,-50%); /* IE 9 */
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
@@ -151,27 +150,27 @@ li a {
   z-index: 5;
   line-height:1;
 }
-#TagLine {
-  font-family: 'Libre Franklin', sans-serif;
-}
+
 /** Arrow **/
 .hp-enter-arrow {
     -webkit-animation-name: hp-enter-arrow; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 0.6s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
     animation-name: hp-enter-arrow;
-    animation-duration: 0.6s;
-    animation-direction: alternate;
+    animation-duration: 1.1s;
+    /*animation-direction: alternate;*/
     animation-iteration-count: infinite;
 }
 /*** Safari 4.0 - 8.0 ***/
 @-webkit-keyframes hp-enter-arrow {
-    0%   {color: rgba(200,200,200,0);}/*bottom:20px;}*/
-    100% {color: rgba(0,0,0,1);} /*bottom:0px;}*/
+    0%   {color: rgba(200,200,200,0); bottom:30px;}
+    50% {color: rgba(200,200,200,1);}
+    100% {color: rgba(200,200,200,0); bottom:0px;}
 }
 /*** Standard syntax ***/
 @keyframes hp-enter-arrow {
-    0%   {color: rgba(200,200,200,0);}/*bottom:20px;}*/
-    100% {color: rgba(0,0,0,1);}/* bottom:0px;}*/
+    0%   {color: rgba(200,200,200,0); bottom:30px;}
+    50% {color: rgba(200,200,200,1);}
+    100% {color: rgba(200,200,200,0); bottom:0px;}
 }
 /** End Arrow **/
 /* end homepage css */
@@ -195,7 +194,7 @@ li a {
   display: block;
   width: 100%;
   height: 5px;
-  background-color: black;
+  background-color: white;
   margin-top: 5px;
 }
 .menu-container .bars span:first-child {
@@ -234,6 +233,9 @@ li a {
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
 }
+.menu-container.is-menu-open .bars span {
+  background-color: black;
+}
 .menu-container.is-menu-open .bars span:first-child {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
@@ -252,7 +254,8 @@ li a {
   -webkit-transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
   transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
   -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  background-color: black;
 }
   .nav-closed {
     display: block;
@@ -322,12 +325,12 @@ li a {
 }
 /* follow dot css */
 .followDot {
-  position:fixed;
+  position:absolute;
   height: 60px;
   width: 60px;
   z-index: 1; 
   color: #171717; 
-  border: 2px solid #171717; 
+  border: 2px solid white; 
   border-radius: 50%; 
   top: 90%;
   left: 50%;
@@ -340,6 +343,10 @@ li a {
   background-color: #fff;
   opacity: 0;
   border-radius: 50%; 
+}
+.footer-text {
+  line-height: 25px;
+  vertical align: middle;
 }
 .featurestitle {
   position: absolute;
@@ -429,41 +436,86 @@ li a {
   background: linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
   background-attachment: fixed;
 }
+.bg-blacktored {
+  background: #660000;
+  background: -moz-linear-gradient(0deg,  #660000 0%, #000 100%);
+  background: -webkit-gradient(linear, top, bottom, color-stop(0%,#660000), color-stop(100%,#000));
+  background: -webkit-linear-gradient(0deg,  #660000 0%,#000 100%);
+  background: -o-linear-gradient(0deg,  #660000 0%,#000 100%);
+  background: -ms-linear-gradient(0deg,  #660000 0%,#000 100%);
+  background: linear-gradient(0deg,  #660000 0%,#000 100%);
+  background-attachment: scroll;
+}
+.bg-redtowhite {
+  background: #fff;
+  background: -moz-linear-gradient(0deg,  #fff 0%, #660000 100%);
+  background: -webkit-gradient(linear, top, bottom, color-stop(0%,#fff), color-stop(100%,#660000));
+  background: -webkit-linear-gradient(0deg,  #fff 0%,#660000 100%);
+  background: -o-linear-gradient(0deg,  #fff 0%,#660000 100%);
+  background: -ms-linear-gradient(0deg,  #fff 0%,#660000 100%);
+  background: linear-gradient(0deg,  #fff 0%,#660000 100%);
+  background-attachment: scroll;
+}
+.bg-red {
+  background: #660000;
+  color: white;
+}
+.bg-black {
+  background: #000;
+  color: white;
+}
+.a-circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.arylide, .arylide a {
+  letter-spacing: 2px;
+  color: #fff;
+  position: fixed;
+  top: 23px;
+  left:19px;
+  line-height:3px;
+  text-decoration: none;
+}
+.pageNum {
+  font-size: 200px;
+  font-weight: 600;
+  color: black;
+  position: absolute;
+  left: 20px;
+  top: 70px;
+  opacity: 0.1;
+  z-index: 0;
+}
+.pageTitle {
+  font-size: 30px;
+  color: black;
+}
+.pageTitleBorder {
+  width: 20px;
+  border-bottom: 1px solid black;
+}
 </style>
 <body onload="myFunction()" style="margin:0;">
 
-<div class="sc-full-screen bg-sunset" id="pulseloader">
+<div class="sc-full-screen w3-black" id="pulseloader">
   <img src="https://rawgit.com/stucoston/arylide/master/features/loaders/pulse.svg" width="50" class="w3-display-middle" alt="">
-  <p class="w3-display-middle w3-text-white w3-center" style="top: 60%; opacity:0.6; width:100%;">loading...<br/><span>Made by Stu. I'll make yours too.</span></p>
+  <div class="w3-display-middle theme-textcolor w3-center" style="top: 60%; opacity:0.6; width:220px;">
+   <!-- <div class="a-circle theme-backgroundcolor" style="position: absolute; left:45%; top: 8%;"></div>-->
+    <br/>made by stu. you want one too?
+  </div>
 </div>
-  <!--<div style="height: 600vh; width: 100vw;margin: 0; padding: 0; overflow: hidden;">
-    <div class="lt-triangle" style="top: 0vh; border-top: 0vh solid transparent; border-bottom: 25.71vh solid transparent; border-left:20vw solid #6bbde9; "></div>
-    
-    <div class="rt-triangle" style="top: 10vh; border-top: 90vh solid transparent; border-bottom: 180vh solid transparent; border-right:70vw solid #e9d66b; "></div>
-    
-    <div class="lt-triangle" style="top: 240vh; border-top: 90vh solid transparent; border-bottom: 115vh solid transparent; border-left:30vw solid #6bbde9; "></div>
-    <div class="lt-triangle" style="top: 321vh; height: 20vh; width:60vw; background-color: #fff; "></div>
-    <div class="lt-triangle" style="top: 321vh; height: 20vh; width:27vw; background-color: #6bbde9; "></div>
-    
-    <div class="rt-triangle" style="top: 360vh; border-top: 60vh solid transparent; border-bottom: 20vh solid transparent; border-right:10vw solid #6bbde9; "></div>
-    
-    <div class="lt-triangle" style="top: 440vh; border-top: 60vh solid transparent; border-bottom: 100vh solid transparent; border-left:30vw solid #e9d66b; "></div>
-    <div class="lt-triangle" style="top: 500vh; height: 50vh; width:30vw; background-color: #e9d66b; "></div>
-    <div class="lt-triangle" style="top: 550vh; border-top: 0vh solid transparent; border-bottom: 50vh solid transparent; border-left:30vw solid #e9d66b; "></div>
-    
-    <div class="rt-triangle" style="top: 590vh; border-top: 10vh solid transparent; border-bottom: 0vh solid transparent; border-right:5vw solid #6bbde9; "></div>
-  </div>-->
+  
 
 <div id="site" class="w3-animate-opacity" style="display:none;">
   <!-- Navbar (sit on top) -->
   <nav class="w3-top sc-full-width" style="height: 60px; z-index:10;"id="myNavbar">
-    <!--<a href="#page6">
-      <img src='http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png' class='w3-display-topleft' id='contactIcon' style='top: 15px; left: 15px; width: 30px;'>
-    </a>-->
     <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">
-      <a href="#home"><img src="https://1.bp.blogspot.com/-X6Svpjot790/WHo6Efy_xUI/AAAAAAAAKbA/IvB_UNS31pYkYbG1_v4egwjsjfLg9EFBwCK4B/s1600/unnamed-1.png"></a>
+      <div class="a-circle w3-display-top theme-backgroundcolor"></div>
+      <div class="arylide w3-display-topleft w3-xlarge"><a href="#home"><div style="color: black">a</div><div id="rylide" style="position: fixed; left:36px; top: 23px;">rylide</div></a></div>
+      <p id="studios" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: #fff; padding-left: 4px;">studios</p>
     </div>
-    <!--<div class="w3-text-black w3-display-middle" style="">Made by Stu. Just for you</div>-->
     <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
       <div class="bars"><span></span><span></span><span></span>
         <div class="other-bar"></div>
@@ -479,102 +531,94 @@ li a {
       </div>
     </div>
   </nav>
- 
-  <!-- followDot -->
-  <div id="followDot1" class="followDot w3-xxlarge center-offset">
-    <div class="">
-      <div id="ball1" class="ball w3-display-middle"></div>
-      <div id="downArrow" class="w3-display-middle">&#8595;</div>
-      <div id="amp" class="w3-display-middle w3-text-black" style="opacity: 0;">&amp;</div>
-      <div id="leftArrow" class="w3-display-middle w3-text-white" style="opacity: 0;">&#8592;</div>
-    </div>
-  </div>
-  <div id="followDot2" class="followDot w3-xxlarge center-offset" style="opacity: 0;">
-    <div class="w3-display-middle">
-      <div id="rightArrow" class="w3-text-white" style="opacity: 0;">&#8594;</div>
-    </div>
-  </div>
-  
-  <!-- Homepage -->
-  <div id="home" class="sc-full-screen w3-text-black bgimg-1" style="position: absolute; top:0;">
-    <div class="sc-full-size" style="background-color: #e9d66b; opacity: 0;z-index: 0;"></div>
-    
-    <div id="logo" class="logo w3-show">
-      <div id="TagLine" class="w3-text-black w3-display-middle;">
-        <h1>YOU FOUND ME!</h1>
-        <p class="w3-large">Now let me help them find you.</p>
-      </div>
-    </div>
-    
-    <a href="#page2" class="w3-display-bottommiddle" style="height: 140px; width: 100%;text-decoration:none; z-index: 1;"></a>
-  </div>
 
-  <!-- Page 2 -->
-  <div id="page2" class="sc-full-screen" style="position: fixed; top:280vh;">
-    <h1 id="page2designTitle" class="w3-center w3-text-white designTitle center-offset ginormous">DESIGNER</h1>
-    <p id="page2designPar" class="w3-large w3-left-align center-offset w3-text-black designPar">Web designer with a passion for designing clean and functional websites and user interfaces.</p> 
-    
-    <div id="page2halflight" class="half-height sc-full-width bg-sunset"></div>
-    <div id="page2half" class="half-height sc-full-width"></div>
+  <!-- content -->
+  <div id="content">
+  
+    <!-- Homepage -->
+    <div id="home" class="sc-full-screen bg-black">
+      <div id="logo" class="logo w3-text-white">               <h1 class="w3-text-white">YOU FOUND ME!</h1>
+        <p class="w3-large">now let me help them find you.</p>
+      </div>
+      <a href="#page2" class="w3-display-bottommiddle" style="height: 140px; width: 100%;text-decoration:none; z-index: 1;"></a>
+      <!-- enterArrow -->
+      <div id="enterArrow" class="w3-display-bottomleft" style="width: 120px;">
+        <div class="w3-padding-left hp-enter-arrow w3-display-bottomleft w3-xlarge w3-text-white">&#8595;</div>
+        <p class="footer-text w3-text-white w3-medium w3-display-bottomright">scroll down</p>
+      </div>
+    </div>
+  
+    <!-- transition from pg 1 to pg 2 -->
+    <div class="sc-full-width bg-blacktored" style="height:20vh;"></div>
 
-    <h1 id="page2developTitle" class="w3-text-white w3-center center-offset developTitle ginormous">&lt;/DEVELOPER&gt;</h3>
-    <p id="page2developPar" class="w3-large w3-right-align w3-text-black center-offset developPar">Front-end developer with experience in HTML, CSS, JS, jQuery, WordPress, and Blogger.</p>
-  </div>
-  
-  <!-- Page 3 -->
-  <div id="page3" class="sc-full-screen w3-text-black" style="position: absolute; top:500vh;"> 
-    <div class="half-width sc-full-height bg-purplerain w3-display-bottomleft">
-      <div id="process" class="half-width half-height w3-display-bottomright">
-        <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
-        <h1 class="w3-text-white w3-xlarge processthe center-offset">THE</h1>
+    <!-- Page 2 -->
+    <div id="page2" class="sc-full-screen bg-red">
+      <div class="pageNum">1</div>
+      <div class="w3-padding" style="left: 30%; top: 30%; width: 80%; max-width: 500px;">
+        <div class="pageTitle">what we do</div>
+        <div class="pageTitleBorder"></div>  
+        <p>We work with you to design and develop your digital home exactly how you want it.&nbsp;&nbsp;With a passion for designing custom, clean, and functional products we use html, css, and js to completely personalize your product.</p>
       </div>
     </div>
-    
-    <div class="bg-redrum half-width sc-full-height w3-display-bottomright">
-      <div id="features" class="half-width half-height w3-display-topright">
-        <h1 class="sc-rotate90clock w3-text-white featurestitle">FEATURES</h1>
-        <h1 class="center-offset w3-text-white w3-xlarge featuresthe">THE</h1>
-      </div>
-    </div>
-  </div>
   
-  <!-- Page 4 (fixed and off to the left) -->
-  <div id="page4" class="sc-full-screen w3-text-black" style="position: fixed; top:0; right: 100%;">
-  </div>
+    <!-- transition from pg 2 to pg 3 -->
+    <div class="sc-full-width bg-redtowhite" style="height:20vh;"></div>
   
-  <!-- Page 5 (fixed and off to the right) -->
-  <div id="page5" class="sc-full-screen w3-text-black" style="position: fixed; top:0; left: 100%;">
-    <div id="page4content" class="w3-display-middle" style="top: 60%; height: 55vh; width: 80vw; max-width: 800px; overflow: hidden; border: 1px solid black; background-color: white;">
-      <!-- Slider main container -->
-      <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Sliders</h1></div></div>
-          <div class="swiper-slide"><div class="w3-display-middle"><h1>Animations</h1></div></div>
-          <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Single or Multipage Designs</h1></div></div>
-          <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Intuitive &amp; Responsive Designs</h1></div></div>
-          <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>SEO</h1></div></div>
-          <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>HTML, CSS, and JavaScript</h1></div></div>
-          <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Touch Friendly</h1></div></div>
+    <!-- Page 3 -->
+   <!-- <div id="page3" class="sc-full-screen w3-white"> 
+      <div class="half-width sc-full-height bg-purplerain w3-display-bottomleft">
+        <div id="process" class="half-width half-height w3-display-bottomright">
+          <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
+          <h1 class="w3-text-white w3-xlarge processthe center-offset">THE</h1>
         </div>
+      </div>
+    
+      <div class="bg-redrum half-width sc-full-height w3-display-bottomright">
+        <div id="features" class="half-width half-height w3-display-topright">
+          <h1 class="sc-rotate90clock w3-text-white featurestitle">FEATURES</h1>
+          <h1 class="center-offset w3-text-white w3-xlarge featuresthe">THE</h1>
+        </div>
+      </div>
+    </div>-->
+  
+    <!-- Page 4 (fixed and off to the left) -->
+    <div id="page4" class="sc-full-screen w3-text-black" style="position: fixed; top:0; right: 100%;">
+    </div>
+  
+    <!-- Page 5 (fixed and off to the right) -->
+    <div id="page5" class="sc-full-screen w3-text-black" style="position: fixed; top:0; left: 100%;">
+      <div id="page4content" class="w3-display-middle" style="top: 60%; height: 55vh; width: 80vw; max-width: 800px; overflow: hidden; border: 1px solid black; background-color: white;">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Sliders</h1></div></div>
+            <div class="swiper-slide"><div class="w3-display-middle"><h1>Animations</h1></div></div>
+            <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Single or Multipage Designs</h1></div></div>
+            <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Intuitive &amp; Responsive Designs</h1></div></div>
+            <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>SEO</h1></div></div>
+            <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>HTML, CSS, and JavaScript</h1></div></div>
+            <div class="swiper-slide w3-center"><div class="w3-display-middle"><h1>Touch Friendly</h1></div></div>
+          </div>
         
-        <!-- If we need pagination -->
-        <div class="swiper-pagination swiper-pagination-black"></div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination swiper-pagination-black"></div>
     
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev swiper-button-black"></div>
-        <div class="swiper-button-next swiper-button-black"></div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev swiper-button-black"></div>
+          <div class="swiper-button-next swiper-button-black"></div>
     
+        </div>
       </div>
     </div>
   </div>
   
   <!-- Footer (stay at bottom) -->
   <footer id="footer" class="w3-text-white">
-    <div class="w3-center w3-padding w3-animate-top">
-      Made by <a href="http://twitter.com/stucoston">Stu</a>. I'll make yours too.
-    </div>
+    <p class="w3-medium w3-right-align w3-padding-right w3-animate-top footer-text">
+      made by <a href="http://twitter.com/stucoston">stu</a>.&nbsp;&nbsp;you want one too?
+    </p>
   </footer>
   
   <!-- Page 4 -->
@@ -636,28 +680,6 @@ function showPage() {
     var captionText = document.getElementById("caption");
     captionText.innerHTML = element.alt; 
   }
-    
-  // Change style of navbar on scroll
-//  window.onscroll = function() {myFunction()};
-//  function myFunction() {
- //   var navbar = document.getElementById("myNavbar");
- //   var scrollHomepage = $(window).scrollTop(); 
-    
- //   if (scrollHomepage >= $(window).height()) {
- //     navbar.className = "w3-card-2" + " w3-top" + " w3-white";
- //   } else {
- //     navbar.className = navbar.className.replace(" w3-card-2 w3-top w3-white", "w3-top");
- //   } 
- // }
-  // Used to toggle the menu on small screens when clicking on the menu button
- // function toggleFunction() {
- //   var x = document.getElementById("navDemo");
- //   if (x.className.indexOf("w3-show") == -1) {
- //     x.className += " w3-show";
- //   } else {
- //     x.className = x.className.replace(" w3-show", "");
- //   }
- // }
   </script>
   
   <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
@@ -705,8 +727,10 @@ function showPage() {
     // change hompage opacity     
     if(newOpacity >= 0){
       $(".logo").css("opacity", newOpacity);
+      $(".followDot").css("opacity", newOpacity);
       } else {
           $(".logo").css("opacity", 0);
+          $(".followDot").css("opacity", 0);
     }
     
     if(st >= 0){
@@ -715,53 +739,13 @@ function showPage() {
       $("#page2developPar").css("right",newPage2ParPos);
       $("#page2developTitle").css("right",newPage2TitlePos);
     }  
-    
-    if(movePage2Divider >= halfh) {
-      $("#page2half").css("top", movePage2Divider);
-      $("#page2halflight").css("top", h-st);
-      } else {
-          $("#page2half").css("top", halfh);
-          $("#page2halflight").css("top", 0);
-    }
-    
-    if(newfd >= halfh) {
-      $("#followDot1").css("top",newfd);
-      $("#followDot1").css("left", halfw);
-      $("#followDot1").css("border-color", "#171717");
-      $("#leftArrow").css("opacity", 0);
-      $("#followDot2").css("top",newfd);
-      $("#followDot2").css("opacity", 0);
-      $("#downArrow").css("opacity",newDownArrowOpac);
-      $("#ball1").css("opacity",-newDownArrowOpac);
-      $("#amp").css("opacity",-newDownArrowOpac);
-      $("#amp").css("z-index",1);
-      } else if(st < 4.3*h){
-          $("#followDot1").css("top", halfh);
-          $("#followDot1").css("left", halfw);
-          $("#followDot2").css("top", halfh);
-          $("#followDot2").css("opacity", 0);
-          $("#ball1").css("opacity", newBallOpac);
-          $("#amp").css("opacity",newBallOpac);
-          } else {
-              $("#followDot2").css("opacity", -newBallOpac);
-              $("#followDot2").css("top", halfh);
-              $("#followDot1").css("top", halfh);
-              $("#followDot1").css("left", -newfdMove+2*halfw);
-              $("#followDot2").css("left", newfdMove);
-              $("#followDot2").css("border-color", "#fff");
-              $("#followDot1").css("border-color", "#fff");
-              $("#ball1").css("opacity", newBallOpac);
-              $("#amp").css("opacity", newBallOpac);
-              $("#leftArrow").css("opacity", -newBallOpac);          
-              $("#rightArrow").css("opacity", -newBallOpac);
-    }
-            
+                
     // change navbar background if scroll past homepage
-    if (st >= h) {
-      navbar.className = "w3-card-2" + " w3-top" + " w3-white";     
-      } else {
-          navbar.className = "w3-top";
-    }
+//    if (st >= h) {
+//      navbar.className = "w3-card-2" + " w3-top" + " w3-white";     
+//      } else {
+//          navbar.className = "w3-top";
+//    }
   });
   //]]>
   </script>
@@ -771,16 +755,13 @@ function showPage() {
   function openNav() {
     var x = document.getElementById('menu-container');
     var y = document.getElementById('menu');
-//    var z = document.getElementById('logo');
   
     if (x.className.indexOf('is-menu-open') == -1) {
       x.className += ' is-menu-open';
       y.className = y.className.replace(' nav-closed', ' nav-open');
-//      z.className = z.className.replace(' w3-show', ' w3-hide');
     } else { 
       x.className = x.className.replace(' is-menu-open', '');
       y.className = y.className.replace(' nav-open', ' nav-closed');
-//      z.className = z.className.replace(' w3-hide', ' w3-show');
     }
   }
   
