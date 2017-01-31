@@ -481,7 +481,6 @@ li a {
   height: 20px;
 }
 .arylide, .arylide a {
-  letter-spacing: 2px;
   color: #fff;
   position: fixed;
   top: 23px;
@@ -489,13 +488,15 @@ li a {
   line-height:3px;
   text-decoration: none;
 }
+.logo-space {
+  letter-spacing: 2px;
+}
 .pageNum {
   font-size: 200px;
   font-weight: 600;
   color: black;
   position: absolute;
   left: 15%;
-  top: 70px;
   opacity: 0.1;
   z-index: 0;
 }
@@ -527,17 +528,20 @@ li a {
   </div>
 </div>
   
-
+<!-- site container -->
 <div id="site" class="w3-animate-opacity" style="display:none;">
   <!-- Navbar (sit on top) -->
   <nav class="w3-top sc-full-width" style="height: 60px; z-index:10;"id="myNavbar">
+    <!-- navbar logo -->
     <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">
-      <div class="a-circle w3-display-top theme-backgroundcolor"></div>
-      <div class="arylide w3-display-topleft w3-xlarge"><a href="#home"><div style="color: black">a</div><div id="rylide" style="position: fixed; left:36px; top: 23px;">rylide</div></a></div>
+      <div id="a-circle" class="a-circle w3-display-top theme-backgroundcolor"></div>
+      <div class="arylide logo-space w3-display-topleft w3-xlarge"><a href="#home"><div id="a" style="color: black">a</div><div id="rylide" style="position: fixed; left:36px; top: 23px;">rylide</div></a></div>
       <p id="studios" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: #fff; padding-left: 4px;">studios</p>
+    <!-- close navbar logo -->
     </div>
+    <!-- menubars -->
     <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
-      <div class="bars"><span></span><span></span><span></span>
+      <div id="menubars" class="bars"><span></span><span></span><span></span>
         <div class="other-bar"></div>
       </div>
     </div>
@@ -553,11 +557,11 @@ li a {
     </div>
   </nav>
 
-  <!-- content -->
-  <div id="content">
-  
+  <!-- site content -->
+  <div id="sitecontent">
     <!-- Homepage -->
     <div id="home" class="page sc-full-screen bg-black">
+      <div class="pageNum w3-text-yellow" data-scroll-speed="1" style="top: 40%;">1</div>
       <div id="logo" class="logo w3-text-white">               <h1 class="w3-text-white">YOU FOUND ME!</h1>
         <p class="w3-large">now let me help them find you.</p>
       </div>
@@ -574,7 +578,7 @@ li a {
 
     <!-- Page 2 -->
     <div id="page2" class="page sc-full-screen bg-red">
-      <div class="pageNum">1</div>
+      <div class="pageNum" data-scroll-speed="1" style="top: 135%;">2</div>
       <!-- page 2 content -->
       <div class="w3-padding center-offset w3-display-middle" style="width: 80%; max-width: 500px;">
         <div class="pageTitle">what we do</div>
@@ -590,7 +594,7 @@ li a {
   
     <!-- Page 3 -->
     <div id="page3" class="page sc-full-screen w3-white"> 
-      <div class="pageNum">2</div>
+      <div class="pageNum" data-scroll-speed="3" style="top: 65%;">3</div>
       <!-- page content -->
       <div style="position: absolute; top: 20%; width: 100%; height: 60%;">
         <div style="position: absolute; left: 20%; top: -30px; z-index: 2;">
@@ -602,13 +606,13 @@ li a {
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h1>Sliders</h1></div></div>
-            <div class="swiper-slide w3-center w3-red"><div class="w3-display-middle"><h1>Animations</h1></div></div>
-            <div class="swiper-slide w3-center w3-green"><div class="w3-display-middle"><h1>Single or Multipage Designs</h1></div></div>
-            <div class="swiper-slide w3-center w3-blue"><div class="w3-display-middle"><h1>Intuitive &amp; Responsive Designs</h1></div></div>
-            <div class="swiper-slide w3-center w3-indigo"><div class="w3-display-middle"><h1>SEO</h1></div></div>
-            <div class="swiper-slide w3-center w3-brown"><div class="w3-display-middle"><h1>HTML, CSS, and JavaScript</h1></div></div>
-            <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h1>Touch Friendly</h1></div></div>
+            <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h2>Sliders</h2></div></div>
+            <div class="swiper-slide w3-center w3-red"><div class="w3-display-middle"><h2>Animations</h2></div></div>
+            <div class="swiper-slide w3-center w3-green"><div class="w3-display-middle"><h2>Single or Multipage Designs</h2></div></div>
+            <div class="swiper-slide w3-center w3-blue"><div class="w3-display-middle"><h2>Intuitive &amp; Responsive Designs</h2></div></div>
+            <div class="swiper-slide w3-center w3-indigo"><div class="w3-display-middle"><h2>SEO</h2></div></div>
+            <div class="swiper-slide w3-center w3-brown"><div class="w3-display-middle"><h2>HTML, CSS, and JavaScript</h2></div></div>
+            <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h2>Touch Friendly</h2></div></div>
           </div>
           <!-- If we need pagination -->
           <div class="swiper-pagination swiper-pagination-black"></div>
@@ -627,18 +631,28 @@ li a {
   
     <!-- Page 4 (fixed and off to the left) -->
     <div id="page4" class="page sc-full-screen theme-backgroundcolor">
-      <div class="pageNum">3</div>
+      <div class="pageNum" data-scroll-speed="3" style="top: 115%;">4</div>
       <!-- page 4 content -->
-      <div class="w3-padding w3-display-middle" style="width: 80%; max-width: 700px; height: 80%;">
+      <div class="w3-display-middle" style="width: 80%; max-width: 600px; height: 50%;">
         <div class="pageTitle">contact</div>
         <div class="pageTitleBorder"></div>
         <br/>
-        <!-- card -->
-        <div class="w3-row w3-card-4 w3-white" style="position: relative; height: 45%;">
+        <!-- contact card -->
+        <div class="w3-row w3-card-4 w3-white w3-animate-bottom" style="position: relative; height: 45%;">
+          <!-- half-width container -->
           <div class="w3-container w3-half sc-full-height" style="position: relative;">
+            <!-- half-height container for divider -->
             <div class="half-height sc-full-width sc-vertical-middle" style="z-index: 1; border-right: 3px dotted #e9d66b;"></div>
-            <div class="w3-display-middle">logo</div>
-          </div>
+              <!-- logo on card -->
+              <div class="w3-display-middle" style="width: 100px; height:40px;">
+                <div class="a-circle w3-display-top theme-backgroundcolor"></div>
+                <div class="logo-space w3-xlarge w3-text-black" style="position: absolute; left: 4px; top: -13px;">arylide</div>
+                <p id="studioscard" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: black; padding-left: 4px;">studios</p>
+              <!-- close logo card -->
+              </div>
+            <!-- close half-height container divider -->
+            </div>
+          <!-- close half-width container -->
           <div class="w3-container w3-half sc-full-height w3-white" style="position: relative;">
             <div class="w3-display-middle">
               <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a><br/>
@@ -649,19 +663,7 @@ li a {
         </div>
       <!-- close page 4 content -->
       </div>
-      <!--<div class="half-width sc-full-height bg-purplerain w3-display-bottomleft">
-        <div id="process" class="half-width half-height w3-display-bottomright">
-          <h1 class="sc-rotate90counterclock w3-text-white processtitle">PROCESS</h1>
-          <h1 class="w3-text-white w3-xlarge processthe center-offset">THE</h1>
-        </div>
-      </div>
-    
-      <div class="bg-redrum half-width sc-full-height w3-display-bottomright">
-        <div id="features" class="half-width half-height w3-display-topright">
-          <h1 class="sc-rotate90clock w3-text-white featurestitle">FEATURES</h1>
-          <h1 class="center-offset w3-text-white w3-xlarge featuresthe">THE</h1>
-        </div>
-      </div>-->
+    <!-- close page 4 -->
     </div>
     
   <!-- close content -->
@@ -674,7 +676,7 @@ li a {
     </p>
   </footer>
   
-<!-- close site -->
+<!-- close site (keep because of the loader page) -->
 </div>
  
   <script>
@@ -715,30 +717,22 @@ function showPage() {
 });
   // navbar actions on scroll
   
-  var navbar = document.getElementById("myNavbar");   
+  var navbar = document.getElementById("myNavbar"); 
+  var footer = document.getElementById("footer");
+  var logo = document.getElementById("rylide");
+  var studio = document.getElementById("studios");
+  var acircle = document.getElementById("a-circle");
   $(window).scroll(function(event){
     var h = $(window).height();
-  var w = $(window).width();
-  var halfh = h/2;
-  var halfw = w/2
-  var fdStart = 0.9*h;
+    var w = $(window).width();
+    var halfh = h/2;
+    var halfw = w/2
+    var fdStart = 0.9*h;
     var st = $(window).scrollTop();
     var stHomePage = 0;
     var stPage2 = st-(1*h);
     var stPage3 = st-(2*h);
-        
-    // while scrolling, define variables proportional to scroll distance and viewport dimensions
     var newOpacity = 1 - (0.005*st);
-    var newOpacity2 = 0 + (0.00125*st);
-    var newOpacity3 = 1 - (0.00025*st);
-    var newPage2ParPos = (halfw*(stPage2/h))-halfw;
-    var newPage2TitlePos = 2*(halfw*(stPage2/h))-1.5*w;
-    var movePage2Divider = h - (0.5*st);
-    var newfd = fdStart - (0.4*st);
-    var newDownArrowOpac = 1 - (0.004*st);
-    var newBallOpac = 5 - (0.0045*stPage3);
-    var newfdMove = (.25*halfw*(stPage3/h))+0.5*halfw;
-    var newfdOpac = 0 + (0.004*st);
     
     // change hompage opacity     
     if(newOpacity >= 0){
@@ -749,14 +743,24 @@ function showPage() {
           $(".followDot").css("opacity", 0);
     }
     
-    if(st >= 2*h){
-      $("#footer").className = "w3-text-black";
-      $("#rylide").className = "w3-text-black";
-      $("#studios").className = "w3-text-black" + "w3-center" + "w3-display-topleft";
+    if(st >= 2.2*h){
+      logo.className = "w3-text-black";
+      studio.className = "w3-text-black w3-center w3-display-topleft";
+      acircle.className = "a-circle w3-display-top w3-black";
+      $("#a").css("color", "#e9d66b");
+      $(".menu-container .bars span").css("background-color", "#000");
       } else {
-        $("#footer").className = "w3-text-white";
-        $("#rylide").className = "w3-text-white";
-        $("#studios").className = "w3-text-white" + "w3-center" + "w3-display-topleft";
+        logo.className = "w3-text-white";
+        studio.className = "w3-text-white w3-center w3-display-topleft";
+        acircle.className = "a-circle w3-display-top theme-backgroundcolor";
+        $("#a").css("color", "#000");
+        $(".menu-container .bars span").css("background-color", "#fff");
+     } 
+     
+     if(st >= 1.25*h){
+      footer.className = "w3-text-black w3-display-bottomright";
+      } else {
+        footer.className = "w3-text-white w3-display-bottomright";
      } 
                 
     // change navbar background if scroll past homepage
@@ -783,7 +787,8 @@ function showPage() {
       y.className = y.className.replace(' nav-open', ' nav-closed');
     }
   }
-  
+  </script>
+  <script>
   $.fn.moveIt = function(){
   var $window = $(window);
   var instances = [];
