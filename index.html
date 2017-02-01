@@ -134,6 +134,9 @@ li a {
   z-index: 10;
   cursor: pointer;
 }
+.menu-container:hover .menu-container .bars span, .menu-container:hover .menu-container.is-menu-open .bars span {
+  background-color: #e9d66b;
+}
 .menu-container .bars {
   width: 30px;
   height: 18px;
@@ -150,6 +153,7 @@ li a {
   background-color: white;
   margin-top: 5px;
 }
+
 .menu-container .bars span:first-child {
   margin-top: 0;
   -webkit-transform: scaleX(1);
@@ -261,7 +265,7 @@ li a {
 #pulseloader {
   background: #e9976b;
 }
-.bg-sunset {
+.bg-sunrise {
   background: #e9976b;
   background: -moz-linear-gradient(45deg,  #e9976b 0%, #e9d66b 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e9976b), color-stop(100%,#e9d66b));
