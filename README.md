@@ -1,4 +1,4 @@
-# ARYLIDE
+# arylide
 Repository for Arylide site, features for customers, and customer templates.
 
 Four branches right now:  
