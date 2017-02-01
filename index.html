@@ -384,39 +384,6 @@ li a {
   background: linear-gradient(45deg,  #e9976b 0%,#e9d66b 100%);
   background-attachment: fixed;
 }
-.bg-blacktored {
-  background: #660000;
-  background: -moz-linear-gradient(0deg,  #660000 0%, #000 100%);
-  background: -webkit-gradient(linear, top, bottom, color-stop(0%,#660000), color-stop(100%,#000));
-  background: -webkit-linear-gradient(0deg,  #660000 0%,#000 100%);
-  background: -o-linear-gradient(0deg,  #660000 0%,#000 100%);
-  background: -ms-linear-gradient(0deg,  #660000 0%,#000 100%);
-  background: linear-gradient(0deg,  #660000 0%,#000 100%);
-  background-attachment: scroll;
-  height: 20vh;
-}
-.bg-redtowhite {
-  background: #fff;
-  background: -moz-linear-gradient(0deg,  #fff 0%, #660000 100%);
-  background: -webkit-gradient(linear, top, bottom, color-stop(0%,#fff), color-stop(100%,#660000));
-  background: -webkit-linear-gradient(0deg,  #fff 0%,#660000 100%);
-  background: -o-linear-gradient(0deg,  #fff 0%,#660000 100%);
-  background: -ms-linear-gradient(0deg,  #fff 0%,#660000 100%);
-  background: linear-gradient(0deg,  #fff 0%,#660000 100%);
-  background-attachment: scroll;
-  height: 20vh;
-}
-.bg-whitetoyellow {
-  background: #e9d66b;
-  background: -moz-linear-gradient(0deg,  #e9d66b 0%, fff 100%);
-  background: -webkit-gradient(linear, top, bottom, color-stop(0%,#e9d66b), color-stop(100%,#fff));
-  background: -webkit-linear-gradient(0deg,  #e9d66b 0%,#fff 100%);
-  background: -o-linear-gradient(0deg,  #e9d66b 0%,#fff 100%);
-  background: -ms-linear-gradient(0deg,  #e9d66b 0%,#fff 100%);
-  background: linear-gradient(0deg,  #e9d66b 0%,#fff 100%);
-  background-attachment: scroll;
-  height: 20vh;
-}
 .bg-red {
   background: #660000;
   color: white;
@@ -508,159 +475,152 @@ li a {
   </nav>
 
   <!-- site content -->
-  <div id="sitecontent">
-    <!-- Homepage -->
-    <div id="home" class="relative sc-full-screen bg-black">
-      <div class="pageNum w3-text-yellow" data-scroll-speed="1" style="top: 40%;">1</div>
-      <div id="logo" class="logo w3-text-white">               <h1 class="w3-text-white">YOU FOUND ME!</h1>
-        <p class="w3-large">now let me help them find you.</p>
+  <div id="sitecontent" class="swiper-container1">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <!-- Homepage -->
+      <div id="home" class="relative sc-full-screen bg-black">
+        <div class="pageNum w3-text-yellow" data-scroll-speed="1" style="top: 40%;">1</div>
+        <div id="logo" class="logo w3-text-white">               <h1 class="w3-text-white">YOU FOUND ME!</h1>
+          <p class="w3-large">now let me help them find you.</p>
+        </div>
+        <a href="#page2" class="w3-display-bottommiddle" style="height: 140px; width: 100%;text-decoration:none; z-index: 1;"></a>
+        <!-- enterArrow -->
+        <div id="enterArrow" class="w3-display-bottomleft" style="width: 120px;">
+          <div class="w3-padding-left hp-enter-arrow w3-display-bottomleft w3-xlarge w3-text-white">&#8595;</div>
+          <p class="footer-text w3-text-white w3-medium w3-display-bottomright">scroll down</p>
+        </div>
       </div>
-      <a href="#page2" class="w3-display-bottommiddle" style="height: 140px; width: 100%;text-decoration:none; z-index: 1;"></a>
-      <!-- enterArrow -->
-      <div id="enterArrow" class="w3-display-bottomleft" style="width: 120px;">
-        <div class="w3-padding-left hp-enter-arrow w3-display-bottomleft w3-xlarge w3-text-white">&#8595;</div>
-        <p class="footer-text w3-text-white w3-medium w3-display-bottomright">scroll down</p>
-      </div>
-    </div>
-  
-    <!-- transition from pg 1 to pg 2 -->
-    <div class="sc-full-width bg-blacktored"></div>
 
-    <!-- Page 2 -->
-    <div id="page2" class="relative sc-full-screen bg-red">
-      <div class="pageNum" data-scroll-speed="2" style="top: 70%;">2</div>
-      <!-- page 2 content -->
-      <div id="pg2content" class="w3-padding center-offset w3-display-middle" style="width: 80%; max-width: 500px;">
-        <div class="pageTitle">what we do</div>
-        <div class="pageTitleBorder"></div>  
-        <p>We give ourselves to the service of creating your perfect digital presence. With a passion for designing custom, clean, and functional products we use HTML, CSS, and JavaScript to make your digital interface exactly what your customers need.&nbsp;&nbsp;We do what your templates just can't do.</p>
-      <!-- close page 2 content -->
-      </div>
-    <!-- close page 2 -->
-    </div>
-  
-    <!-- transition from pg 2 to pg 3 -->
-    <div class="sc-full-width bg-redtowhite"></div>
-  
-    <!-- Page 3 -->
-    <div id="page3" class="relative sc-full-screen w3-white"> 
-      <div class="pageNum" data-scroll-speed="3" style="top: 65%;">3</div>
-      <!-- page content -->
-      <div id="pg3content" style="position: absolute; top: 20%; width: 100%; height: 60%;">
-        <div style="position: absolute; left: 20%; top: -30px; z-index: 2;">
-          <div class="pageTitleBorder"></div>
-          <div class="pageTitle" style="z-index:1;">features</div>
+      <!-- Page 2 -->
+      <div id="page2" class="relative sc-full-screen bg-red">
+        <div class="pageNum" data-scroll-speed="2" style="top: 70%;">2</div>
+        <!-- page 2 content -->
+        <div id="pg2content" class="w3-padding center-offset w3-display-middle" style="width: 80%; max-width: 500px;">
+          <div class="pageTitle">what we do</div>
+          <div class="pageTitleBorder"></div>  
+          <p>We give ourselves to the service of creating your perfect digital presence. With a passion for designing custom, clean, and functional products we use HTML, CSS, and JavaScript to make your digital interface exactly what your customers need.&nbsp;&nbsp;We do what your templates just can't do.</p>
+        <!-- close page 2 content -->
         </div>
-        <!-- Slider main container -->
-        <div class="swiper-container">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h2>Sliders</h2></div></div>
-            <div class="swiper-slide w3-center w3-red"><div class="w3-display-middle"><h2>Animations</h2></div></div>
-            <div class="swiper-slide w3-center w3-green"><div class="w3-display-middle"><h2>Single or Multipage Designs</h2></div></div>
-            <div class="swiper-slide w3-center w3-blue"><div class="w3-display-middle"><h2>Intuitive &amp; Responsive Designs</h2></div></div>
-            <div class="swiper-slide w3-center w3-indigo"><div class="w3-display-middle"><h2>SEO</h2></div></div>
-            <div class="swiper-slide w3-center w3-brown"><div class="w3-display-middle"><h2>HTML, CSS, and JavaScript</h2></div></div>
-            <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h2>Touch Friendly</h2></div></div>
+      <!-- close page 2 -->
+      </div>
+  
+      <!-- Page 3 -->
+      <div id="page3" class="relative sc-full-screen w3-white"> 
+        <div class="pageNum" data-scroll-speed="3" style="top: 65%;">3</div>
+        <!-- page content -->
+        <div id="pg3content" style="position: absolute; top: 20%; width: 100%; height: 60%;">
+          <div style="position: absolute; left: 20%; top: -30px; z-index: 2;">
+            <div class="pageTitleBorder"></div>
+            <div class="pageTitle" style="z-index:1;">features</div>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination swiper-pagination-black"></div>
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev swiper-button-black"></div>
-          <div class="swiper-button-next swiper-button-black"></div>
-        <!-- close swiper container -->  
+          <!-- Slider main container -->
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h2>Sliders</h2></div></div>
+              <div class="swiper-slide w3-center w3-red"><div class="w3-display-middle"><h2>Animations</h2></div></div>
+              <div class="swiper-slide w3-center w3-green"><div class="w3-display-middle"><h2>Single or Multipage Designs</h2></div></div>
+              <div class="swiper-slide w3-center w3-blue"><div class="w3-display-middle"><h2>Intuitive &amp; Responsive Designs</h2></div></div>
+              <div class="swiper-slide w3-center w3-indigo"><div class="w3-display-middle"><h2>SEO</h2></div></div>
+              <div class="swiper-slide w3-center w3-brown"><div class="w3-display-middle"><h2>HTML, CSS, and JavaScript</h2></div></div>
+              <div class="swiper-slide w3-center w3-yellow"><div class="w3-display-middle"><h2>Touch Friendly</h2></div></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination swiper-pagination-black"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev swiper-button-black"></div>
+            <div class="swiper-button-next swiper-button-black"></div>
+          <!-- close swiper container -->  
+          </div>
+        <!-- close page content -->
         </div>
-      <!-- close page content -->
+      <!-- close page 3 -->
       </div>
-    <!-- close page 3 -->
-    </div>
   
-    <!-- transition from pg 3 to pg 4 -->
-    <div class="sc-full-width bg-whitetoyellow"></div>
-  
-    <!-- Page 4 (fixed and off to the left) -->
-    <div id="page4" class="relative sc-full-screen theme-backgroundcolor">
-      <div class="pageNum" data-scroll-speed="3" style="top: 115%;">4</div>
-      <!-- page 4 content -->
-      <div id="pg4content" class="w3-display-middle" style="width: 80%; max-width: 600px; height: 50%;">
-        <div class="pageTitle">contact</div>
-        <div class="pageTitleBorder"></div>
-        <br/>
+      <!-- Page 4 -->
+      <div id="page4" class="relative sc-full-screen theme-backgroundcolor">
+        <div class="pageNum" data-scroll-speed="3" style="top: 115%;">4</div>
+        <!-- page 4 content -->
+        <div id="pg4content" class="w3-display-middle" style="width: 80%; max-width: 600px; height: 50%;">
+          <div class="pageTitle">contact</div>
+          <div class="pageTitleBorder"></div>
+          <br/>
         
-        <!-- contact card on medium and large screens -->
-        <div class="w3-card-2 w3-white w3-hide-small relative" style="height: 250px;">
-          <div class="theme-backgroundcolor w3-display-middle" style="-ms-transform: skew(150deg,0deg); /* IE 9 */ -webkit-transform: skew(150deg,0deg); /* Safari and Chrome */ transform: skew(150deg,0deg); /* Standard syntax */ width: 30px; height: 150%; left: 48%; top:-25%;"></div>
-          <!-- logo: first half-width container -->
-          <div class="w3-container w3-half sc-full-height relative"> 
-            <!-- logo on card -->
-            <div class="w3-display-middle">
-              <img src="https://1.bp.blogspot.com/--qISgsKHiwk/WJILXlsSYcI/AAAAAAAALGY/LYhz8mn_adcA31S4c90-1pY2sdUI3zE0gCK4B/s200/a-circleyellow.png" width="90px">
-              <div class="relative" style="width: 100px; height:40px;">
-                <div class="a-circle w3-display-top theme-backgroundcolor"></div>
+          <!-- contact card on medium and large screens -->
+          <div class="w3-card-2 w3-white w3-hide-small relative" style="height: 250px;">
+            <div class="theme-backgroundcolor w3-display-middle" style="-ms-transform: skew(150deg,0deg); /* IE 9 */ -webkit-transform: skew(150deg,0deg); /* Safari and Chrome */ transform: skew(150deg,0deg); /* Standard syntax */ width: 30px; height: 150%; left: 48%; top:-25%;"></div>
+            <!-- logo: first half-width container -->
+            <div class="w3-container w3-half sc-full-height relative"> 
+              <!-- logo on card -->
+              <div class="w3-display-middle">
+                <img src="https://1.bp.blogspot.com/--qISgsKHiwk/WJILXlsSYcI/AAAAAAAALGY/LYhz8mn_adcA31S4c90-1pY2sdUI3zE0gCK4B/s200/a-circleyellow.png" width="90px">
+                <div class="relative" style="width: 100px; height:40px;">
+                  <div class="a-circle w3-display-top theme-backgroundcolor"></div>
+                  <div class="logo-space w3-xlarge w3-text-black" style="position: absolute; left: 4px; top: -13px;">arylide</div>
+                  <p id="studioscard" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: black; padding-left: 4px;">studios</p>
+                </div>
+              <!-- close logo on card -->
+              </div>
+            </div>
+          
+            <!-- info: second half-width container -->
+            <div class="w3-container w3-half sc-full-height relative">
+              <div class="w3-display-middle w3-right-align">
+                <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a><br/>
+                <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
+                <i class="fa fa-facebook" aria-hidden="true">&nbsp;&nbsp;</i>
+                <i class="fa fa-twitter" aria-hidden="true">&nbsp;&nbsp;</i>
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </div>
+            </div>
+          <!-- card close on medium and large screens-->
+          </div>
+        
+          <!-- contact card on small screens -->
+          <div class="w3-padding w3-card-4 w3-white w3-hide-large w3-hide-medium relative" style="height: 200px;">
+            <div class="theme-backgroundcolor w3-display-middle" style="width: 10%; height: 2px; top: 45%"></div>          
+            <!-- logo on card small screens-->
+            <div class="half-height sc-full-width relative">
+              <div class="w3-container w3-display-middle" style="width: 100px; height:40px;">          
+                <div class="a-circle w3-display-topleft theme-backgroundcolor"></div>
                 <div class="logo-space w3-xlarge w3-text-black" style="position: absolute; left: 4px; top: -13px;">arylide</div>
                 <p id="studioscard" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: black; padding-left: 4px;">studios</p>
-               </div>
-            <!-- close logo on card -->
+              </div>
+            <!-- close logo on card small screens -->
             </div>
-          </div>
-          
-          <!-- info: second half-width container -->
-          <div class="w3-container w3-half sc-full-height relative">
-            <div class="w3-display-middle w3-right-align">
-              <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a><br/>
-              <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
-              <i class="fa fa-facebook" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-twitter" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-github" aria-hidden="true"></i>
+            <!-- info on small screens -->
+            <div class="half-height sc-full-width relative">
+              <div class="w3-container w3-display-middle w3-center">
+                <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a><br/>
+                <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
+                <i class="fa fa-facebook" aria-hidden="true">&nbsp;&nbsp;</i>
+                <i class="fa fa-twitter" aria-hidden="true">&nbsp;&nbsp;</i>
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </div>
             </div>
+          <!-- card close on small screens -->
           </div>
-        <!-- card close on medium and large screens-->
-        </div>
         
-        <!-- contact card on small screens -->
-        <div class="w3-padding w3-card-4 w3-white w3-hide-large w3-hide-medium relative" style="height: 200px;">
-          <div class="theme-backgroundcolor w3-display-middle" style="width: 10%; height: 2px; top: 45%"></div>          
-          <!-- logo on card small screens-->
-          <div class="half-height sc-full-width relative">
-            <div class="w3-container w3-display-middle" style="width: 100px; height:40px;">          
-              <div class="a-circle w3-display-topleft theme-backgroundcolor"></div>
-              <div class="logo-space w3-xlarge w3-text-black" style="position: absolute; left: 4px; top: -13px;">arylide</div>
-              <p id="studioscard" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: black; padding-left: 4px;">studios</p>
-            </div>
-          <!-- close logo on card small screens -->
-          </div>
-          <!-- info on small screens -->
-          <div class="half-height sc-full-width relative">
-            <div class="w3-container w3-display-middle w3-center">
-              <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a><br/>
-              <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
-              <i class="fa fa-facebook" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-twitter" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-github" aria-hidden="true"></i>
-            </div>
-          </div>
-        <!-- card close on small screens -->
+        <!-- close page 4 content -->
         </div>
-        
-      <!-- close page 4 content -->
-      </div>
-    <!-- close page 4 -->
+      <!-- close page 4 -->
+      </div> 
+    <!-- close content wrapper-->
     </div>
-    
-  <!-- close content -->
+  <!-- close content swiper -->
   </div>
   
   <!-- Footer (stay at bottom) -->
   <footer id="footer" class="w3-text-white w3-display-bottomright" style="z-index: 3; width: 245px;">
     <p class="w3-medium w3-right-align w3-padding-right w3-animate-top footer-text">
-      made by <a href="http://twitter.com/stucoston">stu</a>.&nbsp;&nbsp;you want one too?
+    made by <a href="http://twitter.com/stucoston">stu</a>.&nbsp;&nbsp;you want one too?
     </p>
   </footer>
-  
-<!-- close site (keep because of the loader page) -->
+<!-- clsoe site (keep because of the loader page) -->
 </div>
- 
+
   <script>
 var myVar;
 function myFunction() {
@@ -803,6 +763,22 @@ $(function(){
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
   <script>        
+  var mySwiper = new Swiper ('.swiper-container1', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+    
+    // If we need pagination
+    pagination: '.swiper-pagination',
+    
+    // Navigation arrows
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    
+    // And if we need scrollbar
+    scrollbar: '.swiper-scrollbar',
+  })        
+       
   var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
