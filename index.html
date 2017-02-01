@@ -7,11 +7,9 @@
 
 <link rel="icon" type="image/png" href="https://1.bp.blogspot.com/--qISgsKHiwk/WJILXlsSYcI/AAAAAAAALGY/LYhz8mn_adcA31S4c90-1pY2sdUI3zE0gCK4B/s200/a-circleyellow.png">
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/w3/w3.css">
-<link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/arylide.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif|Libre+Franklin">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <style>
 img {
@@ -524,7 +522,7 @@ li a {
 <div class="sc-full-screen w3-black" id="pulseloader">
   <img src="https://rawgit.com/stucoston/arylide/master/features/loaders/pulse.svg" width="50" class="w3-display-middle" alt="">
   <div class="w3-display-middle theme-textcolor w3-center" style="top: 60%; opacity:0.6; width:220px;">
-    <br/>made by stu. you want one too?
+    <br/>made by stu.
   </div>
 </div>
   
@@ -644,21 +642,25 @@ li a {
           <!-- logo: first half-width container -->
           <div class="w3-container w3-half sc-full-height relative"> 
             <!-- logo on card -->
-            <div class="w3-display-middle" style="width: 100px; height:40px;">
-              <div class="a-circle w3-display-top theme-backgroundcolor"></div>
-              <div class="logo-space w3-xlarge w3-text-black" style="position: absolute; left: 4px; top: -13px;">arylide</div>
-              <p id="studioscard" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: black; padding-left: 4px;">studios</p>
+            <div class="w3-display-middle">
+              <img src="https://1.bp.blogspot.com/--qISgsKHiwk/WJILXlsSYcI/AAAAAAAALGY/LYhz8mn_adcA31S4c90-1pY2sdUI3zE0gCK4B/s200/a-circleyellow.png" width="90px">
+              <div class="relative" style="width: 100px; height:40px;">
+                <div class="a-circle w3-display-top theme-backgroundcolor"></div>
+                <div class="logo-space w3-xlarge w3-text-black" style="position: absolute; left: 4px; top: -13px;">arylide</div>
+                <p id="studioscard" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: black; padding-left: 4px;">studios</p>
+               </div>
             <!-- close logo on card -->
             </div>
           </div>
+          
           <!-- info: second half-width container -->
           <div class="w3-container w3-half sc-full-height relative">
             <div class="w3-display-middle w3-right-align">
               <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a><br/>
-              <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
-              <i class="fa fa-facebook" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-twitter" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-github" aria-hidden="true"></i>
+              <i class="fa fa-mobile w3-text-black" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
+              <i class="fa fa-facebook w3-text-black" aria-hidden="true">&nbsp;&nbsp;</i>
+              <i class="fa fa-twitter w3-text-black" aria-hidden="true">&nbsp;&nbsp;</i>
+              <i class="fa fa-github w3-text-black" aria-hidden="true"></i>
             </div>
           </div>
         <!-- card close on medium and large screens-->
@@ -710,7 +712,7 @@ li a {
   <script>
 var myVar;
 function myFunction() {
-    myVar = setTimeout(showPage, 3000);
+    myVar = setTimeout(showPage, 2000);
 }
 function showPage() {
   document.getElementById("pulseloader").style.display = "none";
