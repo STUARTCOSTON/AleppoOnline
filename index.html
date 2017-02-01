@@ -72,14 +72,6 @@ li a {
   background-color: #e9d66b;!important
   color: #fff;
 }
-/* move header up and down with scroll */
-.headerouter-up {
-  top:-105px;
-  transition: .5s;
-}
-.headerouter-down {
-  transition: 0.5s;
-}
 /* Swiper */
 .swiper-container {
     position: absolute;
@@ -87,54 +79,13 @@ li a {
     width: 100%;
     height: 100%;
   }  
-  
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bg {
   background-attachment: fixed;
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* First image */
-.bgimg-1 {
-  background-image: url("https://1.bp.blogspot.com/-U8oijuExdsM/WINlmHuvyDI/AAAAAAAAKtI/_HMWFEe_Cw8EonvjwaPI0BER76AgRXrSgCKgB/s1600/IMG_5855.JPG");
-  height: 100%;
-}
-/* Second image */
-.bgimg-2 {
-  background-image: url("https://4.bp.blogspot.com/-5Z8g68wkdz4/WH2yfEd0LOI/AAAAAAAAKkA/MnKADyzLKZIzQxm0BLZZCQP2t9xDrqpyQCK4B/s1600/FullSizeRender%2B4.jpg");
-  min-height: 300px;
-}
-/* Third image */
-.bgimg-3 {
-  background-image: url("https://4.bp.blogspot.com/-s7iBlsxbjDs/WH2yE3edAWI/AAAAAAAAKjU/VvtSvXJXDrk-GrAQwoLxRXUv7CJrrHPBwCK4B/s1600/IMG_5830.JPG");
-  min-height: 300px;
-}
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-/* Maintain parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        -moz-background-size: auto;
-        -webkit-background-size: auto;
-	    background-attachment: scroll;
-	    background-position: center bottom;
-        background-size: auto;
-    }
-}
-/* roadmap background css */
-.rt-triangle {
-  position: absolute;
-  width: 0; 
-  height: 0;
-  right: 0;
-}
-.lt-triangle {
-  position: absolute;
-  width: 0; 
-  height: 0;
-  left: 0;
-}
+
 /* Homepage CSS */
 .logo {
   position: fixed;
@@ -230,7 +181,7 @@ li a {
           transition-delay: 0.4s;
 }
 .menu-container.is-menu-open .bars span {
-  background-color: black;
+  background-color: black!important;
 }
 .menu-container.is-menu-open .bars span:first-child {
   -webkit-transform: scaleX(0);
@@ -282,8 +233,9 @@ li a {
   }
   
   #menu a:hover {
-    color: #555;
-    transition: 0.5s;
+    color: #e9d66b;
+    transition: 0.4s;
+    transition-timing-function: ease-in-out;
    }
             
 /* end Open and close menu animation */
@@ -657,10 +609,10 @@ li a {
           <div class="w3-container w3-half sc-full-height relative">
             <div class="w3-display-middle w3-right-align">
               <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a><br/>
-              <i class="fa fa-mobile w3-text-black" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
-              <i class="fa fa-facebook w3-text-black" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-twitter w3-text-black" aria-hidden="true">&nbsp;&nbsp;</i>
-              <i class="fa fa-github w3-text-black" aria-hidden="true"></i>
+              <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;931.588.0398<br/>
+              <i class="fa fa-facebook" aria-hidden="true">&nbsp;&nbsp;</i>
+              <i class="fa fa-twitter" aria-hidden="true">&nbsp;&nbsp;</i>
+              <i class="fa fa-github" aria-hidden="true"></i>
             </div>
           </div>
         <!-- card close on medium and large screens-->
