@@ -2,7 +2,7 @@
 <html>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/w3/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 <style>
@@ -358,7 +358,34 @@ li a {
 
 <body>
 
-<!-- image slids -->
+<!-- Navbar (sit on top) -->
+<nav class="w3-top sc-full-width" style="height: 60px; z-index:10;"id="myNavbar">
+  <!-- navbar logo -->
+  <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">
+    <div id="a-circle" class="a-circle w3-display-top theme-backgroundcolor"></div>
+    <div class="arylide logo-space w3-display-topleft w3-xlarge"><a href="#home"><div id="a" style="color: black">a</div><div id="rylide" style="position: fixed; left:36px; top: 23px;">rylide</div></a></div>
+    <p id="studios" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: #fff; padding-left: 4px;">studios</p>
+  <!-- close navbar logo -->
+  </div>
+  <!-- menubars -->
+  <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
+    <div id="menubars" class="bars"><span></span><span></span><span></span>
+      <div class="other-bar"></div>
+    </div>
+  </div>
+  <div id="menu" class="sc-full-screen nav-closed w3-align-left" onclick="openNav()">
+    <div class="w3-display-middle" style="width: 400px; height: 400px;">
+      <ul class="sc-ul sc-rotate90counterclock">
+        <li><h1><a href="#home" onclick="openNav()">home</a></h1></li>
+        <li><h1><a href="#page2" onclick="openNav()">what we do</a></h1></li>
+        <li><h1><a href="#page3" onclick="openNav()">features</a></h1></li>
+        <li><h1><a href="#page4" onclick="openNav()">contact</a></h1></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- image slides -->
 <div id="hp" class="mySlides" style="height:100%; width:100%; background-color: blue;">
 </div>
 <div id="slide1" class="mySlides bgimg-1">
@@ -491,6 +518,22 @@ function showContent(n) {
   c[contentIndex-1].style.display = "block";
 }
 </script>
+
+ <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script>
+  function openNav() {
+    var x = document.getElementById('menu-container');
+    var y = document.getElementById('menu');
+  
+    if (x.className.indexOf('is-menu-open') == -1) {
+      x.className += ' is-menu-open';
+      y.className = y.className.replace(' nav-closed', ' nav-open');
+    } else { 
+      x.className = x.className.replace(' is-menu-open', '');
+      y.className = y.className.replace(' nav-open', ' nav-closed');
+    }
+  }
+  </script>  
 
 </body>
 </html>
