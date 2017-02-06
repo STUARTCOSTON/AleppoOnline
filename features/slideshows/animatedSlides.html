@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+<style>
+/* sitewide css */
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {font-family: "Libre Franklin", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif;}
+h1 {
+  font-size: 62px;
+  font-weight: 900;
+  color: #171717;
+}
+li a {
+  text-decoration: none;
+}
+.center-offset {
+  -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);
+}
+.pageNum {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 500px;
+  font-weight: 900;
+  position: fixed;
+  top: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.mySlides .pageNum {
+  left: 50%;
+  -webkit-animation: transinpn 0.5s ease forwards;
+  -webkit-animation-delay: 1.74s;
+  opacity: 0;
+  animation: transinpn 0.5s ease forwards;
+  animation-delay: 1.74s;
+}
+#slide1 .pageNum {
+  color: white;
+}
+#slide2 .pageNum {
+  color: black;
+}
+#slide3 .pageNum {
+  color: black;
+}
+#slide4 .pageNum {
+  color: white;
+}
+.pageNums {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 500px;
+  font-weight: 900;
+  position: fixed;
+  top: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  position:absolute;
+  left:100%;
+  color: transparent;
+  -webkit-animation: transinpn 0.5s ease forwards;
+  -webkit-animation-delay: 1s;
+  opacity:0;
+  animation: transinpn 0.5s ease forwards;
+  animation-delay: 1s;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-stroke-width: 1px;
+  text-stroke-color: black;
+}
+.pageTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  position: fixed;
+  bottom: 25%;
+  z-index: 3;
+  color: white;
+  left: -100%;
+  animation: transinpt 0.5s ease forwards;
+  animation-delay: 1.2s;
+}
+.pageTitleBorder {
+  width: 40px;
+  border-bottom: 1px solid black;
+  bottom: 15%;
+  -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);
+}
+.pageContent {
+  bottom: 10%;
+  -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);
+}
+/* end sitewide css */
+
+/* Nav and Menu css */
+.menu-container {
+  right: 15px;
+  top: 15px;
+  z-index: 10;
+  cursor: pointer;
+}
+.menu-container:hover .menu-container .bars span, .menu-container:hover .menu-container.is-menu-open .bars span {
+  background-color: #e9d66b;
+}
+.menu-container .bars {
+  width: 30px;
+  height: 18px;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.menu-container .bars span {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  margin-top: 5px;
+}
+.menu-container .bars span:first-child {
+  margin-top: 0;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+.menu-container .bars span:nth-child(3) {
+  width: 65%;
+  -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+.menu-container .bars .other-bar {
+  width: 5px;
+  height: 0px;
+  position: absolute;
+  background-color: black;
+  top: -2px;
+  left: 50%;
+  margin-left: -3px;
+  -webkit-transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  z-index: 10;
+}
+.menu-container.is-menu-open .bars {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+.menu-container.is-menu-open .bars span {
+  background-color: black!important;
+}
+.menu-container.is-menu-open .bars span:first-child {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.menu-container.is-menu-open .bars span:nth-child(3) {
+  width: 0;
+  -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.menu-container.is-menu-open .bars .other-bar {
+  height: 30px;
+  -webkit-transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  background-color: black;
+}
+  .nav-closed {
+    display: block;
+    top: 0;
+    left: 100%;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    color: #171717;
+    opacity: 1;
+    transition: 1s;
+    line-height: 1;
+  }
+  
+  .nav-open {
+    display: block;
+    top: 0;
+    left: 0%;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    color: #171717;
+    opacity: 1;
+    transition: 1s;
+    line-height: 1;
+  }
+  
+  #menu a:hover {
+    color: #e9d66b;
+    transition: 0.4s;
+    transition-timing-function: ease;
+  }  
+  
+.a-circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.arylide, .arylide a {
+  color: #fff;
+  position: fixed;
+  top: 23px;
+  left:19px;
+  line-height:3px;
+  text-decoration: none;
+}
+.logo-space {
+  letter-spacing: 2px;
+}
+/* end nav and menu css */
+
+/* footer css */
+.footer-text {
+  line-height: 25px;
+  vertical-align: middle;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* end footer css */
+
+/* slide bg image css */
+.myslides {
+  height:100vh;
+  width: 100vw;
+}
+.bgimg-hp, .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+.bgimg-1 {
+  background-image: url("img_fjords.jpg");
+}
+.bgimg-2 {
+  background-image: url("img_lights.jpg");
+}
+.bgimg-3 {
+  background-image: url("img_mountains.jpg");
+}
+.bgimg-4 {
+  background-image: url("img_forest.jpg");
+}
+/* end slide bg img css */
+
+/* themeDiv css */
+.themeDiv {
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
+.themeDiv-1 {
+  background: teal;
+}
+.themeDiv-2 {
+  background: green;
+}
+.themeDiv-3 {
+  background: lightblue;
+}
+.themeDiv-4 {
+  background: lightgreen;
+}
+.halfPage {
+  background: transparent;
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  width: 50vw;
+  top: 0;
+  left:0;
+}
+/* end themeDiv css */
+
+
+@-webkit-keyframes transinpn {
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+@-webkit-keyframes transoutpn {
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}
+@-webkit-keyframes transinpt {
+    0%   {left: -100%;}
+    100% {left: 5%;}
+}
+@-webkit-keyframes transoutpt {
+    0%   {left: 5%;}
+    100% {left: -100%;}
+}
+</style>
+
+<body>
+
+<div class="w3-content w3-display-container">
+  <div id="hp" class="mySlides" style="height:100vh; width:100vw; background-color: blue;">
+    <div class="pageTitle">Homepage</div>
+  </div>
+  <div id="slide1" class="mySlides bgimg-1">
+    <div class="pageNum">1</div>
+    <div class="pageTitle">Page 1 Title</div>
+  </div>
+  <div id="slide2" class="mySlides bgimg-2">
+    <div class="pageNum">2</div>
+    <div class="pageTitle">Page 2 Title</div>
+  </div>
+  <div id="slide3" class="mySlides bgimg-3">
+    <div class="pageNum">3</div>
+    <div class="pageTitle">Page 3 Title</div>
+  </div>
+  <div id="slide4" class="mySlides bgimg-4">
+    <div class="pageNum">4</div>
+    <div class="pageTitle">Page 4 Title</div>
+  </div>
+    
+  <div class="themeDiv" style="background-color: transparent;"></div>
+  <div class="themeDiv themeDiv-1"></div>
+  <div class="themeDiv themeDiv-2"></div>
+  <div class="themeDiv themeDiv-3"></div>
+  <div class="themeDiv themeDiv-4"></div>
+  
+  <div class="halfPage">
+    <div class="pageNums"> </div>
+    <div class="pageNums">1</div>
+    <div class="pageNums">2</div>
+    <div class="pageNums">3</div>
+    <div class="pageNums">4</div>
+  </div>
+
+  <a class="w3-display-bottommiddle" onclick="plusDivs(-1)">&#10094;</a>
+  <a class="w3-display-bottomright" onclick="plusDivs(1)">&#10095;</a>
+</div>
+
+<script>
+var numsIndex = 1;
+var themeIndex = 1;
+var slideIndex = 1;
+showDivs(slideIndex);
+showTheme(themeIndex);
+showPageNums(numsIndex);
+
+
+function plusDivs(n) {
+  transTheme(themeIndex);
+  setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
+  setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
+  setTimeout(function(){ showDivs(slideIndex += n); }, 230);
+}
+
+function showDivs(n) {
+  var id;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (id = 0; id < x.length; id++) {
+     x[id].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+function showTheme(n) {
+  var it;
+  var td = document.getElementsByClassName("themeDiv");
+  if (n > td.length) {themeIndex = 1}    
+  if (n < 1) {themeIndex = td.length}
+  for (it = 0; it < td.length; it++) {
+     td[it].style.display = "none";
+  }
+  td[themeIndex-1].style.transition = "0.5s";
+  td[themeIndex-1].style.display = "block";
+  td[themeIndex-1].style.left = "-100%";
+  setTimeout(function(){ td[themeIndex-1].style.left = "-50%"; }, 50);
+}
+
+function showPageNums(n) {
+  var inum;
+  var pn = document.getElementsByClassName("pageNums");
+  if (n > pn.length) {numsIndex = 1}    
+  if (n < 1) {numsIndex = pn.length}
+  for (inum = 0; inum < pn.length; inum++) {
+     pn[inum].style.display = "none";
+  }
+  pn[numsIndex-1].style.display = "block";
+}
+
+function transTheme(n) {
+  var pn = document.getElementsByClassName("pageNums");
+  var td = document.getElementsByClassName("themeDiv");
+  pn[themeIndex-1].style.display = "none";
+  td[themeIndex-1].style.transition = "1s";
+  td[themeIndex-1].style.left = "100%";
+}
+
+</script>
+
+</body>
+</html>
