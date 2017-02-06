@@ -8,13 +8,14 @@
 <style>
 /* sitewide css */
 img {
-  max-width: 100vw;
+  max-width: 100%;
   height: auto;
 }
-body {font-family: "Libre Franklin", sans-serif;}
+body {font-family: "arial";}
 body, html {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  color: #777;
   line-height: 1.8;
 }
 h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif;}
@@ -89,7 +90,7 @@ li a {
   font-weight: 700;
   position: fixed;
   bottom: 25%;
-  z-index: 3;
+  z-index: 1000000;
   color: white;
   left: -100%;
   animation: transinpt 0.5s ease forwards;
@@ -262,17 +263,20 @@ li a {
 /* end footer css */
 
 /* slide bg image css */
-.myslides {
-  height:100vh;
-  width: 100vw;
+.mySlides {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height:100%;
+  width: 100%;
 }
 .bgimg-hp, .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   z-index: -1;
 }
 .bgimg-1 {
@@ -345,76 +349,99 @@ li a {
     0%   {opacity:0;}
     100% {opacity:1;}
 }
-@-webkit-keyframes transoutpn {
-    0%   {opacity:1;}
-    100% {opacity:0;}
-}
 @-webkit-keyframes transinpt {
     0%   {left: -100%;}
     100% {left: 5%;}
-}
-@-webkit-keyframes transoutpt {
-    0%   {left: 5%;}
-    100% {left: -100%;}
 }
 /* end animations */
 </style>
 
 <body>
 
-<div class="w3-content w3-display-container">
-  <div id="hp" class="mySlides" style="height:100vh; width:100vw; background-color: blue;">
-    <div class="pageTitle">Homepage</div>
-  </div>
-  <div id="slide1" class="mySlides bgimg-1">
-    <div class="pageNum">1</div>
-    <div class="pageTitle">Page 1 Title</div>
-  </div>
-  <div id="slide2" class="mySlides bgimg-2">
-    <div class="pageNum">2</div>
-    <div class="pageTitle">Page 2 Title</div>
-  </div>
-  <div id="slide3" class="mySlides bgimg-3">
-    <div class="pageNum">3</div>
-    <div class="pageTitle">Page 3 Title</div>
-  </div>
-  <div id="slide4" class="mySlides bgimg-4">
-    <div class="pageNum">4</div>
-    <div class="pageTitle">Page 4 Title</div>
-  </div>
-    
-  <div class="themeDiv" style="background-color: transparent;"></div>
-  <div class="themeDiv themeDiv-1"></div>
-  <div class="themeDiv themeDiv-2"></div>
-  <div class="themeDiv themeDiv-3"></div>
-  <div class="themeDiv themeDiv-4"></div>
-  
-  <div class="halfPage">
-    <div class="pageNums"> </div>
-    <div class="pageNums">1</div>
-    <div class="pageNums">2</div>
-    <div class="pageNums">3</div>
-    <div class="pageNums">4</div>
-  </div>
-
-  <a class="pageup" onclick="plusDivs(-1)">&#8593;</a>
-  <a class="pagedown" onclick="plusDivs(1)">&#8595;</a>
+<!-- image slids -->
+<div id="hp" class="mySlides" style="height:100%; width:100%; background-color: blue;">
+</div>
+<div id="slide1" class="mySlides bgimg-1">
+  <div class="pageNum">1</div>
+</div>
+<div id="slide2" class="mySlides bgimg-2">
+  <div class="pageNum">2</div>
+</div>
+<div id="slide3" class="mySlides bgimg-3">
+  <div class="pageNum">3</div>
+</div>
+<div id="slide4" class="mySlides bgimg-4">
+  <div class="pageNum">4</div>
 </div>
 
+<!-- themeDiv slides -->
+<div class="themeDiv" style="background-color: transparent;"></div>
+<div class="themeDiv themeDiv-1"></div>
+<div class="themeDiv themeDiv-2"></div>
+<div class="themeDiv themeDiv-3"></div>
+<div class="themeDiv themeDiv-4"></div>
+
+<!-- pageNum slides -->
+<div class="halfPage">
+  <div class="pageNums"> </div>
+  <div class="pageNums">1</div>
+  <div class="pageNums">2</div>
+  <div class="pageNums">3</div>
+  <div class="pageNums">4</div>
+</div>
+
+<!-- pageTitle and pageContent slides -->
+<div class="content">
+  <div class="pageTitle">Homepage</div>
+  <div class="pageContent">homepage content</div>
+</div>
+<div class="content">
+  <div class="pageTitle">Page 1</div>
+  <div class="pageContent">page 1 content</div>
+</div>
+<div class="content">
+  <div class="pageTitle">Page 2</div>
+  <div class="pageContent">page 2 content</div>
+</div>
+<div class="content">
+  <div class="pageTitle">Page 3</div>
+  <div class="pageContent">page 3 content</div>
+</div>
+<div class="content">
+  <div class="pageTitle">Page 4</div>
+  <div class="pageContent">page 4 content</div>
+</div>
+<!-- page navigation -->
+<a class="pageup" onclick="plusDivs(-1)">&#8593;</a>
+<a class="pagedown" onclick="plusDivs(1)">&#8595;</a>
+
 <script>
+var contentIndex = 1;
 var numsIndex = 1;
 var themeIndex = 1;
 var slideIndex = 1;
 showDivs(slideIndex);
 showTheme(themeIndex);
 showPageNums(numsIndex);
+showContent(contentIndex);
 
 
 function plusDivs(n) {
   transTheme(themeIndex);
-  setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
-  setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
   setTimeout(function(){ showDivs(slideIndex += n); }, 230);
+  setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
+  setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
+  setTimeout(function(){ showContent(contentIndex += n); }, 1200);
+}
+
+function transTheme(n) {
+  var pn = document.getElementsByClassName("pageNums");
+  var td = document.getElementsByClassName("themeDiv");
+  var c = document.getElementsByClassName("content");
+  pn[themeIndex-1].style.display = "none";
+  td[themeIndex-1].style.transition = "1s";
+  td[themeIndex-1].style.left = "100%";
+  c[themeIndex-1].style.display = "none";
 }
 
 function showDivs(n) {
@@ -453,14 +480,16 @@ function showPageNums(n) {
   pn[numsIndex-1].style.display = "block";
 }
 
-function transTheme(n) {
-  var pn = document.getElementsByClassName("pageNums");
-  var td = document.getElementsByClassName("themeDiv");
-  pn[themeIndex-1].style.display = "none";
-  td[themeIndex-1].style.transition = "1s";
-  td[themeIndex-1].style.left = "100%";
+function showContent(n) {
+  var ic;
+  var c = document.getElementsByClassName("content");
+  if (n > c.length) {contentIndex = 1}    
+  if (n < 1) {contentIndex = c.length}
+  for (ic = 0; ic < c.length; ic++) {
+     c[ic].style.display = "none";
+  }
+  c[contentIndex-1].style.display = "block";
 }
-
 </script>
 
 </body>
