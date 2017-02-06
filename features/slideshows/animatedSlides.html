@@ -276,16 +276,16 @@ li a {
   z-index: -1;
 }
 .bgimg-1 {
-  background-image: url("img_fjords.jpg");
+  background-image: url("https://4.bp.blogspot.com/-4PNYULr8wq8/WH2ycy51LbI/AAAAAAAAKj4/pVHlkaGa6YwRmpc2WuHIflbx5py0tC0lgCK4B/s1600/IMG_5832.JPG");
 }
 .bgimg-2 {
-  background-image: url("img_lights.jpg");
+  background-image: url("https://4.bp.blogspot.com/-5Z8g68wkdz4/WH2yfEd0LOI/AAAAAAAAKkA/MnKADyzLKZIzQxm0BLZZCQP2t9xDrqpyQCK4B/s1600/FullSizeRender%2B4.jpg");
 }
 .bgimg-3 {
-  background-image: url("img_mountains.jpg");
+  background-image: url("https://4.bp.blogspot.com/-s7iBlsxbjDs/WH2yE3edAWI/AAAAAAAAKjU/VvtSvXJXDrk-GrAQwoLxRXUv7CJrrHPBwCK4B/s1600/IMG_5830.JPG");
 }
 .bgimg-4 {
-  background-image: url("img_forest.jpg");
+  background-image: url("https://1.bp.blogspot.com/-U8oijuExdsM/WINlmHuvyDI/AAAAAAAAKtI/_HMWFEe_Cw8EonvjwaPI0BER76AgRXrSgCKgB/s1600/IMG_5855.JPG");
 }
 /* end slide bg img css */
 
@@ -320,7 +320,27 @@ li a {
 }
 /* end themeDiv css */
 
+/* page up and down */
+.pageup {
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+  right: 50px;
+}
+.pagedown {
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+  right: 20px;
+}
 
+/* animations */
 @-webkit-keyframes transinpn {
     0%   {opacity:0;}
     100% {opacity:1;}
@@ -337,6 +357,7 @@ li a {
     0%   {left: 5%;}
     100% {left: -100%;}
 }
+/* end animations */
 </style>
 
 <body>
@@ -376,8 +397,8 @@ li a {
     <div class="pageNums">4</div>
   </div>
 
-  <a class="w3-display-bottommiddle" onclick="plusDivs(-1)">&#10094;</a>
-  <a class="w3-display-bottomright" onclick="plusDivs(1)">&#10095;</a>
+  <a class="pageup" onclick="plusDivs(-1)">&#8593;</a>
+  <a class="pagedown" onclick="plusDivs(1)">&#8595;</a>
 </div>
 
 <script>
@@ -444,3 +465,4 @@ function transTheme(n) {
 
 </body>
 </html>
+
