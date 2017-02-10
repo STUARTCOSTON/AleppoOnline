@@ -24,6 +24,17 @@ h1 {
   font-weight: 900;
   color: #171717;
 }
+svg {
+  font-family: "montserrat", sans-serif;
+  height: 100%;
+  width: 70%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%,-50%); 
+  -webkit-transform: translate(-50%,-50%); 
+  transform: translate(-50%,-50%);
+}
 li a {
   text-decoration: none;
 }
@@ -52,16 +63,9 @@ li a {
   animation-delay: 1.3s;
 }
 .pageNums {
-  font-family: 'montserrat', sans-serif;
-  font-size: 500px;
-  font-weight: 600;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  left:100%;
-  color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
   -webkit-animation: transinpn 0.5s ease forwards;
   -webkit-animation-delay: 0.6s;
   opacity:0;
@@ -358,7 +362,7 @@ li a {
     <div class="arylide logo-space w3-display-topleft w3-xlarge"><a href="#home"><div id="a" style="color: black">a</div><div id="rylide" style="position: fixed; left:36px; top: 23px;">rylide</div></a></div>
     <p id="studios" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: #fff; padding-left: 4px;">studios</p>-->
     
-    <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700;"><!--<img src="https://1.bp.blogspot.com/-fDrqWbSVTCw/WJv66h8tn8I/AAAAAAAALX8/6nFnxo3KGNQMxJz6oE122IO7IftYNPXOACLcB/s1600/angle-fish-logo-design%2Bcopy.png" style=" width: 40px;">-->SALTWATER</div>
+    <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700;"><!--<img src="https://1.bp.blogspot.com/-fDrqWbSVTCw/WJv66h8tn8I/AAAAAAAALX8/6nFnxo3KGNQMxJz6oE122IO7IftYNPXOACLcB/s1600/angle-fish-logo-design%2Bcopy.png" style=" width: 40px;">-->SALTWATER.</div>
   <!-- close navbar logo -->
   </div>
   <!-- menubars -->
@@ -380,20 +384,11 @@ li a {
 </nav>
 
 <!-- image slides -->
-<div id="hp" class="mySlides" style="background-color: blue;">
-</div>
-<div id="slide1" class="mySlides bgimg-1">
-  <div class="pageNum">1</div>
-</div>
-<div id="slide2" class="mySlides bgimg-2">
-  <div class="pageNum">2</div>
-</div>
-<div id="slide3" class="mySlides bgimg-3">
-  <div class="pageNum">3</div>
-</div>
-<div id="slide4" class="mySlides bgimg-4">
-  <div class="pageNum">4</div>
-</div>
+<div id="hp" class="mySlides" style="background-color: blue;"></div>
+<div id="slide1" class="mySlides bgimg-1"></div>
+<div id="slide2" class="mySlides bgimg-2"></div>
+<div id="slide3" class="mySlides bgimg-3"></div>
+<div id="slide4" class="mySlides bgimg-4"></div>
 
 <!-- themeDiv slides -->
 <div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
@@ -403,12 +398,75 @@ li a {
 <div class="themeDiv themeDiv-4"></div>
 
 <!-- pageNum slides -->
-<div class="halfPage">
-  <div class="pageNums"> </div>
-  <div class="pageNums">1</div>
-  <div class="pageNums">2</div>
-  <div class="pageNums">3</div>
-  <div class="pageNums">4</div>
+<div class="pageNums">
+  <svg style="border: 1px solid blue;">
+    <mask x="0" y="0" id="half">
+      <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+    </mask>
+    <defs>
+      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
+        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      </pattern>
+    </defs>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)"></text>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" mask="url(#half)" fill="#fff"></text>
+  </svg>
+</div>
+<div class="pageNums">
+  <svg style="border: 1px solid blue;">
+    <mask x="0" y="0" id="half">
+      <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+    </mask>
+    <defs>
+      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
+        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      </pattern>
+    </defs>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">1</text>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" mask="url(#half)" fill="#fff">1</text>
+  </svg>
+</div>
+<div class="pageNums">
+  <svg style="border: 1px solid blue;">
+    <mask x="0" y="0" id="half">
+      <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+    </mask>
+    <defs>
+      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
+        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      </pattern>
+    </defs>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">2</text>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" mask="url(#half)" fill="#fff">2</text>
+  </svg>
+</div>
+<div class="pageNums">
+  <svg style="border: 1px solid blue;">
+    <mask x="0" y="0" id="half">
+      <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+    </mask>
+    <defs>
+      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
+        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      </pattern>
+    </defs>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">3</text>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" mask="url(#half)" fill="#fff">3</text>
+  </svg>
+</div>
+<div class="pageNums">
+  <svg style="border: 1px solid blue;">
+    <mask x="0" y="0" id="half">
+      <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+    </mask>
+    <defs>
+      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
+        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      </pattern>
+    </defs>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">4</text>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" mask="url(#half)" fill="#fff">4</text>
+  </svg>
 </div>
 
 <!-- pageTitle and pageContent slides -->
