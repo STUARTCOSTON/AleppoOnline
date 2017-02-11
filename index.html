@@ -43,25 +43,6 @@ li a {
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
 }
-.pageNum {
-  font-family: 'montserrat', sans-serif;
-  font-size: 500px;
-  font-weight: 600;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-.mySlides .pageNum {
-  left: 50%;
-  -webkit-animation: transinpn 0.5s ease forwards;
-  -webkit-animation-delay: 1.74s;
-  opacity: 0;
-  color: white;
-  animation: transinpn 0.5s ease forwards;
-  animation-delay: 1.3s;
-}
 .pageNums {
   width: 100%;
   height: 100%;
@@ -307,15 +288,6 @@ li a {
 .themeDiv-4 {
   background: lightgreen;
 }
-.halfPage {
-  background: transparent;
-  overflow: hidden;
-  position: fixed;
-  height: 100vh;
-  width: 50vw;
-  top: 0;
-  left:0;
-}
 /* end themeDiv css */
 /* page up and down */
 .pageup {
@@ -324,8 +296,8 @@ li a {
   font-size: 30px;
   position: fixed;
   z-index: 1;
-  bottom: 0px;
-  right: 50px;
+  bottom: 10px;
+  right: 80px;
 }
 .pagedown {
   cursor: pointer;
@@ -333,9 +305,33 @@ li a {
   font-size: 30px;
   position: fixed;
   z-index: 1;
-  bottom: 0px;
-  right: 20px;
+  bottom: 10px;
+  right: 30px;
 }
+.pagination{
+  position: fixed;
+  right: -25px;
+  top: 50%;
+  width: 50px;
+  -ms-transform: translate(-50%,-50%); 
+  -webkit-transform: translate(-50%,-50%); 
+  transform: translate(-50%,-50%);
+}  
+.activePage,.inactivePage:hover {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid white;
+}
+.inactivePage {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #555;
+  opacity: 0.9;
+  cursor:pointer;
+}
+  
 /* animations */
 @-webkit-keyframes transinpn {
     0%   {opacity:0;}
@@ -357,12 +353,8 @@ li a {
 <!-- Navbar (sit on top) -->
 <nav class="w3-top sc-full-width" style="height: 60px; z-index:10; "id="myNavbar">
   <!-- navbar logo -->
-  <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">
-    <!--<div id="a-circle" class="a-circle w3-display-top theme-backgroundcolor"></div>
-    <div class="arylide logo-space w3-display-topleft w3-xlarge"><a href="#home"><div id="a" style="color: black">a</div><div id="rylide" style="position: fixed; left:36px; top: 23px;">rylide</div></a></div>
-    <p id="studios" class="w3-center w3-display-topleft" style="letter-spacing: 6px; color: #fff; padding-left: 4px;">studios</p>-->
-    
-    <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700;"><!--<img src="https://1.bp.blogspot.com/-fDrqWbSVTCw/WJv66h8tn8I/AAAAAAAALX8/6nFnxo3KGNQMxJz6oE122IO7IftYNPXOACLcB/s1600/angle-fish-logo-design%2Bcopy.png" style=" width: 40px;">-->SALTWATER.</div>
+  <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">    
+    <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700; cursor: pointer;" onclick="homePage()">SALTWATER.</div>
   <!-- close navbar logo -->
   </div>
   <!-- menubars -->
@@ -384,7 +376,28 @@ li a {
 </nav>
 
 <!-- image slides -->
-<div id="hp" class="mySlides" style="background-color: blue;"></div>
+<div id="hp" class="mySlides" style="background-color: blue;">
+
+<svg class="loading" version="1.1"  x="0px" y="0px"
+	 width="574.558px" height="120px" viewBox="0 0 574.558 120" enable-background="new 0 0 574.558 120" xml:space="preserve">
+  <defs>
+    <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+      <path fill="#4aaaa5" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+    </pattern>
+    
+    <text id="text" transform="matrix(1 0 0 1 -8.0684 116.7852)" font-family="'montserrat'" font-size="65" font-weight="600">SALTWATER</text>
+    
+    <mask id="text-mask">
+      <use x="0" y="0" xlink:href="#text" opacity="1" fill="#4aaaa5"/>
+    </mask>
+  </defs>
+ 
+	  <use x="0" y="0" xlink:href="#text" fill="#222"/>
+  
+  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/>
+</svg>
+
+</div>
 <div id="slide1" class="mySlides bgimg-1"></div>
 <div id="slide2" class="mySlides bgimg-2"></div>
 <div id="slide3" class="mySlides bgimg-3"></div>
@@ -404,8 +417,8 @@ li a {
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
     <defs>
-      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
-        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)"></text>
@@ -418,8 +431,8 @@ li a {
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
     <defs>
-      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
-        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">1</text>
@@ -432,8 +445,8 @@ li a {
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
     <defs>
-      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
-        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">2</text>
@@ -446,8 +459,8 @@ li a {
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
     <defs>
-      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
-        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">3</text>
@@ -460,8 +473,8 @@ li a {
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
     <defs>
-      <pattern id="pathPattern" x="4" y="4" width="25" height="25" patternUnits="userSpaceOnUse">
-        <path d="M 0 0 Q 5 20 10 10 T 20 20" stroke="#000" fill="none" />
+      <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="400" font-weight="600" height="200" fill="url(#pathPattern)">4</text>
@@ -494,11 +507,39 @@ li a {
   <div class="pageTitleBorder"></div>
   <div class="pageContent">page 4 content</div>
 </div>
+
 <!-- page navigation -->
-<a class="pageup" onclick="plusDivs(-1)">&#8593;</a>
-<a class="pagedown" onclick="plusDivs(1)">&#8595;</a>
+<a class="pageup" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
+<a class="pagedown" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
+
+<div class="pagination" style="opacity:0"></div>
+<div class="pagination">
+  <div class="activePage">1</div>
+  <div class="inactivePage">2</div>
+  <div class="inactivePage">3</div>
+  <div class="inactivePage">4</div>
+</div>
+<div class="pagination">
+  <div class="inactivePage">1</div>
+  <div class="activePage">2</div>
+  <div class="inactivePage">3</div>
+  <div class="inactivePage">4</div>
+</div>
+<div class="pagination">
+  <div class="inactivePage">1</div>
+  <div class="inactivePage">2</div>
+  <div class="activePage">3</div>
+  <div class="inactivePage">4</div>
+</div>
+<div class="pagination">
+  <div class="inactivePage">1</div>
+  <div class="inactivePage">2</div>
+  <div class="inactivePage">3</div>
+  <div class="activePage">4</div>
+</div>
 
 <script>
+var paginationIndex = 1;
 var contentIndex = 1;
 var numsIndex = 1;
 var themeIndex = 1;
@@ -507,9 +548,12 @@ showDivs(slideIndex);
 showTheme(themeIndex);
 showPageNums(numsIndex);
 showContent(contentIndex);
+showPagination(paginationIndex);
+
 function plusDivs(n) {
   transTheme(themeIndex);
   setTimeout(function(){ showDivs(slideIndex += n); }, 230);
+  setTimeout(function(){ showPagination(paginationIndex += n); }, 230);
   setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
   setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
   setTimeout(function(){ showContent(contentIndex += n); }, 1200);
@@ -566,6 +610,58 @@ function showContent(n) {
   }
   c[contentIndex-1].style.display = "block";
 }
+function showPagination(n) {
+  var ip;
+  var p = document.getElementsByClassName("pagination");
+  if (n > p.length) {paginationIndex = 1}    
+  if (n < 1) {paginationIndex = p.length}
+  for (ip = 0; ip < p.length; ip++) {
+     p[ip].style.display = "none";
+  }
+  p[paginationIndex-1].style.display = "block";
+}
+function homePage(){
+  transTheme(1);
+  setTimeout(function(){ showDivs(1); }, 230);
+  setTimeout(function(){ showTheme(1); }, 1000);
+  setTimeout(function(){ showPageNums(1); }, 1000);
+  setTimeout(function(){ showContent(1); }, 1200);
+}
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var fill=document.querySelector(".water-fill");
+  TweenMax.fromTo(fill,0.8,{
+    attr:{
+      x:-400
+    }
+  },
+  {
+    attr:{
+      x:0,
+    },
+    repeat:-1,
+    ease:Linear.easeNone
+  });
+  
+  TweenMax.fromTo(fill,10,{
+    attr:{
+      y:120,
+      height:0
+    },
+  },{
+    attr:{
+      y:-20,
+      height:140
+    },
+    repeat:-1,
+    yoyo:true,
+    ease:Linear.easeNone
+  });
+  
+});
 </script>
 
  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
