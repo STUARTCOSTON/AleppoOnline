@@ -24,6 +24,23 @@ h1 {
   font-weight: 900;
   color: #171717;
 }
+#waterLoader {
+  height: 100vh;
+  width: 100vw;
+  background-color: #222;
+}
+.themeColor1 {
+  background-color:#7accc8;
+}
+.themeColor2 {
+  background-color:#4aaaa5;
+}
+.themeColor3 {
+  background-color:#a3d39c;
+}
+.themeColor4 {
+  background-color:#e45f56;
+}
 svg {
   font-family: "montserrat", sans-serif;
   height: 100%;
@@ -55,11 +72,10 @@ li a {
 }
 .pageTitle {
   font-family: 'Montserrat', sans-serif;
-  font-size: 50px;
-  font-weight: 600;
+  font-weight: 100;
   position: fixed;
   line-height: 1em;
-  bottom: 35%;
+  bottom: 47%;
   z-index: 1000000;
   color: white;
   left: -100%;
@@ -70,27 +86,43 @@ li a {
   position: fixed;
   width: 40px;
   border-bottom: 1px solid white;
-  bottom: 30%;
+  bottom: 45%;
   left: -100%;
-  animation: transinpt 0.5s ease forwards;
-  animation-delay: 0.9s;
+  animation: transintb 0.7s ease forwards;
+  animation-delay: 1.2s;
   -ms-transform: translate(0%,-50%); 
   -webkit-transform: translate(0%,-50%); 
   transform: translate(0%,-50%);
 }
 .pageContent {
   position: fixed;
-  bottom: -100%;
+  width: 40%;
+  top: 100%;
   left: 5%;
   animation: transincontent 0.7s ease forwards;
   animation-delay: 0.9s;
+}
+.button {
+  position: fixed;
+  top: 100%;
+  left: 5%;
+  animation: transincontent 0.7s ease forwards;
+  animation-delay: 0.9s;
+  border:1px solid white;
+  background-color: transparent;
+  padding: 5px 25px;
+}
+.button:hover {
+  box-shadow: 2px 2px 3px #222;
+  background-color: #e45f56; 
+  border:1px solid #e45f56;
 }
 /* end sitewide css */
 
 /* Nav and Menu css */
 .menu-container {
-  right: 15px;
-  top: 15px;
+  right: 25px;
+  top: 25px;
   z-index: 10;
   cursor: pointer;
 }
@@ -98,7 +130,7 @@ li a {
   background-color: #e9d66b;
 }
 .menu-container .bars {
-  width: 30px;
+  width: 25px;
   height: 18px;
   position: relative;
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
@@ -109,7 +141,7 @@ li a {
 .menu-container .bars span {
   display: block;
   width: 100%;
-  height: 5px;
+  height: 3px;
   background-color: white;
   margin-top: 5px;
 }
@@ -130,98 +162,6 @@ li a {
   transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
-}
-.menu-container .bars .other-bar {
-  width: 5px;
-  height: 0px;
-  position: absolute;
-  background-color: black;
-  top: -2px;
-  left: 50%;
-  margin-left: -3px;
-  -webkit-transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
-  z-index: 10;
-}
-.menu-container.is-menu-open .bars {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
-}
-.menu-container.is-menu-open .bars span {
-  background-color: black!important;
-}
-.menu-container.is-menu-open .bars span:first-child {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-.menu-container.is-menu-open .bars span:nth-child(3) {
-  width: 0;
-  -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-.menu-container.is-menu-open .bars .other-bar {
-  height: 30px;
-  -webkit-transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-  background-color: black;
-}
-  .nav-closed {
-    display: block;
-    top: 0;
-    left: 100%;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: #fff;
-    color: #171717;
-    opacity: 1;
-    transition: 1s;
-    line-height: 1;
-  }
-  
-  .nav-open {
-    display: block;
-    top: 0;
-    left: 0%;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: #fff;
-    color: #171717;
-    opacity: 1;
-    transition: 1s;
-    line-height: 1;
-  }
-  
-  #menu a:hover {
-    color: #e9d66b;
-    transition: 0.4s;
-    transition-timing-function: ease;
-  }  
-  
-.a-circle {
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-}
-.arylide, .arylide a {
-  color: #fff;
-  position: fixed;
-  top: 23px;
-  left:19px;
-  line-height:3px;
-  text-decoration: none;
-}
-.logo-space {
-  letter-spacing: 2px;
 }
 /* end nav and menu css */
 
@@ -245,7 +185,7 @@ li a {
   height:100%;
   width: 100%;
 }
-.bgimg-hp, .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+.bgimg-hp, .bgimg-1, .bgimg-2, .bgimg-3{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -263,9 +203,6 @@ li a {
 .bgimg-3 {
   background-image: url("https://4.bp.blogspot.com/-s7iBlsxbjDs/WH2yE3edAWI/AAAAAAAAKjU/VvtSvXJXDrk-GrAQwoLxRXUv7CJrrHPBwCK4B/s1600/IMG_5830.JPG");
 }
-.bgimg-4 {
-  background-image: url("https://1.bp.blogspot.com/-U8oijuExdsM/WINlmHuvyDI/AAAAAAAAKtI/_HMWFEe_Cw8EonvjwaPI0BER76AgRXrSgCKgB/s1600/IMG_5855.JPG");
-}
 /* end slide bg img css */
 
 /* themeDiv css */
@@ -275,18 +212,6 @@ li a {
   height: 100vh;
   width: 100vw;
   top: 0;
-}
-.themeDiv-1 {
-  background: teal;
-}
-.themeDiv-2 {
-  background: green;
-}
-.themeDiv-3 {
-  background: lightblue;
-}
-.themeDiv-4 {
-  background: lightgreen;
 }
 /* end themeDiv css */
 /* page up and down */
@@ -334,87 +259,127 @@ li a {
   
 /* animations */
 @-webkit-keyframes transinpn {
-    0%   {opacity:0;}
-    100% {opacity:1;}
+  0%   {opacity:0;}
+  10%  {opacity:1}
+  40%  {opacity:0}
+  55%  {opacity:1;}
+  70%  {opacity:0;}
+  75%  {opacity:1;}
+  90%  {opacity:0}
+  100% {opacity:1;}
 }
 @-webkit-keyframes transinpt {
-    0%   {left: -100%;}
-    100% {left: 5%;}
+  0%   {left: -100%;}
+  100% {left: 30px;}
+}
+@-webkit-keyframes transintb {
+  0%   {left: -100%;width:0px}
+  35% {left:0%;width:0px;}
+  40%   {left: 0%;width:20px}
+  70%  {left: 0%;width:70px}
+  100% {left: 30px;width:40px}
 }
 @-webkit-keyframes transincontent {
-    0%   {bottom: -100%;}
-    100% {bottom: 15%;}
+  0%   {top: 100%;}
+  100% {top: 60%;}
+}
+@-webkit-keyframes buttonHover {
+  0%   {background-color:white;opacity:0;}
+  10%  {opacity:1}
+  40%  {opacity:0}
+  55%  {opacity:1;}
+  70%  {opacity:0;}
+  75%  {opacity:1;}
+  90%  {opacity:0}
+  100% {opacity:1;}
 }
 /* end animations */
 </style>
 
-<body>
-
-<!-- Navbar (sit on top) -->
-<nav class="w3-top sc-full-width" style="height: 60px; z-index:10; "id="myNavbar">
-  <!-- navbar logo -->
-  <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">    
-    <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700; cursor: pointer;" onclick="homePage()">SALTWATER.</div>
-  <!-- close navbar logo -->
-  </div>
-  <!-- menubars -->
-  <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
-    <div id="menubars" class="bars"><span></span><span></span><span></span>
-      <div class="other-bar"></div>
-    </div>
-  </div>
-  <div id="menu" class="sc-full-screen nav-closed w3-align-left" onclick="openNav()">
-    <div class="w3-display-middle" style="width: 400px; height: 400px;">
-      <ul class="sc-ul sc-rotate90counterclock">
-        <li><h1><a href="#home" onclick="openNav()">home</a></h1></li>
-        <li><h1><a href="#page2" onclick="openNav()">what we do</a></h1></li>
-        <li><h1><a href="#page3" onclick="openNav()">features</a></h1></li>
-        <li><h1><a href="#page4" onclick="openNav()">contact</a></h1></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- image slides -->
-<div id="hp" class="mySlides" style="background-color: blue;">
-
-<svg class="loading" version="1.1"  x="0px" y="0px"
+<body onload="myLoader()">
+<div id="waterLoader">
+  <svg class="loading" version="1.1"  x="0px" y="0px"
 	 width="574.558px" height="120px" viewBox="0 0 574.558 120" enable-background="new 0 0 574.558 120" xml:space="preserve">
-  <defs>
-    <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
-      <path fill="#4aaaa5" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
-    </pattern>
+    <defs>
+      <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+        <path fill="#4aaaa5" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+      </pattern>
     
-    <text id="text" transform="matrix(1 0 0 1 -8.0684 116.7852)" font-family="'montserrat'" font-size="65" font-weight="600">SALTWATER</text>
+      <text id="text" transform="matrix(1 0 0 1 -8.0684 116.7852)" font-family='montserrat' font-size="65" font-weight="600">LOADING</text>
     
-    <mask id="text-mask">
-      <use x="0" y="0" xlink:href="#text" opacity="1" fill="#4aaaa5"/>
-    </mask>
-  </defs>
+      <mask id="text-mask">
+        <use x="0" y="0" xlink:href="#text" opacity="1" fill="#4aaaa5"/>
+      </mask>
+    </defs>
  
-	  <use x="0" y="0" xlink:href="#text" fill="#222"/>
+	    <use x="0" y="0" xlink:href="#text" fill="#222"/>
   
-  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/>
-</svg>
-
+    <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/>
+  </svg>
 </div>
-<div id="slide1" class="mySlides bgimg-1"></div>
-<div id="slide2" class="mySlides bgimg-2"></div>
-<div id="slide3" class="mySlides bgimg-3"></div>
-<div id="slide4" class="mySlides bgimg-4"></div>
+  
+<div id="site" class="w3-animate-bottom">
+  <!-- Navbar (sit on top) -->
+  <nav class="w3-top sc-full-width" style="height: 60px; z-index:15; "id="myNavbar">
+    <!-- navbar logo -->
+    <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">    
+      <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700; cursor: pointer;" onclick="currentDiv(1)">SALTWATER.</div>
+    <!-- close navbar logo -->
+    </div>
+    <!-- menubars -->
+    <div class="w3-hide-large w3-hide-medium">
+      <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
+        <div id="menubars" class="bars">
+          <span></span><span></span><span></span>
+          <div class="other-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-hide-small menu-container w3-padding-right w3-display-topright">
+      <div class="w3-large"><span>projects</span><span style="margin-left: 20px;">contact</span></div>
+    </div>
+  </nav>
 
-<!-- themeDiv slides -->
-<div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
-<div class="themeDiv themeDiv-1"></div>
-<div class="themeDiv themeDiv-2"></div>
-<div class="themeDiv themeDiv-3"></div>
-<div class="themeDiv themeDiv-4"></div>
-
-<!-- pageNum slides -->
-<div class="pageNums">
-</div>
-<div class="pageNums">
-  <svg>
+  <!-- slides -->
+  <div id="Slides">
+    <div id="hp" class="mySlides themeColor2">
+      <!--<svg class="loading" version="1.1"  x="0px" y="0px"
+	 width="574.558px" height="120px" viewBox="0 0 574.558 120" enable-background="new 0 0 574.558 120" xml:space="preserve">
+    <defs>
+      <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+        <path fill="#4aaaa5" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+      </pattern>
+    
+      <text id="text" transform="matrix(1 0 0 1 -8.0684 116.7852)" font-family='montserrat' font-size="65" font-weight="600">SALTWATER</text>
+    
+      <mask id="text-mask">
+        <use x="0" y="0" xlink:href="#text" opacity="1" fill="#4aaaa5"/>
+      </mask>
+    </defs>
+ 
+	    <use x="0" y="0" xlink:href="#text" fill="#222"/>
+  
+    <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/>
+  </svg>-->
+      <div class="pageNums"></div>
+    </div>
+    <div id="slide1" class="mySlides bgimg-1"></div>
+    <div id="slide2" class="mySlides bgimg-2"></div>
+    <div id="slide3" class="mySlides bgimg-3"></div>
+  </div>
+  
+  <!-- themeDiv slides -->
+  <div id="themeSlides">
+    <div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
+    <div class="themeDiv themeColor3"></div>
+    <div class="themeDiv themeColor1"></div>
+    <div class="themeDiv themeColor4"></div>
+  </div>
+  
+  <!-- pageNum slides -->
+  <div id="numSlides">
+    <div class="pageNums">
+      <svg>
     <mask x="0" y="0" id="half">
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
@@ -426,9 +391,9 @@ li a {
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">1</text>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" mask="url(#half)" fill="#fff">1</text>
   </svg>
-</div>
-<div class="pageNums">
-  <svg>
+    </div>
+    <div class="pageNums">
+      <svg>
     <mask x="0" y="0" id="half">
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
@@ -440,9 +405,9 @@ li a {
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">2</text>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" mask="url(#half)" fill="#fff">2</text>
   </svg>
-</div>
-<div class="pageNums">
-  <svg>
+    </div>
+    <div class="pageNums">
+      <svg>
     <mask x="0" y="0" id="half">
       <rect y="0" x="50%" fill="white" width="50%" height="100%" />
     </mask>
@@ -454,78 +419,75 @@ li a {
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">3</text>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" mask="url(#half)" fill="#fff">3</text>
   </svg>
-</div>
-<div class="pageNums">
-  <svg>
-    <mask x="0" y="0" id="half">
-      <rect y="0" x="50%" fill="white" width="50%" height="100%" />
-    </mask>
-    <defs>
-      <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
-        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
-      </pattern>
-    </defs>
-    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">4</text>
-    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" mask="url(#half)" fill="#fff">4</text>
-  </svg>
-</div>
-	
-<!-- pageTitle and pageContent slides -->
-<div class="content">
-  <div class="pageTitle" style="animation-delay: 0s;">SALTWATER<br/><span class="w3-large" style="font-weight: 300; letter-spacing: 14px;">digital studios</span></div>
-  <div class="pageTitleBorder" style="animation-delay: 0.1s;"></div>
-</div>
-<div class="content">
-  <div class="pageTitle">Design &amp; <br/>Develop</div>
-  <div class="pageTitleBorder"></div>
-  <div class="pageContent">page 1 content</div>
-</div>
-<div class="content">
-  <div class="pageTitle">Page 2</div>
-  <div class="pageTitleBorder"></div>
-  <div class="pageContent">page 2 content</div>
-</div>
-<div class="content">
-  <div class="pageTitle">Page 3</div>
-  <div class="pageTitleBorder"></div>
-  <div class="pageContent">page 3 content</div>
-</div>
-<div class="content">
-  <div class="pageTitle">Page 4</div>
-  <div class="pageTitleBorder"></div>
-  <div class="pageContent">page 4 content</div>
+    </div>
+  </div>
+  
+  <!-- pageTitle and pageContent slides -->
+  <div id="contentSlides">
+    <div class="content">
+      <div class="pageTitle w3-xxxlarge" style="font-weight: 600; line-height: 25px; animation-delay: 0s;">SALTWATER<br/><span class="w3-large" style="margin-left: 4px; font-weight: 300; letter-spacing: 12px;">digital studios</span></div>
+      <div class="pageTitleBorder" style="animation-delay: 0.1s;"></div>
+    </div>
+    <div class="content">
+      <div class="pageTitle w3-xxlarge">Design &amp; <br/>Develop</div>
+      <div class="pageTitleBorder"></div>
+      <div class="pageContent">We design and develop custom, clean, and functional products using HTML, CSS, and JavaScript to build your digital home.</div>
+    </div>
+    <div class="content">
+      <div class="pageTitle w3-xxlarge">DEMOS</div>
+      <div class="pageTitleBorder"></div>
+      <div class="button">take a look</div>
+    </div>
+    <div class="content">
+      <div class="pageTitle w3-xxlarge">CONTACT</div>
+      <div class="pageTitleBorder"></div>
+      <div class="pageContent">
+        <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a>
+        <br/>
+        931.588.0398
+        <br/>
+        <i class="fa fa-facebook" aria-hidden="true">&nbsp;&nbsp;</i>
+        <i class="fa fa-twitter" aria-hidden="true">&nbsp;&nbsp;</i>
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  
+  <!-- page navigation -->
+  <a class="pageup" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
+  <a class="pagedown" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
+
+  <div id="paginationSlides">
+    <div class="pagination" style="opacity:0"></div>
+    <div class="pagination">
+      <div class="activePage" onclick="currentDiv(2)">1</div>
+      <div class="inactivePage" onclick="currentDiv(3)">2</div>
+      <div class="inactivePage" onclick="currentDiv(4)">3</div>
+    </div>
+    <div class="pagination">
+      <div class="inactivePage" onclick="currentDiv(2)">1</div>
+      <div class="activePage" onclick="currentDiv(3)">2</div>
+      <div class="inactivePage" onclick="currentDiv(4)">3</div>
+    </div>
+    <div class="pagination">
+      <div class="inactivePage" onclick="currentDiv(2)">1</div>
+      <div class="inactivePage" onclick="currentDiv(3)">2</div>
+      <div class="activePage" onclick="currentDiv(4)">3</div>
+    </div>
+  </div>
+<!-- close site div -->
 </div>
 
-<!-- page navigation -->
-<a class="pageup" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
-<a class="pagedown" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
-
-<div class="pagination" style="opacity:0"></div>
-<div class="pagination">
-  <div class="activePage">1</div>
-  <div class="inactivePage">2</div>
-  <div class="inactivePage">3</div>
-  <div class="inactivePage">4</div>
-</div>
-<div class="pagination">
-  <div class="inactivePage">1</div>
-  <div class="activePage">2</div>
-  <div class="inactivePage">3</div>
-  <div class="inactivePage">4</div>
-</div>
-<div class="pagination">
-  <div class="inactivePage">1</div>
-  <div class="inactivePage">2</div>
-  <div class="activePage">3</div>
-  <div class="inactivePage">4</div>
-</div>
-<div class="pagination">
-  <div class="inactivePage">1</div>
-  <div class="inactivePage">2</div>
-  <div class="inactivePage">3</div>
-  <div class="activePage">4</div>
-</div>
-
+<script>
+var myVar;
+function myLoader() {
+    myVar = setTimeout(showPage, 10000);
+}
+function showPage() {
+  document.getElementById("waterLoader").style.display = "none";
+  document.getElementById("site").style.display = "block";
+}
+</script>
 <script>
 var paginationIndex = 1;
 var contentIndex = 1;
@@ -537,7 +499,6 @@ showTheme(themeIndex);
 showPageNums(numsIndex);
 showContent(contentIndex);
 showPagination(paginationIndex);
-
 function plusDivs(n) {
   transTheme(themeIndex);
   setTimeout(function(){ showDivs(slideIndex += n); }, 230);
@@ -619,7 +580,7 @@ function homePage(){
 
 <script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
 <script>
-document.addEventListener("DOMContentLoaded",function(){
+function(){
   var fill=document.querySelector(".water-fill");
   TweenMax.fromTo(fill,0.8,{
     attr:{
@@ -666,6 +627,18 @@ document.addEventListener("DOMContentLoaded",function(){
       y.className = y.className.replace(' nav-open', ' nav-closed');
     }
   }
+  
+  $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
+  if( event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+    //scroll down
+    plusDivs(-1);
+  } else {
+    //scroll up
+    plusDivs(1);
+  }
+  //prevent page fom scrolling
+  return false;
+});
   </script>  
 
 </body>
