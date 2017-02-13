@@ -433,8 +433,8 @@ li a {
   </div><!-- close pageContent slides -->
   
   <!-- page navigation -->
-  <a class="pageup" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
-  <a class="pagedown" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
+  <a class="pageup w3-hide-small w3-hide-medium" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
+  <a class="pagedown w3-hide-small w3-hide-medium" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
 
   <div id="paginationSlides">
     <div class="pagination" style="opacity:0"></div>
@@ -617,7 +617,7 @@ window.addEventListener('load', function(){
         e.preventDefault()
     }, false)
 	//continue to trigger click event from the target of any touch event at the document level
-	$(window).on('touchstart', function(e){
+	$(window).on('touchend', function(e){
 		$(e.target).trigger('click');
 	});
 }//end window onload
