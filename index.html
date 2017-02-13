@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/w3/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 /* sitewide css */
@@ -11,18 +12,12 @@ img {
   max-width: 100%;
   height: auto;
 }
-body {font-family: "Libre Franklin", sans-serif;}
+body {font-family: "Montserrat", sans-serif;}
 body, html {
   height: 100%;
   width: 100%;
   color: white;
   line-height: 1.8;
-}
-h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif;}
-h1 {
-  font-size: 62px;
-  font-weight: 900;
-  color: #171717;
 }
 #waterLoader {
   height: 100vh;
@@ -60,6 +55,9 @@ li a {
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
 }
+.letter-space {
+  letter-spacing: 2px;
+}
 .pageNums {
   width: 100%;
   height: 100%;
@@ -71,12 +69,10 @@ li a {
   animation-delay: 0.6s;
 }
 .pageTitle {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 100;
   position: fixed;
   line-height: 1em;
   bottom: 47%;
-  z-index: 1000000;
   color: white;
   left: -100%;
   animation: transinpt 0.5s ease forwards;
@@ -89,7 +85,7 @@ li a {
   bottom: 45%;
   left: -100%;
   animation: transintb 0.7s ease forwards;
-  animation-delay: 1.2s;
+  animation-delay: 0.4s;
   -ms-transform: translate(0%,-50%); 
   -webkit-transform: translate(0%,-50%); 
   transform: translate(0%,-50%);
@@ -105,17 +101,26 @@ li a {
 .button {
   position: fixed;
   top: 100%;
-  left: 5%;
+  left: 20px;
   animation: transincontent 0.7s ease forwards;
   animation-delay: 0.9s;
   border:1px solid white;
   background-color: transparent;
   padding: 5px 25px;
 }
-.button:hover {
-  box-shadow: 2px 2px 3px #222;
+.button:hover, .contact:hover {
+  box-shadow: 2px 2px 3px #555;
   background-color: #e45f56; 
   border:1px solid #e45f56;
+}
+.contact {
+  border:1px solid white;
+  background-color: transparent;
+  padding: 5px 15px;
+}
+.projects:hover {
+  color: #e45f56;
+  cursor: pointer;
 }
 /* end sitewide css */
 
@@ -296,7 +301,7 @@ li a {
 /* end animations */
 </style>
 
-<body onload="myLoader()">
+<body id="body" onload="myLoader()">
 <!--<div id="waterLoader">
   <svg class="loading" version="1.1"  x="0px" y="0px"
 	 width="574.558px" height="120px" viewBox="0 0 574.558 120" enable-background="new 0 0 574.558 120" xml:space="preserve">
@@ -322,7 +327,7 @@ li a {
   <!-- Navbar (sit on top) -->
   <nav class="w3-top sc-full-width" style="height: 60px; z-index:15; "id="myNavbar">
     <!-- navbar logo -->
-    <div class="w3-display-topleft" style="top: 15px; left: 15px; width: 200px;">    
+    <div class="w3-display-topleft w3-padding-left w3-padding-24">    
       <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700; cursor: pointer;" onclick="currentDiv(1)">SALTWATER.</div>
     <!-- close navbar logo -->
     </div>
@@ -335,8 +340,8 @@ li a {
         </div>
       </div>
     </div>
-    <div class="w3-hide-small menu-container w3-padding-right w3-display-topright">
-      <div class="w3-large"><span>projects</span><span style="margin-left: 20px;">contact</span></div>
+    <div class="w3-hide-small w3-padding-right w3-display-topright w3-padding-24">
+      <div class="w3-medium"><span class="w3-padding-right letter-space projects">PROJECTS</span><span class="contact letter-space">CONTACT</span></div>
     </div>
   </nav>
 
@@ -385,7 +390,7 @@ li a {
     </mask>
     <defs>
       <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
-        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">1</text>
@@ -399,7 +404,7 @@ li a {
     </mask>
     <defs>
       <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
-        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">2</text>
@@ -413,7 +418,7 @@ li a {
     </mask>
     <defs>
       <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
-        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#000" fill="none" />
+        <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
       </pattern>
     </defs>
     <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">3</text>
@@ -431,15 +436,15 @@ li a {
     <div class="content">
       <div class="pageTitle w3-xxlarge">Design &amp; <br/>Develop</div>
       <div class="pageTitleBorder"></div>
-      <div class="pageContent">We design and develop custom, clean, and functional products using HTML, CSS, and JavaScript to build your digital home.</div>
+      <div class="pageContent">We make custom, functional, clean, and memorable websites and front-end products using HTML, CSS, and JavaScript.</div>
     </div>
     <div class="content">
-      <div class="pageTitle w3-xxlarge">DEMOS</div>
+      <div class="pageTitle w3-xxlarge">Demos</div>
       <div class="pageTitleBorder"></div>
-      <div class="button">take a look</div>
+      <div class="button letter-space w3-medium">VIEW</div>
     </div>
     <div class="content">
-      <div class="pageTitle w3-xxlarge">CONTACT</div>
+      <div class="pageTitle w3-xxlarge">Contact</div>
       <div class="pageTitleBorder"></div>
       <div class="pageContent">
         <a href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a>
@@ -488,6 +493,7 @@ function showPage() {
   document.getElementById("site").style.display = "block";
 }
 </script>
+
 <script>
 var paginationIndex = 1;
 var contentIndex = 1;
@@ -499,6 +505,7 @@ showTheme(themeIndex);
 showPageNums(numsIndex);
 showContent(contentIndex);
 showPagination(paginationIndex);
+
 function plusDivs(n) {
   transTheme(themeIndex);
   setTimeout(function(){ showDivs(slideIndex += n); }, 230);
@@ -515,6 +522,7 @@ function currentDiv(n){
   setTimeout(function(){ showPageNums(numsIndex = n); }, 1000);
   setTimeout(function(){ showContent(contentIndex = n); }, 1200);
 }
+
 function transTheme(n) {
   var pn = document.getElementsByClassName("pageNums");
   var td = document.getElementsByClassName("themeDiv");
@@ -579,6 +587,68 @@ function showPagination(n) {
 }
 </script>
 
+<script>
+//enable touch events to change slides
+window.addEventListener('load', function(){
+    var el = document.getElementById('body')
+    var inner = document.getElementById('inner')
+    var hidetimer = null
+    swipedetect(el, function(swipedir){
+        if (swipedir != 'none'){
+            clearTimeout(hidetimer)
+            plusDivs(swipedir)
+        }
+    })
+}, false)
+                        
+    function swipedetect(el, callback){
+  
+    var touchsurface = el,
+    swipedir,
+    startX,
+    startY,
+    distX,
+    distY,
+    threshold = 60, //required min distance traveled to be considered swipe
+    restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 700, // maximum time allowed to travel that distance
+    elapsedTime,
+    startTime,
+    handleswipe = callback || function(swipedir){}
+  
+    touchsurface.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0]
+        swipedir = 'none'
+        dist = 0
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
+        e.preventDefault()
+    }, false)
+  
+    touchsurface.addEventListener('touchmove', function(e){
+        e.preventDefault() // prevent scrolling when inside DIV
+    }, false)
+  
+    touchsurface.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0]
+        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        if (elapsedTime <= allowedTime){ // first condition for awipe met
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                swipedir = (distX < 0)? '-1' : '1' // if dist traveled is negative, it indicates left swipe
+            }
+            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                swipedir = (distY < 0)? '-1' : '1' // if dist traveled is negative, it indicates up swipe
+            }
+        }
+        handleswipe(swipedir)
+        e.preventDefault()
+    }, false)
+}//end window onload
+</script>
+
 <script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
 <script>
 function(){
@@ -629,8 +699,9 @@ function(){
     }
   }
   
+  //scroll mousewheel to change slides
   $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
-  if( event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+  if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
     //scroll down
     plusDivs(-1);
   } else {
