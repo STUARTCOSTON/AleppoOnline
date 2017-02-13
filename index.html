@@ -654,6 +654,11 @@ document.getElementById("touchscreen").addEventListener('load', function(){
         e.preventDefault()
     }, false)
 }//end window onload
+	
+	//trigger click event from the target of any touch event at the document level
+	$(document).on('touchend', function(e){
+		$(e.target).trigger('click');
+	});
 </script>
 
 <script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
