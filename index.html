@@ -616,12 +616,13 @@ window.addEventListener('load', function(){
         handleswipe(swipedir)
         e.preventDefault()
     }, false)
-}//end window onload
-	
-	//trigger click event from the target of any touch event at the document level
-	$(window).on('touchend', function(e){
+	//continue to trigger click event from the target of any touch event at the document level
+	$(window).on('touchstart', function(e){
 		$(e.target).trigger('click');
 	});
+}//end window onload
+	
+	
 </script>
 
 <script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
