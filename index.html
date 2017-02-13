@@ -19,6 +19,14 @@ body, html {
   color: white;
   line-height: 1.8;
 }
+nav {
+  position:fixed;
+  width: 85%;
+  height: 60px;
+  left: 50%;
+  top: 30px;
+  z-index: 10;
+}
 #waterLoader {
   height: 100vh;
   width: 100vw;
@@ -265,10 +273,17 @@ li a {
   top:200%;
   width: 100%;
   height:100%;
-  animation: sea 8s ease forwards;
+  animation: sea 10s ease;
+  animation-direction: alternate;
+  animation-iteration-count: infinite
 }
 .sea2 {
-  animation: sea2 0.2s ease forwards;
+  position:fixed;
+  top:200%;
+  width: 100%;
+  height:100%;
+  animation: sea2 0.4s ease;
+  z-index: 12;
 }
   
 /* animations */
@@ -327,22 +342,21 @@ li a {
 <!-- site container -->
 <div id="site" class="w3-animate-bottom" style="display:none;">
   <!-- Navbar (sit on top) -->
-  <nav class="w3-top sc-full-width" style="height: 60px; z-index:15; "id="myNavbar">
+  <nav class="center-offset" id="myNavbar">
     <!-- navbar logo -->
-    <div class="w3-display-topleft w3-padding-left w3-padding-24">    
+    <div class="w3-display-bottomleft">    
       <div class="w3-xlarge w3-text-white" style="font-family: 'montserrat',san-serif; font-weight: 700; cursor: pointer;" onclick="currentDiv(1)">SALTWATER</div>
     </div>
-    <!-- menubars -->
     <div class="w3-hide-large w3-hide-medium">
-      <div class="menu-container w3-display-topright" id='menu-container' onclick='openNav()'>
+      <div class="menu-container w3-display-bottomright" id='menu-container' onclick='openNav()'>
         <div id="menubars" class="bars">
           <span></span><span></span><span></span>
           <div class="other-bar"></div>
         </div>
       </div>
     </div>
-    <div class="w3-hide-small w3-padding-right w3-display-topright w3-padding-24">
-      <div class="w3-medium"><span class="w3-padding-right letter-space projects">WORK</span><span class="contact letter-space" onclick="currentDiv(4)">CONTACT</span></div>
+    <div class="w3-hide-small w3-display-bottomright">
+      <div class="w3-medium" style="line-height: 40px;"><span class="w3-padding-right letter-space projects">WORK</span><span class="contact letter-space" onclick="currentDiv(4)">CONTACT</span></div>
     </div>
   </nav>
 
@@ -523,13 +537,14 @@ function transTheme(n) {
   var pn = document.getElementsByClassName("pageNums");
   var td = document.getElementsByClassName("themeDiv");
   var c = document.getElementsByClassName("content");
-  sea.className = sea.className.replace(' sea themeColor1', ' sea2 themeColor1');
+  sea.className = sea.className.replace('sea themeColor1', 'sea2 themeColor1');
   pn[themeIndex-1].style.display = "none";
   td[themeIndex-1].style.transition = "1s";
   td[themeIndex-1].style.left = "100%";
   c[themeIndex-1].style.display = "none";
 }
 function showDivs(n) {
+  var sea = document.getElementById("sea");
   var id;
   var x = document.getElementsByClassName("mySlides");
   if (n > x.length) {slideIndex = 1}    
@@ -538,6 +553,7 @@ function showDivs(n) {
      x[id].style.display = "none";
   }
   x[slideIndex-1].style.display = "block";
+  sea.className = sea.className.replace('sea2 themeColor1', 'sea themeColor1');
 }
 function showTheme(n) {
   var it;
