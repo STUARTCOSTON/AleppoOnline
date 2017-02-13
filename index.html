@@ -619,7 +619,7 @@ window.addEventListener('load', function(){
 }//end window onload
 	
 	//trigger click event from the target of any touch event at the document level
-	$(document).on('touchend', function(e){
+	$(window).on('touchend', function(e){
 		$(e.target).trigger('click');
 	});
 </script>
