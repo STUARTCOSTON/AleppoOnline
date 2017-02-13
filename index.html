@@ -260,6 +260,16 @@ li a {
   opacity: 0.9;
   cursor:pointer;
 }
+.sea {
+  position:fixed;
+  top:200%;
+  width: 100%;
+  height:100%;
+  animation: sea 8s ease forwards;
+}
+.sea2 {
+  animation: sea2 0.2s ease forwards;
+}
   
 /* animations */
 @-webkit-keyframes transinpn {
@@ -286,6 +296,14 @@ li a {
 @-webkit-keyframes transincontent {
   0%   {top: 100%;}
   100% {top: 60%;}
+}
+@-webkit-keyframes sea {
+  0%   {top: 100%;}
+  100% {top: 85%;}
+}
+@-webkit-keyframes sea2 {
+  0%   {top: 85%;}
+  100% {top: 0%;}
 }
 @-webkit-keyframes buttonHover {
   0%   {background-color:white;opacity:0;}
@@ -324,23 +342,24 @@ li a {
       </div>
     </div>
     <div class="w3-hide-small w3-padding-right w3-display-topright w3-padding-24">
-      <div class="w3-medium"><span class="w3-padding-right letter-space projects">PROJECTS</span><span class="contact letter-space">CONTACT</span></div>
+      <div class="w3-medium"><span class="w3-padding-right letter-space projects">WORK</span><span class="contact letter-space" onclick="currentDiv(4)">CONTACT</span></div>
     </div>
   </nav>
 
   <!-- slides -->
   <div id="Slides">
     <div id="hp" class="mySlides black">
-      <svg class="ocean" style="position: fixed; width: 100%; bottom:0%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
-            <path fill="#7accc8" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
-          </pattern>
-        </defs>  
-        <rect class="water-fill" fill="url(#water)" width="1600"/> 
-      </svg>
+      <div id="sea" class="sea themeColor1">
+        <svg class="ocean" style="position: absolute; width: 100%; bottom:100%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
+              <path fill="#7accc8" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
+            </pattern>
+          </defs>  
+          <rect class="water-fill" fill="url(#water)" width="3000"/> 
+        </svg>
+      </div><!-- close sea -->
     </div>
-    
     <div id="slide1" class="mySlides bgimg-1"></div>
     <div id="slide2" class="mySlides bgimg-2"></div>
     <div id="slide3" class="mySlides bgimg-3"></div>
@@ -350,7 +369,7 @@ li a {
   <div id="themeSlides">
     <div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
     <div class="themeDiv themeColor3"></div>
-    <div class="themeDiv themeColor1"></div>
+    <div class="themeDiv themeColor2"></div>
     <div class="themeDiv themeColor4"></div>
   </div>
   
@@ -470,6 +489,7 @@ function showPage() {
 </script>
 
 <script>
+// change slides script
 var paginationIndex = 1;
 var contentIndex = 1;
 var numsIndex = 1;
@@ -480,6 +500,7 @@ showTheme(themeIndex);
 showPageNums(numsIndex);
 showContent(contentIndex);
 showPagination(paginationIndex);
+
 function plusDivs(n) {
   transTheme(themeIndex);
   setTimeout(function(){ showDivs(slideIndex += n); }, 230);
@@ -496,10 +517,13 @@ function currentDiv(n){
   setTimeout(function(){ showPageNums(numsIndex = n); }, 1000);
   setTimeout(function(){ showContent(contentIndex = n); }, 1200);
 }
+
 function transTheme(n) {
+  var sea = document.getElementById("sea");
   var pn = document.getElementsByClassName("pageNums");
   var td = document.getElementsByClassName("themeDiv");
   var c = document.getElementsByClassName("content");
+  sea.className = sea.className.replace(' sea themeColor1', ' sea2 themeColor1');
   pn[themeIndex-1].style.display = "none";
   td[themeIndex-1].style.transition = "1s";
   td[themeIndex-1].style.left = "100%";
@@ -629,7 +653,7 @@ window.addEventListener('load', function(){
 <script>
 document.addEventListener("DOMContentLoaded",function(){
   var fill=document.querySelector(".water-fill");
-  TweenMax.fromTo(fill,0.9,{attr:{x:-400}},{attr:{x:0,},
+  TweenMax.fromTo(fill,0.9,{attr:{x:-750}},{attr:{x:0,},
     repeat:-1,
     ease:Linear.easeNone
   });
