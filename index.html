@@ -55,15 +55,6 @@ li a {
   -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
   transform: translate(-50%,-50%);
 }
-#touchscreen {
-	position:fixed;
-	z-index: 100;
-  width:75%;
-	height: 75%;
-	background-color: transparent;
-	left: 50%;
-	top: 50%;
-}
 .letter-space {
   letter-spacing: 2px;
 }
@@ -488,15 +479,14 @@ li a {
       <div class="inactivePage" onclick="currentDiv(3)">2</div>
       <div class="activePage" onclick="currentDiv(4)">3</div>
     </div>
-	</div>
-	<div id="touchscreen" class="center-offset"></div>	
+	</div>	
 <!-- close site div -->
 </div>
 
 <script>
 var myVar;
 function myLoader() {
-    myVar = setTimeout(showPage, 10000);
+    myVar = setTimeout(showPage(), 10000);
 }
 function showPage() {
   document.getElementById("waterLoader").style.display = "none";
@@ -597,8 +587,8 @@ function showPagination(n) {
 }
 	
 //enable touch events to change slides
-document.getElementById("touchscreen").addEventListener('load', function(){
-    var el = document.getElementById('touchscreen')
+window.addEventListener('load', function(){
+    var el = document.getElementById('body')
     var hidetimer = null
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
