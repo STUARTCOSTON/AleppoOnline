@@ -597,8 +597,7 @@ function showPagination(n) {
 	
 //enable touch events to change slides
 window.addEventListener('load', function(){
-    var el = document.getElementById('body')
-    var inner = document.getElementById('inner')
+    var el = document.getElementById('touchscreen')
     var hidetimer = null
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
