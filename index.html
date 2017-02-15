@@ -135,9 +135,17 @@ li a {
 }
 /* end sitewide css */
 /* Nav and Menu css */
+nav img {
+  position: absolute;
+  -webkit-filter: invert(1);
+  filter: invert(1); 
+  bottom: 13px; 
+  height: 25px;
+  right: 2px;
+}
 .menu-container {
-  right: 25px;
-  top: 25px;
+  right: 60px;
+  bottom: 6px;
   z-index: 10;
   cursor: pointer;
 }
@@ -146,7 +154,7 @@ li a {
 }
 .menu-container .bars {
   width: 25px;
-  height: 18px;
+  height: 25px;
   position: relative;
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
@@ -156,9 +164,9 @@ li a {
 .menu-container .bars span {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 1px;
   background-color: white;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 .menu-container .bars span:first-child {
   margin-top: 0;
@@ -354,6 +362,7 @@ li a {
           <div class="other-bar"></div>
         </div>
       </div>
+      <img onclick="currentDiv(4)" src="http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png">
     </div>
     <div class="w3-hide-small w3-display-bottomright">
       <div class="w3-medium" style="line-height: 40px;"><span class="w3-padding-right letter-space projects">WORK</span><span class="contact letter-space" onclick="currentDiv(4)">CONTACT</span></div>
